@@ -8,23 +8,40 @@
 body {
   background: #eee;
   font-family: Arial, Helvetica, sans-serif;
+  overflow-x: hidden;
 }
 
-#notebook {
-  display: inline-block;
-  vertical-align: bottom;
-  margin: 20px;
+section#main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
-#notebook .screen-container {
+section#main aside {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+section#main #notebook {
+  -webkit-box-flex: 3;
+      -ms-flex: 3;
+          flex: 3;
+  margin: 20px auto 0 auto;
+  position: relative;
+  right: -6vw;
+}
+
+section#main #notebook .screen-container {
   background: #222;
   width: 60vw;
   padding: 30px;
   margin: 0 auto;
   border-radius: 10px 10px 0 0;
+  position: relative;
 }
 
-#notebook .screen-container .screen {
+section#main #notebook .screen-container .screen {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -33,7 +50,20 @@ body {
   overflow-y: auto;
 }
 
-#notebook .basis {
+section#main #notebook .screen-container:before {
+  content: "";
+  background: rgba(255, 255, 255, 0.1);
+  height: 8px;
+  width: 10vw;
+  position: absolute;
+  left: 50%;
+  bottom: 11px;
+  border-radius: 10px;
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
+}
+
+section#main #notebook .basis {
   width: 75vw;
   height: 25px;
   background: #666;
@@ -41,8 +71,8 @@ body {
   position: relative;
 }
 
-#notebook .basis:after,
-#notebook .basis:before {
+section#main #notebook .basis:after,
+section#main #notebook .basis:before {
   content: "";
   background: #999;
   height: 3px;
@@ -52,12 +82,12 @@ body {
   transform: translateX(-50%);
 }
 
-#notebook .basis:before {
+section#main #notebook .basis:before {
   width: 98%;
   bottom: -3px;
 }
 
-#notebook .basis:after {
+section#main #notebook .basis:after {
   width: 97%;
   bottom: -6px;
 }
