@@ -97,6 +97,36 @@ section#main
           background: url("./assets/1.jpg")#fff
           overflow-y: auto
 
+          ul
+            width: 260px
+            padding: 15px 0 0 15px
+
+            li
+              display: inline-flex
+              width: 70px
+              height: 60px
+              // background: red
+              margin: 10px 30px 40px 10px
+              justify-content: center
+              align-items: center
+              text-align: center
+              font-weight: 500
+
+              a
+                span.fa
+                  font-size: 40px
+
+                span.fa-folder
+                  color: #ffff99
+
+                span.fa-file-pdf
+                  color: red
+
+                span.sub
+                  display: block
+                  font-size: 12px
+                  margin: 5px 0 0 0
+
       .screen-container:before
         @extend .pseudo-el
         background: rgba(255, 255, 255, 0.1)
