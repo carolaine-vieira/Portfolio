@@ -12,6 +12,7 @@
 
 \:root
   --primary-font: 'Montserrat', sans-serif
+  --icon-folder: #FFF0A3
 
 body
   font-family: Arial, Helvetica, sans-serif
@@ -20,6 +21,9 @@ body
   a,
   a:hover
     text-decoration: none
+
+  img
+    max-width: 100%
 
 .pseudo-el
   content: ""
@@ -110,11 +114,11 @@ section#main
         .screen
           display: flex
           height: 100%
-          background: url("./assets/2.png")#fff
-          background-size: cover
+          background: url("./assets/1.jpg")#fff
+          // background-size: cover
           overflow-y: auto
 
-          ul
+          ul#screen-links
             width: 260px
             padding: 15px 0 0 15px
 
@@ -137,7 +141,7 @@ section#main
                   font-size: 40px
 
                 span.fa-folder
-                  color: #ffff99
+                  color: var(--icon-folder)
 
                 span.fa-file-pdf
                   color: red
@@ -161,8 +165,8 @@ section#main
             .explorer
               background: #fff
               border-radius: 5px
-              min-height: 70%
-              width: 80%
+              height: 80%
+              width: 90%
               font-family: "Open Sans"
               font-size: 13px
               text-align: left
@@ -192,8 +196,41 @@ section#main
                   border-right: 1px solid #eee
                   height: 100%
 
+                  ul
+                    li
+                      list-style: none
+                      margin: 0 0 10px 0
+
+                      a
+                        color: #444
+
+                      ol
+                        margin: 10px 0 0 15px
+
+                        li
+                          margin: 0 0 5px 0
+
+                        li:before
+                          content: "\f07b"
+                          color: var(--icon-folder)
+
+                    li:before
+                      @extend .pseudo-el
+                      content: "\f005"
+                      position: initial
+                      font-family: "Font Awesome 5 Free"
+                      -webkit-font-smoothing: antialiased
+                      display: inline-block
+                      font-style: normal
+                      font-variant: normal
+                      text-rendering: auto
+                      line-height: 1
+                      margin-right: 5px
+                      color: #DA91E5
+
                 .right
                   flex: 4
+                  overflow-y: auto
 
               .container
                 div
