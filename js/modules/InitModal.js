@@ -6,7 +6,7 @@ export default function initBox() {
 
   $("#notebook").css({
     right: "0",
-    flex: "unset",
+    flex: "10 1 100%",
     width: "100%",
   });
 

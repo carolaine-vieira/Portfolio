@@ -54,6 +54,13 @@ body
   -o-transition: all 1s ease-in-out
   transition: all 1s ease-in-out
 
+.transition-5ms
+  -webkit-transition: all 0.5s ease
+  -moz-transition: all 0.5s ease
+  -ms-transition: all 0.5s ease
+  -o-transition: all 0.5s ease
+  transition: all 0.5s ease
+
 section#main
   // background: red
   height: 100vh
@@ -69,12 +76,13 @@ section#main
       display: flex
       align-items: flex-start
       flex: 1
-      // background: green
       height: 100vh
       position: relative
-      @extend .transition-1s
+      @extend .transition-5ms
       left: 0
       font-family: var(--primary-font)
+      animation-name: aside
+      animation-duration: 1.5s
 
       .container
         margin: 13vh 5vh 0 13vh
@@ -119,6 +127,9 @@ section#main
       position: relative
       right: -6vw
       text-align: center
+      @extend .transition-1s
+      animation-name: notebook
+      animation-duration: 1.5s
 
       .screen-container
         background: #222
@@ -133,7 +144,6 @@ section#main
           display: flex
           height: 100%
           background: url("./assets/1.jpg")#fff
-          // background-size: cover
           overflow-y: auto
 
           ul#screen-links
@@ -150,6 +160,7 @@ section#main
               align-items: center
               text-align: center
               font-weight: 500
+              font-family: var(--primary-font)
 
               a
                 cursor: pointer
@@ -162,7 +173,10 @@ section#main
                   color: var(--icon-folder)
 
                 span.fa-file-pdf
-                  color: red
+                  color: #ff6666
+
+                span.fa-dice
+                  color: #f0b3ff
 
                 span.sub
                   display: block
@@ -172,8 +186,8 @@ section#main
           .open-folder
             position: absolute
             z-index: 9
-            background: rgba(0, 0, 0, 0.5)
-            backdrop-filter: blur(3px) grayscale(100)
+            background: rgba(0, 0, 0, 0.4)
+            backdrop-filter: blur(3px)
             width: calc(100% - 60px)
             height: calc(100% - 60px)
             display: none
@@ -183,7 +197,7 @@ section#main
             .explorer
               background: #fff
               border-radius: 5px
-              height: 80%
+              height: 75%
               width: 90%
               font-size: 13px
               text-align: left
@@ -285,6 +299,30 @@ section#main
                   .project:last-child
                     margin: 0
 
+                  .skill
+                    font-weight: 500
+                    font-family: var(--primary-font)
+                    font-size: 11px
+                    margin-bottom: 20px
+
+                    .progress-bar
+                      height: 10px
+                      border-radius: 5px
+                      background: #eee
+                      margin-top: 5px
+                      position: relative
+
+                      .bar
+                        position: absolute
+                        background: red
+                        left: 0
+                        top: 0
+                        height: 100%
+                        border-radius: 5px
+
+                  .skill:last-child
+                    margin-bottom: 0
+
             .view-container
               overflow-y: auto
               display: block
@@ -370,3 +408,17 @@ section#main:after
   bottom: 0px
   z-index: -1
   background: #E7CA82
+
+// ANIMATIONS
+
+@keyframes notebook
+  from
+    right: -12vw
+  to
+    right: -6vw
+
+@keyframes aside
+  from
+    left: -5%
+  to
+    left: 0

@@ -55,9 +55,14 @@ section#main .container-main #notebook .basis:before, section#main:after {
   position: absolute;
 }
 
-.transition-1s, section#main .container-main aside, section#main .container-main #notebook .screen-container .screen .open-folder .explorer .container .right .project {
+.transition-1s, section#main .container-main #notebook, section#main .container-main #notebook .screen-container .screen .open-folder .explorer .container .right .project {
   -webkit-transition: all 1s ease-in-out;
   transition: all 1s ease-in-out;
+}
+
+.transition-5ms, section#main .container-main aside {
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
 }
 
 section#main {
@@ -90,6 +95,10 @@ section#main .container-main aside {
   position: relative;
   left: 0;
   font-family: var(--primary-font);
+  -webkit-animation-name: aside;
+          animation-name: aside;
+  -webkit-animation-duration: 1.5s;
+          animation-duration: 1.5s;
 }
 
 section#main .container-main aside .container {
@@ -144,6 +153,10 @@ section#main .container-main #notebook {
   position: relative;
   right: -6vw;
   text-align: center;
+  -webkit-animation-name: notebook;
+          animation-name: notebook;
+  -webkit-animation-duration: 1.5s;
+          animation-duration: 1.5s;
 }
 
 section#main .container-main #notebook .screen-container {
@@ -185,6 +198,7 @@ section#main .container-main #notebook .screen-container .screen ul#screen-links
           align-items: center;
   text-align: center;
   font-weight: 500;
+  font-family: var(--primary-font);
 }
 
 section#main .container-main #notebook .screen-container .screen ul#screen-links li a {
@@ -201,7 +215,11 @@ section#main .container-main #notebook .screen-container .screen ul#screen-links
 }
 
 section#main .container-main #notebook .screen-container .screen ul#screen-links li a span.fa-file-pdf {
-  color: red;
+  color: #ff6666;
+}
+
+section#main .container-main #notebook .screen-container .screen ul#screen-links li a span.fa-dice {
+  color: #f0b3ff;
 }
 
 section#main .container-main #notebook .screen-container .screen ul#screen-links li a span.sub {
@@ -213,9 +231,9 @@ section#main .container-main #notebook .screen-container .screen ul#screen-links
 section#main .container-main #notebook .screen-container .screen .open-folder {
   position: absolute;
   z-index: 9;
-  background: rgba(0, 0, 0, 0.5);
-  -webkit-backdrop-filter: blur(3px) grayscale(100);
-          backdrop-filter: blur(3px) grayscale(100);
+  background: rgba(0, 0, 0, 0.4);
+  -webkit-backdrop-filter: blur(3px);
+          backdrop-filter: blur(3px);
   width: calc(100% - 60px);
   height: calc(100% - 60px);
   display: none;
@@ -230,7 +248,7 @@ section#main .container-main #notebook .screen-container .screen .open-folder {
 section#main .container-main #notebook .screen-container .screen .open-folder .explorer {
   background: #fff;
   border-radius: 5px;
-  height: 80%;
+  height: 75%;
   width: 90%;
   font-size: 13px;
   text-align: left;
@@ -365,6 +383,34 @@ section#main .container-main #notebook .screen-container .screen .open-folder .e
   margin: 0;
 }
 
+section#main .container-main #notebook .screen-container .screen .open-folder .explorer .container .right .skill {
+  font-weight: 500;
+  font-family: var(--primary-font);
+  font-size: 11px;
+  margin-bottom: 20px;
+}
+
+section#main .container-main #notebook .screen-container .screen .open-folder .explorer .container .right .skill .progress-bar {
+  height: 10px;
+  border-radius: 5px;
+  background: #eee;
+  margin-top: 5px;
+  position: relative;
+}
+
+section#main .container-main #notebook .screen-container .screen .open-folder .explorer .container .right .skill .progress-bar .bar {
+  position: absolute;
+  background: red;
+  left: 0;
+  top: 0;
+  height: 100%;
+  border-radius: 5px;
+}
+
+section#main .container-main #notebook .screen-container .screen .open-folder .explorer .container .right .skill:last-child {
+  margin-bottom: 0;
+}
+
 section#main .container-main #notebook .screen-container .screen .open-folder .view-container {
   overflow-y: auto;
   display: block;
@@ -449,5 +495,41 @@ section#main:after {
   bottom: 0px;
   z-index: -1;
   background: #E7CA82;
+}
+
+@-webkit-keyframes notebook {
+  from {
+    right: -12vw;
+  }
+  to {
+    right: -6vw;
+  }
+}
+
+@keyframes notebook {
+  from {
+    right: -12vw;
+  }
+  to {
+    right: -6vw;
+  }
+}
+
+@-webkit-keyframes aside {
+  from {
+    left: -5%;
+  }
+  to {
+    left: 0;
+  }
+}
+
+@keyframes aside {
+  from {
+    left: -5%;
+  }
+  to {
+    left: 0;
+  }
 }
 /*# sourceMappingURL=style.css.map */

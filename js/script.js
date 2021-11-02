@@ -1,3 +1,4 @@
+import ModalLinks from "./modules/ModalLinks.js";
 import ModalProjects from "./modules/ModalProjects.js";
 import ModalSkills from "./modules/ModalSkills.js";
 
@@ -32,6 +33,10 @@ const openFolder = () => {
 
         case "skills":
           ModalSkills();
+          break;
+
+        case "links":
+          ModalLinks();
           break;
       }
     });

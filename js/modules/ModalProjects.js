@@ -62,6 +62,52 @@ export default function ModalProjects() {
       },
     ];
 
+    const links = [
+      {
+        id: 0,
+        class: "all",
+        title: "Tudo",
+      },
+      {
+        id: 1,
+        class: "html",
+        title: "HTML, CSS e JS",
+      },
+      {
+        id: 2,
+        class: "php",
+        title: "PHP com WordPress",
+      },
+      {
+        id: 3,
+        class: "python",
+        title: "Python + Django",
+      },
+      {
+        id: 4,
+        class: "react",
+        title: "React JS",
+      },
+      {
+        id: 5,
+        class: "figma",
+        title: "Figma e Photoshop",
+      },
+      {
+        id: 6,
+        class: "random",
+        title: "Aleatório",
+      },
+    ];
+
+    $(".left").append(`<ul><li>Tipo<ol></ol></li></ul>`);
+
+    links.forEach((link, index) => {
+      $(".left ol").append(
+        `<li><a class="${link.class}">${link.title}</a></li>`
+      );
+    });
+
     $(".explorer").show();
 
     projects.forEach((project, index) => {
