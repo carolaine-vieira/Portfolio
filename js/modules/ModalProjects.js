@@ -62,11 +62,21 @@ export default function ModalProjects() {
       },
     ];
 
+    $(".explorer").show();
+
+    projects.forEach((project, index) => {
+      $(".right").append(
+        `<div class="project project-${index}"><div class="image-container"><img src="${project.image}" alt="${project.title}"/></div><div class="description"><h3>${project.title}</h3> ${project.description}</div></div>`
+      );
+    });
+
     const filters = document.querySelectorAll(".left ol li a");
 
     filters.forEach((filter) => {
-      filter.addEventListener("click", function () {
+      filter.addEventListener("click", function (event) {
         $(".right").html("");
+        $(".left ol li a").removeClass("active");
+
         projects.forEach((project, index) => {
           const projectType = project.type.toLowerCase();
           const filterType = $(filter).attr("class").toLowerCase();
@@ -81,15 +91,9 @@ export default function ModalProjects() {
             );
           }
         });
+
+        $(event.target).addClass("active");
       });
-    });
-
-    $(".explorer").show();
-
-    projects.forEach((project, index) => {
-      $(".right").append(
-        `<div class="project project-${index}"><div class="image-container"><img src="${project.image}" alt="${project.title}"/></div><div class="description"><h3>${project.title}</h3> ${project.description}</div></div>`
-      );
     });
   };
 

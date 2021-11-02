@@ -1,4 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,500;0,600;0,700;1,500;1,600;1,700&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&display=swap')
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,500;0,600;0,700;1,500;1,600;1,700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;1,100;1,300;1,400;1,500;1,700&display=swap')
+@import url('https://fonts.googleapis.com/css2?family=Zen+Kurenaido&display=swap')
 
 *
   margin: 0
@@ -15,7 +16,8 @@
   --icon-folder: #FFF0A3
 
 body
-  font-family: Arial, Helvetica, sans-serif
+  font-family: 'Roboto', sans-serif
+  font-weight: 300
   overflow-x: hidden
 
   a,
@@ -24,6 +26,22 @@ body
 
   img
     max-width: 100%
+
+::-webkit-scrollbar
+  width: 15px
+
+::-webkit-scrollbar-track
+  background: #f1f1f1
+  border: 7px solid #fff
+  margin: 3px
+
+::-webkit-scrollbar-thumb
+  background: #777
+  border-radius: 10px
+  border: 6px solid #fff
+
+::-webkit-scrollbar-thumb:hover
+  background: #555
 
 .pseudo-el
   content: ""
@@ -39,7 +57,6 @@ body
 section#main
   // background: red
   height: 100vh
-  font-family: var(--primary-font)
 
   .container-main
     display: flex
@@ -57,6 +74,7 @@ section#main
       position: relative
       @extend .transition-1s
       left: 0
+      font-family: var(--primary-font)
 
       .container
         margin: 13vh 5vh 0 13vh
@@ -148,7 +166,7 @@ section#main
 
                 span.sub
                   display: block
-                  font-size: 12px
+                  font-size: 11px
                   margin: 5px 0 0 0
 
           .open-folder
@@ -167,7 +185,6 @@ section#main
               border-radius: 5px
               height: 80%
               width: 90%
-              font-family: "Open Sans"
               font-size: 13px
               text-align: left
               display: none
@@ -201,7 +218,7 @@ section#main
                   ul
                     li
                       list-style: none
-                      margin: 0 0 10px 0
+                      margin: 0 0 15px 0
 
                       a
                         color: #444
@@ -212,6 +229,9 @@ section#main
 
                         li
                           margin: 0 0 5px 0
+
+                          a.active
+                            font-weight: bold
 
                         li:before
                           content: "\f07b"
@@ -232,13 +252,13 @@ section#main
                       color: #DA91E5
 
                 .right
-                  flex: 4
+                  flex: 3
                   overflow-y: auto
                   padding: 30px
 
                   .project
                     border: 1px solid #eee
-                    margin: 10px 0 20px 0
+                    margin: 0 0 30px 0
                     overflow: hidden
                     border-radius: 5px
                     display: inline-flex
@@ -250,15 +270,20 @@ section#main
                       padding: 20px
                       flex: 3
                       text-align: justify
+                      font-size: 14px
 
                       h3
                         margin-bottom: 10px
+                        font-size: 16px
 
                     .image-container
                       flex: 4
 
                       img
                         margin-bottom: -4px
+
+                  .project:last-child
+                    margin: 0
 
             .view-container
               overflow-y: auto

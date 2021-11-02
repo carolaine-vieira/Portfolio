@@ -13,6 +13,6 @@ export default function initBox() {
   $(".screen-container").css("width", "70%");
   $(".basis").css("width", "90%");
   $(".open-folder").css("display", "flex");
-  $(".left").css("height", $(".explorer").height() - 35);
-  $(".right").css("height", $(".explorer").height() - 35);
+  $(".left").css("height", $(".explorer").height() - 33);
+  $(".right").css("height", $(".explorer").height() - 33);
 }
