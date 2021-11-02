@@ -21,10 +21,10 @@ $(document).ready(function () {
 
 const openFolder = () => {
   const folders = document.querySelectorAll(".screen ul a");
-  folders.forEach((element, index) => {
-    const current = $(element).attr("class");
+  folders.forEach((folder) => {
+    const current = $(folder).attr("class");
 
-    element.addEventListener("click", function () {
+    folder.addEventListener("click", function () {
       switch (current) {
         case "projects":
           ModalProjects();
