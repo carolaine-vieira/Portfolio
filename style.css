@@ -4,6 +4,8 @@
   padding: 0;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  -webkit-transition: all 0.5ss ease;
+  transition: all 0.5ss ease;
 }
 
 :root {
@@ -24,6 +26,11 @@ body a:hover {
 section#main .container-main #notebook .basis:before, section#main:after {
   content: "";
   position: absolute;
+}
+
+.transition-1s, section#main .container-main aside {
+  -webkit-transition: all 1s ease-in-out;
+  transition: all 1s ease-in-out;
 }
 
 section#main {
@@ -54,6 +61,8 @@ section#main .container-main aside {
       -ms-flex: 1;
           flex: 1;
   height: 100vh;
+  position: relative;
+  left: 0;
 }
 
 section#main .container-main aside .container {
@@ -107,6 +116,7 @@ section#main .container-main #notebook {
   margin: 0 auto 8vh auto;
   position: relative;
   right: -6vw;
+  text-align: center;
 }
 
 section#main .container-main #notebook .screen-container {
@@ -124,7 +134,8 @@ section#main .container-main #notebook .screen-container .screen {
   display: -ms-flexbox;
   display: flex;
   height: 100%;
-  background: url("./assets/1.jpg") #fff;
+  background: url("./assets/2.png") #fff;
+  background-size: cover;
   overflow-y: auto;
 }
 
@@ -150,6 +161,11 @@ section#main .container-main #notebook .screen-container .screen ul li {
   font-weight: 500;
 }
 
+section#main .container-main #notebook .screen-container .screen ul li a {
+  cursor: pointer;
+  color: #444;
+}
+
 section#main .container-main #notebook .screen-container .screen ul li a span.fa {
   font-size: 40px;
 }
@@ -166,6 +182,81 @@ section#main .container-main #notebook .screen-container .screen ul li a span.su
   display: block;
   font-size: 12px;
   margin: 5px 0 0 0;
+}
+
+section#main .container-main #notebook .screen-container .screen .open-folder {
+  position: absolute;
+  z-index: 9;
+  background: rgba(0, 0, 0, 0.5);
+  -webkit-backdrop-filter: blur(5px);
+          backdrop-filter: blur(5px);
+  width: calc(100% - 60px);
+  height: calc(100% - 60px);
+  display: none;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+section#main .container-main #notebook .screen-container .screen .open-folder .explorer {
+  background: #fff;
+  border-radius: 5px;
+  min-height: 70%;
+  width: 80%;
+  font-family: "Open Sans";
+  font-size: 13px;
+  text-align: left;
+}
+
+section#main .container-main #notebook .screen-container .screen .open-folder .explorer .header {
+  border-bottom: 1px solid #eee;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  justify-items: start;
+  padding: 10px 0 10px 15px;
+}
+
+section#main .container-main #notebook .screen-container .screen .open-folder .explorer .header .circle {
+  border-radius: 100%;
+  width: 12px;
+  height: 12px;
+  background: #eee;
+  margin-right: 10px;
+}
+
+section#main .container-main #notebook .screen-container .screen .open-folder .explorer .header .cirle::nth-child(0) {
+  background: violet;
+}
+
+section#main .container-main #notebook .screen-container .screen .open-folder .explorer .container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+section#main .container-main #notebook .screen-container .screen .open-folder .explorer .container .left {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  border-right: 1px solid #eee;
+  height: 100%;
+}
+
+section#main .container-main #notebook .screen-container .screen .open-folder .explorer .container .right {
+  -webkit-box-flex: 4;
+      -ms-flex: 4;
+          flex: 4;
+}
+
+section#main .container-main #notebook .screen-container .screen .open-folder .explorer .container div {
+  padding: 15px;
 }
 
 section#main .container-main #notebook .screen-container:before {
@@ -195,6 +286,7 @@ section#main .container-main #notebook .basis {
   background: #666;
   border-radius: 2px;
   position: relative;
+  margin: 0 auto;
 }
 
 section#main .container-main #notebook .basis:after,

@@ -12,4 +12,33 @@ $(document).ready(function () {
   } else {
     $("#notebook");
   }
+
+  openFolder();
 });
+
+const openFolder = () => {
+  const folders = document.querySelectorAll(".screen ul a");
+  folders.forEach((element) => {
+    element.addEventListener("click", function () {
+      maximizeScreen();
+    });
+  });
+};
+
+const maximizeScreen = () => {
+  $("aside").css({
+    left: "-100%",
+    width: "0%",
+  });
+
+  $("#notebook").css({
+    right: "0",
+    flex: "unset",
+    width: "100%",
+    // display: "block",
+  });
+
+  $(".screen-container").css("width", "70%");
+  $(".basis").css("width", "90%");
+  $(".open-folder").css("display", "flex");
+};
