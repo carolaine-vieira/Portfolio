@@ -317,6 +317,7 @@ section#main .container-main #notebook .screen-container .screen .open-folder .e
   -webkit-box-flex: 3;
       -ms-flex: 3;
           flex: 3;
+  text-align: justify;
 }
 
 section#main .container-main #notebook .screen-container .screen .open-folder .explorer .container .right .project .description h3 {
@@ -324,8 +325,6 @@ section#main .container-main #notebook .screen-container .screen .open-folder .e
 }
 
 section#main .container-main #notebook .screen-container .screen .open-folder .explorer .container .right .project .image-container {
-  overflow: hidden;
-  max-height: 200px;
   -webkit-box-flex: 4;
       -ms-flex: 4;
           flex: 4;

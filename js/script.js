@@ -1,4 +1,5 @@
-import Modal from "./modules/modal.js";
+import ModalProjects from "./modules/ModalProjects.js";
+import ModalSkills from "./modules/ModalSkills.js";
 
 $(document).ready(function () {
   const notebookWidth = $(".screen-container").width();
@@ -21,8 +22,18 @@ $(document).ready(function () {
 const openFolder = () => {
   const folders = document.querySelectorAll(".screen ul a");
   folders.forEach((element, index) => {
+    const current = $(element).attr("class");
+
     element.addEventListener("click", function () {
-      Modal(element, index);
+      switch (current) {
+        case "projects":
+          ModalProjects();
+          break;
+
+        case "skills":
+          ModalSkills();
+          break;
+      }
     });
   });
 };
