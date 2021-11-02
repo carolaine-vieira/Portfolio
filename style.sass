@@ -155,7 +155,7 @@ section#main
             position: absolute
             z-index: 9
             background: rgba(0, 0, 0, 0.5)
-            backdrop-filter: blur(5px)
+            backdrop-filter: blur(3px) grayscale(100)
             width: calc(100% - 60px)
             height: calc(100% - 60px)
             display: none
@@ -170,6 +170,7 @@ section#main
               font-family: "Open Sans"
               font-size: 13px
               text-align: left
+              display: none
 
               .header
                 border-bottom: 1px solid #eee
@@ -195,6 +196,7 @@ section#main
                   flex: 1
                   border-right: 1px solid #eee
                   height: 100%
+                  padding: 15px
 
                   ul
                     li
@@ -203,6 +205,7 @@ section#main
 
                       a
                         color: #444
+                        cursor: pointer
 
                       ol
                         margin: 10px 0 0 15px
@@ -231,10 +234,57 @@ section#main
                 .right
                   flex: 4
                   overflow-y: auto
+                  padding: 30px
 
-              .container
-                div
-                  padding: 15px
+                  .project
+                    border: 1px solid #eee
+                    margin: 10px 0 20px 0
+                    overflow: hidden
+                    border-radius: 5px
+                    display: inline-flex
+                    width: 100%
+                    vertical-align: top
+                    @extend .transition-1s
+
+                    .description
+                      padding: 20px
+                      flex: 3
+
+                      h3
+                        margin-bottom: 10px
+
+                    .image-container
+                      overflow: hidden
+                      max-height: 200px
+                      flex: 4
+
+                      img
+                        margin-bottom: -4px
+
+            .view-container
+              overflow-y: auto
+              display: block
+              width: 100%
+              height: 100%
+              padding: 40px
+              overflow-y: auto
+              display: none
+
+              .view
+
+                .project
+                  display: inline-block
+                  width: calc(100% / 4 - 30px)
+                  margin: 0 30px 30px 0
+
+                  img
+                    width: 100%
+                    height: 100%
+                    object-fit: cover
+                    border-radius: 5px
+
+                .project:nth-child(4n + 0)
+                  margin: 0 0 30px 0
 
       .screen-container:before
         @extend .pseudo-el
