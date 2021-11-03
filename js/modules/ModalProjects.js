@@ -167,7 +167,7 @@ export default function ModalProjects() {
           }
         });
 
-        insertReadMore();
+        //insertReadMore();
 
         $(event.target).addClass("active");
       });
