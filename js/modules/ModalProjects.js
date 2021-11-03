@@ -67,6 +67,15 @@ export default function ModalProjects() {
         type: "HTML",
         URI: "",
       },
+      {
+        id: 7,
+        image: "./assets/screenshot.png",
+        title: "Soli Deo Gloria",
+        description:
+          "Este é meu primeira tema para WordPress. Recentemente, iniciei a configuração para uso de CMS.",
+        type: "php",
+        URI: "",
+      },
     ];
 
     const links = [
@@ -121,12 +130,20 @@ export default function ModalProjects() {
       $(".right").append(
         `<div class="project project-${index}"><div class="image-container"><img src="${project.image}" alt="${project.title}"/></div><div class="description"><h3>${project.title}</h3><p>${project.description}</p></div></div>`
       );
-      if (project.URI !== "") {
-        $(".right .description").append(
-          `<div class="read-more"><a href="${project.URI}" target="_blank">Dar uma olhada</a></div>`
-        );
-      }
     });
+
+    const insertReadMore = () => {
+      projects.forEach((project, index) => {
+        if (project.URI !== "") {
+          $(".right .description")
+            .eq(index)
+            .append(
+              `<div class="read-more"><a href="${project.URI}" target="_blank">Dar uma olhada</a></div>`
+            );
+        }
+      });
+    };
+    insertReadMore();
 
     const filters = document.querySelectorAll(".left ol li a");
 
@@ -143,22 +160,14 @@ export default function ModalProjects() {
             $(".right").append(
               `<div class="project project-${index}"><div class="image-container"><img src="${project.image}" alt="${project.title}"/></div><div class="description"><h3>${project.title}</h3><p>${project.description}</p><div class="read-more"></div></div></div>`
             );
-            if (project.URI !== "") {
-              $(".right .description").append(
-                `<div class="read-more"><a href="${project.URI}" target="_blank">Dar uma olhada</a></div>`
-              );
-            }
           } else if (filterType === "all") {
             $(".right").append(
               `<div class="project project-${index}"><div class="image-container"><img src="${project.image}" alt="${project.title}"/></div><div class="description"><h3>${project.title}</h3><p>${project.description}</p><div class="read-more"></div></div></div>`
             );
-            if (project.URI !== "") {
-              $(".right .description").append(
-                `<div class="read-more"><a href="${project.URI}" target="_blank">Dar uma olhada</a></div>`
-              );
-            }
           }
         });
+
+        insertReadMore();
 
         $(event.target).addClass("active");
       });
