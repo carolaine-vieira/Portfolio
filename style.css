@@ -15,7 +15,7 @@
   --accent-color-two: #db7070;
   --icon-folder: #FFF0A3;
   --first-color: #fff;
-  --second-color: #555;
+  --second-color: #444;
   --third-color: #222;
   --fourth-color: #fbfbfb;
   --fifth-color: #eee;
@@ -24,7 +24,6 @@
 body {
   font-family: 'Roboto', sans-serif;
   font-weight: 300;
-  overflow-x: hidden;
   background: var(--first-color);
 }
 
@@ -64,13 +63,15 @@ section#main .container-main #notebook .basis:before, section#main:after {
   transition: all 1s ease-in-out;
 }
 
-.transition-5ms, section#main .container-main #notebook .screen-container, section#main .container-main #notebook .screen-container .screen .open-folder .explorer .container .right ul.links-list li a, section#main .container-main #notebook .screen-container .screen .open-folder .explorer .container .right ul.links-list li a:hover, section#main .container-main #notebook .screen-container .screen .open-folder .view-container .view, section#main .container-main #notebook .screen-container .screen .open-folder .view-container .view .design, section#main .container-main #notebook .screen-container .screen .open-folder .view-container .view .design .info {
+.transition-5ms, body a,
+body a:hover, section#main .container-main #notebook .screen-container, section#main .container-main #notebook .screen-container .screen .open-folder .view-container .view, section#main .container-main #notebook .screen-container .screen .open-folder .view-container .view .design, section#main .container-main #notebook .screen-container .screen .open-folder .view-container .view .design .info {
   -webkit-transition: all 0.5s ease;
   transition: all 0.5s ease;
 }
 
 section#main {
   height: 100vh;
+  overflow: hidden;
 }
 
 section#main .container-main {
@@ -106,7 +107,7 @@ section#main .container-main aside {
 }
 
 section#main .container-main aside .container {
-  margin: 13vh 5vh 0 13vh;
+  margin: 10vh 5vh 0 13vh;
 }
 
 section#main .container-main aside .container h1 {
@@ -128,7 +129,7 @@ section#main .container-main aside .container h1:before {
   height: 200px;
   border-radius: 100%;
   z-index: -1;
-  margin: -30px 0 0 -10px;
+  margin: -20px 0 0 -30px;
 }
 
 section#main .container-main aside .container h2 {
@@ -303,10 +304,6 @@ section#main .container-main #notebook .screen-container .screen .open-folder .e
   margin-right: 10px;
 }
 
-section#main .container-main #notebook .screen-container .screen .open-folder .explorer .header .cirle::nth-child(0) {
-  background: violet;
-}
-
 section#main .container-main #notebook .screen-container .screen .open-folder .explorer .container {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -323,9 +320,11 @@ section#main .container-main #notebook .screen-container .screen .open-folder .e
   border-right: 1px solid var(--fifth-color);
   height: 100%;
   padding: 15px;
+  overflow-y: auto;
 }
 
 section#main .container-main #notebook .screen-container .screen .open-folder .explorer .container .left ul li {
+  color: var(--second-color);
   list-style: none;
   margin: 0 0 15px 0;
 }
@@ -377,6 +376,7 @@ section#main .container-main #notebook .screen-container .screen .open-folder .e
 
 section#main .container-main #notebook .screen-container .screen .open-folder .explorer .container .right .project {
   border: 1px solid var(--fifth-color);
+  color: var(--second-color);
   margin: 0 0 30px 0;
   overflow: hidden;
   border-radius: 5px;
@@ -460,8 +460,8 @@ section#main .container-main #notebook .screen-container .screen .open-folder .e
 }
 
 section#main .container-main #notebook .screen-container .screen .open-folder .explorer .container .right ul.links-list li a:hover {
-  -webkit-box-shadow: inset 0 40px 0 pink;
-          box-shadow: inset 0 40px 0 pink;
+  -webkit-box-shadow: inset 0 40px 0 var(--accent-color-two);
+          box-shadow: inset 0 40px 0 var(--accent-color-two);
   color: var(--first-color);
 }
 
@@ -491,7 +491,7 @@ section#main .container-main #notebook .screen-container .screen .open-folder .v
 
 section#main .container-main #notebook .screen-container .screen .open-folder .view-container .view .design {
   display: inline-block;
-  width: calc(100% / 3 - 10px);
+  width: calc(100% / 4 - 10px);
   margin: 0 10px 10px 0;
 }
 
@@ -511,7 +511,7 @@ section#main .container-main #notebook .screen-container .screen .open-folder .v
 section#main .container-main #notebook .screen-container .screen .open-folder .view-container .view .design .info h3 {
   font-family: var(--primary-font);
   text-transform: uppercase;
-  color: var(--first-color);
+  color: #fff;
   font-weight: 500;
   font-size: 12px;
   padding: 15px;
@@ -528,6 +528,29 @@ section#main .container-main #notebook .screen-container .screen .open-folder .v
 
 section#main .container-main #notebook .screen-container .screen .open-folder .view-container .view .design:hover .info {
   opacity: 1;
+}
+
+section#main .container-main #notebook .screen-container .screen .open-folder .view-container .view .topic {
+  background: var(--first-color);
+  color: var(--second-color);
+  width: calc(100% / 3 - 20px);
+  margin: 0 20px 20px 0;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+section#main .container-main #notebook .screen-container .screen .open-folder .view-container .view .topic .info h3 {
+  border-bottom: 1px solid var(--fifth-color);
+  padding: 10px 20px;
+}
+
+section#main .container-main #notebook .screen-container .screen .open-folder .view-container .view .topic .info p {
+  padding: 20px;
+  text-align: justify;
+}
+
+section#main .container-main #notebook .screen-container .screen .open-folder .view-container .view .topic:nth-child(3n + 0) {
+  margin: 0 0 20px 0;
 }
 
 section#main .container-main #notebook .screen-container .screen .open-folder .view-container::-webkit-scrollbar-thumb {

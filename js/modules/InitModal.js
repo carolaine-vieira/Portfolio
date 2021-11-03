@@ -23,7 +23,6 @@ export default function initBox() {
     $("#notebook").css({
       right: "-8%",
       flex: "10",
-      width: "100%",
     });
 
     $(".screen-container").css("width", "80%");
