@@ -47,6 +47,12 @@ export default function ModalLinks() {
         progress: 60,
         color: "#ccccff",
       },
+      {
+        id: 7,
+        type: "PHP",
+        progress: 30,
+        color: "#dcccff",
+      },
     ];
 
     $(".left").append(`<ul><li>Tipo<ol><li><a>Tudo</a></li></ol></li></ul>`);
