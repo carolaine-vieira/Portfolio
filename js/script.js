@@ -1,6 +1,7 @@
 import ModalLinks from "./modules/ModalLinks.js";
 import ModalProjects from "./modules/ModalProjects.js";
 import ModalSkills from "./modules/ModalSkills.js";
+import ModalDesigns from "./modules/ModalDesigns.js";
 
 $(document).ready(function () {
   const notebookWidth = $(".screen-container").width();
@@ -37,6 +38,10 @@ const openFolder = () => {
 
         case "links":
           ModalLinks();
+          break;
+
+        case "designs":
+          ModalDesigns();
           break;
       }
     });

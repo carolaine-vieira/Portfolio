@@ -33,6 +33,11 @@ html(lang="en")
 
         #notebook 
           .screen-container
+            .back-home-container
+              a(href="/" class="back-home") 
+                span.fa.fa-chevron-left 
+                span Voltar
+
             .screen
               ul#screen-links
                 li
@@ -56,8 +61,8 @@ html(lang="en")
                     span.sub Links
 
                 li
-                  a
-                    span.fa.fa-folder
+                  a(class="designs")
+                    span.fa.fa-images
                     span.sub Designs no Figma e/ou Phot...
 
                 li
@@ -77,9 +82,10 @@ html(lang="en")
                     .right
                 
                 .view-container
-                  .view
 
           .basis
 
   script(type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js")
+  script(src="https://npmcdn.com/isotope-layout@3/dist/isotope.pkgd.js")
   script(type="module" src="./js/script.js" defer)
+  

@@ -15,4 +15,6 @@ export default function initBox() {
   $(".open-folder").css("display", "flex");
   $(".left").css("height", $(".explorer").height() - 33);
   $(".right").css("height", $(".explorer").height() - 33);
+
+  $(".back-home-container").show();
 }

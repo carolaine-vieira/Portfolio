@@ -7,45 +7,50 @@ export default function ModalLinks() {
     const links = [
       {
         id: 0,
-        class: "all",
         title: "Tudo",
+        URI: "/",
       },
       {
         id: 1,
-        class: "html",
         title: "HTML, CSS e JS",
+        URI: "/",
       },
       {
         id: 2,
-        class: "php",
         title: "PHP com WordPress",
+        URI: "/",
       },
       {
         id: 3,
-        class: "python",
         title: "Python + Django",
+        URI: "/",
       },
       {
         id: 4,
-        class: "react",
         title: "React JS",
+        URI: "/",
       },
       {
         id: 5,
-        class: "figma",
         title: "Figma e Photoshop",
+        URI: "/",
       },
       {
         id: 6,
-        class: "random",
         title: "Aleatório",
+        URI: "/",
       },
     ];
+
+    $(".left").append(`<ul><li>Tipo<ol><li><a>Tudo</a></li></ol></li></ul>`);
+
+    $(".explorer").show();
+
+    $(".right").append(`<ul class="links-list"></ul>`);
+    links.forEach((link) => {
+      $(".right ul").append(`<li><a href="${link.URI}">${link.title}</a></li>`);
+    });
   };
-
-  $(".left").append(`<ul><li>Tipo<ol><li><a>Tudo</a></li></ol></li></ul>`);
-
-  $(".explorer").show();
 
   insertLinks();
 }

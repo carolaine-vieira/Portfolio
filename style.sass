@@ -140,6 +140,18 @@ section#main
         border-radius: 10px 10px 0 0
         position: relative
 
+        .back-home-container
+          display: none
+          position: absolute
+          left: -100px
+          font-family: var(--primary-font)
+
+          a.back-home
+            color: #222
+
+            .fa-chevron-left
+              margin-right: 10px
+
         .screen
           display: flex
           height: 100%
@@ -323,9 +335,25 @@ section#main
                   .skill:last-child
                     margin-bottom: 0
 
+                  ul.links-list
+                    li
+                      list-style: none
+                      margin: 0 0 10px 0
+
+                      a
+                        background: #eee
+                        color: #222
+                        display: block
+                        padding: 5px 10px
+                        box-shadow: inset 0 -40px 0 transparent
+                        @extend .transition-5ms
+
+                      a:hover
+                        box-shadow: inset 0 40px 0 pink
+                        color: #fff
+                        @extend .transition-5ms
+
             .view-container
-              overflow-y: auto
-              display: block
               width: 100%
               height: 100%
               padding: 40px
@@ -334,7 +362,7 @@ section#main
 
               .view
 
-                .project
+                .design
                   display: inline-block
                   width: calc(100% / 4 - 30px)
                   margin: 0 30px 30px 0
@@ -345,7 +373,7 @@ section#main
                     object-fit: cover
                     border-radius: 5px
 
-                .project:nth-child(4n + 0)
+                .design:nth-child(4n + 0)
                   margin: 0 0 30px 0
 
       .screen-container:before
