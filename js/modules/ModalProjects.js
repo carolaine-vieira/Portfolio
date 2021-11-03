@@ -70,7 +70,7 @@ export default function ModalProjects() {
       {
         id: 7,
         image: "./assets/screenshot.png",
-        title: "Soli Deo Gloria",
+        title: "Solsticio",
         description:
           "Este é meu primeira tema para WordPress. Recentemente, iniciei a configuração para uso de CMS.",
         type: "php",
