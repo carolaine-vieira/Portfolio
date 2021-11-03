@@ -11,7 +11,7 @@
 
 :root {
   --primary-font: 'Montserrat', sans-serif;
-  --accent-color: #F5F9DC;
+  --accent-color: #f5f9dc;
   --accent-color-two: #db7070;
   --icon-folder: #FFF0A3;
   --first-color: #fff;
@@ -64,7 +64,7 @@ section#main .container-main #notebook .basis:before, section#main:after {
 }
 
 .transition-5ms, body a,
-body a:hover, section#main .container-main #notebook .screen-container, section#main .container-main #notebook .screen-container .screen .open-folder .view-container .view, section#main .container-main #notebook .screen-container .screen .open-folder .view-container .view .design, section#main .container-main #notebook .screen-container .screen .open-folder .view-container .view .design .info {
+body a:hover, section#main .container-main #notebook .screen-container, section#main .container-main #notebook .screen-container .screen .open-folder .explorer .container .right .project .description .read-more, section#main .container-main #notebook .screen-container .screen .open-folder .view-container .view, section#main .container-main #notebook .screen-container .screen .open-folder .view-container .view .design, section#main .container-main #notebook .screen-container .screen .open-folder .view-container .view .design .info {
   -webkit-transition: all 0.5s ease;
   transition: all 0.5s ease;
 }
@@ -203,10 +203,8 @@ section#main .container-main #notebook .screen-container .screen {
   display: -ms-flexbox;
   display: flex;
   height: 100%;
-  background-image: url("./assets/1.jpg");
-  background-color: var(--first-color);
-  background-repeat: repeat;
-  background-size: contain;
+  background: #db7070;
+  background: linear-gradient(210deg, #db7070 0%, #f5f9dc 77%, #f5f9dc 100%);
   overflow-y: auto;
 }
 
@@ -395,11 +393,31 @@ section#main .container-main #notebook .screen-container .screen .open-folder .e
           flex: 3;
   text-align: justify;
   font-size: 14px;
+  position: relative;
 }
 
 section#main .container-main #notebook .screen-container .screen .open-folder .explorer .container .right .project .description h3 {
   margin-bottom: 10px;
   font-size: 16px;
+  text-align: left;
+}
+
+section#main .container-main #notebook .screen-container .screen .open-folder .explorer .container .right .project .description .read-more {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background: white;
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0)), color-stop(51%, white));
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, white 51%);
+  padding: 40px 20px 15px 20px;
+  text-align: center;
+  width: 100%;
+  font-weight: bold;
+  opacity: 0;
+}
+
+section#main .container-main #notebook .screen-container .screen .open-folder .explorer .container .right .project .description .read-more a {
+  color: var(--second-color);
 }
 
 section#main .container-main #notebook .screen-container .screen .open-folder .explorer .container .right .project .image-container {
@@ -414,6 +432,10 @@ section#main .container-main #notebook .screen-container .screen .open-folder .e
 
 section#main .container-main #notebook .screen-container .screen .open-folder .explorer .container .right .project:last-child {
   margin: 0;
+}
+
+section#main .container-main #notebook .screen-container .screen .open-folder .explorer .container .right .project:hover .read-more {
+  opacity: 1;
 }
 
 section#main .container-main #notebook .screen-container .screen .open-folder .explorer .container .right .skill {
@@ -447,22 +469,29 @@ section#main .container-main #notebook .screen-container .screen .open-folder .e
 
 section#main .container-main #notebook .screen-container .screen .open-folder .explorer .container .right ul.links-list li {
   list-style: none;
-  margin: 0 0 10px 0;
+  margin: 0 20px 10px 0;
+  display: inline-block;
+  width: calc(100% / 2 - 10px);
 }
 
 section#main .container-main #notebook .screen-container .screen .open-folder .explorer .container .right ul.links-list li a {
   background: var(--fifth-color);
   color: var(--third-color);
   display: block;
-  padding: 5px 10px;
+  padding: 10px;
   -webkit-box-shadow: inset 0 -40px 0 transparent;
           box-shadow: inset 0 -40px 0 transparent;
+  border-radius: 3px;
 }
 
 section#main .container-main #notebook .screen-container .screen .open-folder .explorer .container .right ul.links-list li a:hover {
   -webkit-box-shadow: inset 0 40px 0 var(--accent-color-two);
           box-shadow: inset 0 40px 0 var(--accent-color-two);
   color: var(--first-color);
+}
+
+section#main .container-main #notebook .screen-container .screen .open-folder .explorer .container .right ul.links-list li:nth-child(even) {
+  margin: 0 0 20px 0;
 }
 
 section#main .container-main #notebook .screen-container .screen .open-folder .explorer .container .right::-webkit-scrollbar-thumb {

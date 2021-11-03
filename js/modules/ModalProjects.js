@@ -6,59 +6,66 @@ export default function ModalProjects() {
   const insertProjects = () => {
     const projects = [
       {
-        id: 4,
-        image: "../../assets/Songster.png",
+        id: 0,
+        image: "./assets/Songster.png",
         title: "Projeto para estudar React",
         description: "Criei a página inicial. Falta o resto...",
         type: "React",
+        URI: "https://www.figma.com/file/qGMl9TLpu25H5s9pjDMeDK/Music-Player---React?node-id=0%3A1",
       },
       {
-        id: 4,
-        image: "../../assets/Portfolio-2.png",
+        id: 1,
+        image: "./assets/Portfolio-2.png",
         title: "Meu suposto novo portfólio",
         description:
           "Estava achando o meu antigo bem simples. Fiz esse, porém, conforme assistia as palestras da faculdade pensei em fazer algo mais interativo então criei este aqui.",
         type: "Figma",
+        URI: "https://www.figma.com/file/5GsQsX4HshYLaMOkIic8HW/Portfolio-2?node-id=0%3A1",
       },
       {
-        id: 4,
-        image: "../../assets/Alternativo.png",
+        id: 2,
+        image: "./assets/Alternativo.png",
         title: "Alternativo",
         description:
           "Este tema foi criado para ser vendido no Codester. Não foi usado nada além de HTML, CSS e JS. Tumblr é uma plataforma simples de blogs pessoais.",
         type: "HTML",
+        URI: "https://cavithemes-alternativo.tumblr.com/",
       },
       {
         id: 4,
-        image: "../../assets/Novamente.png",
+        image: "./assets/Novamente.png",
         title: "Novamente",
         description:
           "Este tema foi criado para ser vendido no Codester. Não foi usado nada além de HTML, CSS e JS. Tumblr é uma plataforma simples de blogs pessoais.",
         type: "HTML",
+        URI: "https://www.codester.com/items/preview/16299/novamente-tumblr-theme",
       },
       {
-        id: 4,
-        image: "../../assets/Waves.png",
+        id: 5,
+        image: "./assets/Waves.png",
         title: "Waves",
         description:
           "Este tema foi criado para ser vendido no Codester. Não foi usado nada além de HTML, CSS e JS. Tumblr é uma plataforma simples de blogs pessoais.",
         type: "HTML",
+        URI: "https://www.codester.com/items/preview/10250/waves-tumblr-theme",
       },
       {
-        id: 4,
-        image: "../../assets/Doravante.png",
+        id: 6,
+        image: "./assets/Doravante.png",
         title: "Doravante",
         description:
           "Este tema foi criado para ser vendido no Codester. Não foi usado nada além de HTML, CSS e JS. Tumblr é uma plataforma simples de blogs pessoais.",
         type: "HTML",
+        URI: "https://www.codester.com/items/preview/10251/doravante-tumblr-theme",
       },
       {
-        id: 4,
-        image: "../../assets/Soli_Deo_Gloria.png",
+        id: 7,
+        image: "./assets/Soli_Deo_Gloria.png",
         title: "Soli Deo Gloria",
         description:
           "Este tema foi criado para ser vendido no Codester. Não foi usado nada além de HTML, CSS e JS. Tumblr é uma plataforma simples de blogs pessoais.",
         type: "HTML",
+        URI: "",
       },
     ];
 
@@ -112,8 +119,13 @@ export default function ModalProjects() {
 
     projects.forEach((project, index) => {
       $(".right").append(
-        `<div class="project project-${index}"><div class="image-container"><img src="${project.image}" alt="${project.title}"/></div><div class="description"><h3>${project.title}</h3> ${project.description}</div></div>`
+        `<div class="project project-${index}"><div class="image-container"><img src="${project.image}" alt="${project.title}"/></div><div class="description"><h3>${project.title}</h3><p>${project.description}</p></div></div>`
       );
+      if (project.URI !== "") {
+        $(".right .description").append(
+          `<div class="read-more"><a href="${project.URI}" target="_blank">Dar uma olhada</a></div>`
+        );
+      }
     });
 
     const filters = document.querySelectorAll(".left ol li a");
@@ -129,12 +141,22 @@ export default function ModalProjects() {
 
           if (projectType === filterType) {
             $(".right").append(
-              `<div class="project project-${index}"><div class="image-container"><img src="${project.image}" alt="${project.title}"/></div><div class="description"><h3>${project.title}</h3> ${project.description}</div></div>`
+              `<div class="project project-${index}"><div class="image-container"><img src="${project.image}" alt="${project.title}"/></div><div class="description"><h3>${project.title}</h3><p>${project.description}</p><div class="read-more"></div></div></div>`
             );
+            if (project.URI !== "") {
+              $(".right .description").append(
+                `<div class="read-more"><a href="${project.URI}" target="_blank">Dar uma olhada</a></div>`
+              );
+            }
           } else if (filterType === "all") {
             $(".right").append(
-              `<div class="project project-${index}"><div class="image-container"><img src="${project.image}" alt="${project.title}"/></div><div class="description"><h3>${project.title}</h3> ${project.description}</div></div>`
+              `<div class="project project-${index}"><div class="image-container"><img src="${project.image}" alt="${project.title}"/></div><div class="description"><h3>${project.title}</h3><p>${project.description}</p><div class="read-more"></div></div></div>`
             );
+            if (project.URI !== "") {
+              $(".right .description").append(
+                `<div class="read-more"><a href="${project.URI}" target="_blank">Dar uma olhada</a></div>`
+              );
+            }
           }
         });
 

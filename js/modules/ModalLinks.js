@@ -7,38 +7,23 @@ export default function ModalLinks() {
     const links = [
       {
         id: 0,
-        title: "Tudo",
-        URI: "/",
+        title: "GitHub",
+        URI: "https://github.com/carolaine-vieira",
       },
       {
         id: 1,
-        title: "HTML, CSS e JS",
-        URI: "/",
+        title: "LinkedIn",
+        URI: "https://www.linkedin.com/in/carolaine-vieira-7602b1145/",
       },
       {
         id: 2,
-        title: "PHP com WordPress",
-        URI: "/",
+        title: "Facebook",
+        URI: "https://www.facebook.com/CarolesNobrega/",
       },
       {
         id: 3,
-        title: "Python + Django",
-        URI: "/",
-      },
-      {
-        id: 4,
-        title: "React JS",
-        URI: "/",
-      },
-      {
-        id: 5,
-        title: "Figma e Photoshop",
-        URI: "/",
-      },
-      {
-        id: 6,
-        title: "Aleatório",
-        URI: "/",
+        title: "Codepen",
+        URI: "https://codepen.io/carolaine-vieira",
       },
     ];
 
@@ -48,7 +33,9 @@ export default function ModalLinks() {
 
     $(".right").append(`<ul class="links-list"></ul>`);
     links.forEach((link) => {
-      $(".right ul").append(`<li><a href="${link.URI}">${link.title}</a></li>`);
+      $(".right ul").append(
+        `<li><a href="${link.URI}" target="_blank">${link.title}</a></li>`
+      );
     });
   };
 

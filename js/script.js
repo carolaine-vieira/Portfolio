@@ -67,9 +67,13 @@ $(".switch-mode").click(function (e) {
     root.css("--fourth-color", "#333");
     root.css("--fifth-color", "#444");
 
-    $(".screen-container").css("background", "#fff");
-    $(".basis").css("background", "#eee");
-    $(".screen").css("background-image", `url("../../assets/2.jpg")`);
+    $(".screen-container").css("background", "#ebebeb");
+    $(".basis").css("background", "rgb(60, 60, 60)");
+    $(".screen").css("background", "rgb(29,173,175)");
+    $(".screen").css(
+      "background",
+      "linear-gradient(210deg, rgba(29,173,175,1) 0%, rgba(219,112,112,1) 77%, rgba(219,112,112,1) 100%)"
+    );
 
     $(".switch-mode").html("Modo claro");
     $(".switch-mode").addClass("light");
@@ -85,7 +89,11 @@ $(".switch-mode").click(function (e) {
 
     $(".screen-container").css("background", "#222");
     $(".basis").css("background", "#666");
-    $(".screen").css("background-image", `url("../../assets/1.jpg")`);
+    $(".screen").css("background", "rgb(219,112,112)");
+    $(".screen").css(
+      "background",
+      "linear-gradient(210deg, rgba(219,112,112,1) 0%, rgba(245,249,220,1) 77%, rgba(245,249,220,1) 100%)"
+    );
 
     $(".switch-mode").html("Modo escuro");
     $(".switch-mode").addClass("night");
