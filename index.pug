@@ -27,16 +27,24 @@ html(lang="en")
               li
                 a(href="") Versão simplificada
               li
-                a(href="") Modo noturno
+                a(href="" class="switch-mode") 
               li
                 a(href="") CV Lattes
 
         #notebook 
           .screen-container
-            .back-home-container
-              a(href="/" class="back-home") 
-                span.fa.fa-chevron-left 
-                span Voltar
+            .controls-container
+              a(class="close") 
+                span.fa.fa-times
+                span Fechar
+
+              a(class="maximize") 
+                span.fa.fa-window-maximize
+                span Maximizar
+
+              a(class="minimize") 
+                span.fa.fa-window-minimize
+                span Minimizar
 
             .screen
               ul#screen-links

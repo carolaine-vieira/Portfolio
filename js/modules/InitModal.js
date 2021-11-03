@@ -1,20 +1,67 @@
 export default function initBox() {
-  $("aside").css({
-    left: "-100%",
-    width: "0%",
+  const maximize = () => {
+    $("aside").css({
+      left: "-100%",
+      width: "0%",
+    });
+
+    $("#notebook").css({
+      right: "0",
+      flex: "10 1 100%",
+    });
+
+    $(".screen-container").css("width", "70%");
+    $(".basis").css("width", "90%");
+  };
+
+  const minimize = () => {
+    $("aside").css({
+      left: "0",
+      width: "auto",
+    });
+
+    $("#notebook").css({
+      right: "-8%",
+      flex: "10",
+      width: "100%",
+    });
+
+    $(".screen-container").css("width", "80%");
+    $(".basis").css("width", "100%");
+  };
+
+  const openModal = () => {
+    $(".open-folder").css("display", "flex");
+    $(".left").html("");
+    $(".right").html("");
+    $(".left").css("height", $(".explorer").height() - 33);
+    $(".right").css("height", $(".explorer").height() - 33);
+  };
+  openModal();
+
+  const closeModal = () => {
+    $(".open-folder").css("display", "none");
+    $(".explorer").hide();
+    $(".view-container").hide();
+    $(".left").css("height", $(".explorer").height() - 33);
+    $(".right").css("height", $(".explorer").height() - 33);
+    $(".controls-container").hide();
+  };
+
+  $(".controls-container").show();
+
+  $(".controls-container .close").click(function (e) {
+    e.preventDefault();
+    closeModal();
   });
 
-  $("#notebook").css({
-    right: "0",
-    flex: "10 1 100%",
-    width: "100%",
+  $(".controls-container .maximize").click(function (e) {
+    e.preventDefault();
+    maximize();
   });
 
-  $(".screen-container").css("width", "70%");
-  $(".basis").css("width", "90%");
-  $(".open-folder").css("display", "flex");
-  $(".left").css("height", $(".explorer").height() - 33);
-  $(".right").css("height", $(".explorer").height() - 33);
-
-  $(".back-home-container").show();
+  $(".controls-container .minimize").click(function (e) {
+    e.preventDefault();
+    minimize();
+  });
 }

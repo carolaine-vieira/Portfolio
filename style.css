@@ -11,13 +11,21 @@
 
 :root {
   --primary-font: 'Montserrat', sans-serif;
+  --accent-color: #F5F9DC;
+  --accent-color-two: #db7070;
   --icon-folder: #FFF0A3;
+  --first-color: #fff;
+  --second-color: #555;
+  --third-color: #222;
+  --fourth-color: #fbfbfb;
+  --fifth-color: #eee;
 }
 
 body {
   font-family: 'Roboto', sans-serif;
   font-weight: 300;
   overflow-x: hidden;
+  background: var(--first-color);
 }
 
 body a,
@@ -34,19 +42,15 @@ body img {
 }
 
 ::-webkit-scrollbar-track {
-  background: #f1f1f1;
-  border: 7px solid #fff;
+  background: #fbfbfb;
+  border: 7px solid var(--first-color);
   margin: 3px;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #777;
+  background: var(--second-color);
   border-radius: 10px;
-  border: 6px solid #fff;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: #555;
+  border: 6px solid var(--first-color);
 }
 
 .pseudo-el, section#main .container-main aside .container h1:before, section#main .container-main #notebook .screen-container .screen .open-folder .explorer .container .left ul li:before, section#main .container-main #notebook .screen-container:before, section#main .container-main #notebook .screen-container:after, section#main .container-main #notebook .basis:after,
@@ -55,12 +59,12 @@ section#main .container-main #notebook .basis:before, section#main:after {
   position: absolute;
 }
 
-.transition-1s, section#main .container-main #notebook, section#main .container-main #notebook .screen-container .screen .open-folder .explorer .container .right .project {
+.transition-1s, section#main .container-main aside, section#main .container-main #notebook, section#main .container-main #notebook .screen-container .screen .open-folder .explorer .container .right .project {
   -webkit-transition: all 1s ease-in-out;
   transition: all 1s ease-in-out;
 }
 
-.transition-5ms, section#main .container-main aside, section#main .container-main #notebook .screen-container .screen .open-folder .explorer .container .right ul.links-list li a, section#main .container-main #notebook .screen-container .screen .open-folder .explorer .container .right ul.links-list li a:hover {
+.transition-5ms, section#main .container-main #notebook .screen-container, section#main .container-main #notebook .screen-container .screen .open-folder .explorer .container .right ul.links-list li a, section#main .container-main #notebook .screen-container .screen .open-folder .explorer .container .right ul.links-list li a:hover, section#main .container-main #notebook .screen-container .screen .open-folder .view-container .view, section#main .container-main #notebook .screen-container .screen .open-folder .view-container .view .design, section#main .container-main #notebook .screen-container .screen .open-folder .view-container .view .design .info {
   -webkit-transition: all 0.5s ease;
   transition: all 0.5s ease;
 }
@@ -108,6 +112,7 @@ section#main .container-main aside .container {
 section#main .container-main aside .container h1 {
   font-size: 26px;
   font-weight: 700;
+  color: var(--third-color);
 }
 
 section#main .container-main aside .container h1 sub {
@@ -118,7 +123,7 @@ section#main .container-main aside .container h1 sub {
 }
 
 section#main .container-main aside .container h1:before {
-  background: #F5F9DC;
+  background: var(--accent-color);
   width: 200px;
   height: 200px;
   border-radius: 100%;
@@ -130,6 +135,7 @@ section#main .container-main aside .container h2 {
   font-size: 18px;
   margin: 50px 0 0 0;
   font-weight: 700;
+  color: var(--third-color);
 }
 
 section#main .container-main aside .container ul {
@@ -142,16 +148,16 @@ section#main .container-main aside .container ul li {
 }
 
 section#main .container-main aside .container ul li a {
-  color: #222;
+  color: var(--third-color);
 }
 
 section#main .container-main #notebook {
-  -webkit-box-flex: 3;
-      -ms-flex: 3;
-          flex: 3;
+  -webkit-box-flex: 10;
+      -ms-flex: 10;
+          flex: 10;
   margin: 0 auto 8vh auto;
   position: relative;
-  right: -6vw;
+  right: -8%;
   text-align: center;
   -webkit-animation-name: notebook;
           animation-name: notebook;
@@ -160,28 +166,35 @@ section#main .container-main #notebook {
 }
 
 section#main .container-main #notebook .screen-container {
-  background: #222;
+  background: var(--third-color);
   width: 80%;
-  max-height: 92vh;
+  max-height: 82vh;
   padding: 30px;
   margin: 0 auto;
   border-radius: 10px 10px 0 0;
   position: relative;
 }
 
-section#main .container-main #notebook .screen-container .back-home-container {
+section#main .container-main #notebook .screen-container .controls-container {
   display: none;
   position: absolute;
-  left: -100px;
+  left: -130px;
   font-family: var(--primary-font);
+  text-align: left;
+  font-size: 14px;
 }
 
-section#main .container-main #notebook .screen-container .back-home-container a.back-home {
-  color: #222;
+section#main .container-main #notebook .screen-container .controls-container a {
+  cursor: pointer;
+  color: var(--third-color);
+  display: block;
+  margin-bottom: 15px;
 }
 
-section#main .container-main #notebook .screen-container .back-home-container a.back-home .fa-chevron-left {
+section#main .container-main #notebook .screen-container .controls-container a .fa {
   margin-right: 10px;
+  min-width: 20px;
+  text-align: center;
 }
 
 section#main .container-main #notebook .screen-container .screen {
@@ -189,7 +202,10 @@ section#main .container-main #notebook .screen-container .screen {
   display: -ms-flexbox;
   display: flex;
   height: 100%;
-  background: url("./assets/1.jpg") #fff;
+  background-image: url("./assets/1.jpg");
+  background-color: var(--first-color);
+  background-repeat: repeat;
+  background-size: contain;
   overflow-y: auto;
 }
 
@@ -218,7 +234,7 @@ section#main .container-main #notebook .screen-container .screen ul#screen-links
 
 section#main .container-main #notebook .screen-container .screen ul#screen-links li a {
   cursor: pointer;
-  color: #444;
+  color: var(--second-color);
 }
 
 section#main .container-main #notebook .screen-container .screen ul#screen-links li a span.fa {
@@ -230,11 +246,11 @@ section#main .container-main #notebook .screen-container .screen ul#screen-links
 }
 
 section#main .container-main #notebook .screen-container .screen ul#screen-links li a span.fa-file-pdf {
-  color: #ff6666;
+  color: var(--accent-color-two);
 }
 
 section#main .container-main #notebook .screen-container .screen ul#screen-links li a span.fa-dice {
-  color: #f0b3ff;
+  color: var(--accent-color-two);
 }
 
 section#main .container-main #notebook .screen-container .screen ul#screen-links li a span.sub {
@@ -261,7 +277,7 @@ section#main .container-main #notebook .screen-container .screen .open-folder {
 }
 
 section#main .container-main #notebook .screen-container .screen .open-folder .explorer {
-  background: #fff;
+  background: var(--first-color);
   border-radius: 5px;
   height: 75%;
   width: 90%;
@@ -271,7 +287,7 @@ section#main .container-main #notebook .screen-container .screen .open-folder .e
 }
 
 section#main .container-main #notebook .screen-container .screen .open-folder .explorer .header {
-  border-bottom: 1px solid #eee;
+  border-bottom: 1px solid var(--fifth-color);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -283,7 +299,7 @@ section#main .container-main #notebook .screen-container .screen .open-folder .e
   border-radius: 100%;
   width: 12px;
   height: 12px;
-  background: #eee;
+  background: var(--fifth-color);
   margin-right: 10px;
 }
 
@@ -304,7 +320,7 @@ section#main .container-main #notebook .screen-container .screen .open-folder .e
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
-  border-right: 1px solid #eee;
+  border-right: 1px solid var(--fifth-color);
   height: 100%;
   padding: 15px;
 }
@@ -315,7 +331,7 @@ section#main .container-main #notebook .screen-container .screen .open-folder .e
 }
 
 section#main .container-main #notebook .screen-container .screen .open-folder .explorer .container .left ul li a {
-  color: #444;
+  color: var(--second-color);
   cursor: pointer;
 }
 
@@ -356,10 +372,11 @@ section#main .container-main #notebook .screen-container .screen .open-folder .e
           flex: 3;
   overflow-y: auto;
   padding: 30px;
+  background: var(--fourth-color);
 }
 
 section#main .container-main #notebook .screen-container .screen .open-folder .explorer .container .right .project {
-  border: 1px solid #eee;
+  border: 1px solid var(--fifth-color);
   margin: 0 0 30px 0;
   overflow: hidden;
   border-radius: 5px;
@@ -368,6 +385,7 @@ section#main .container-main #notebook .screen-container .screen .open-folder .e
   display: inline-flex;
   width: 100%;
   vertical-align: top;
+  background: var(--first-color);
 }
 
 section#main .container-main #notebook .screen-container .screen .open-folder .explorer .container .right .project .description {
@@ -403,12 +421,13 @@ section#main .container-main #notebook .screen-container .screen .open-folder .e
   font-family: var(--primary-font);
   font-size: 11px;
   margin-bottom: 20px;
+  color: var(--second-color);
 }
 
 section#main .container-main #notebook .screen-container .screen .open-folder .explorer .container .right .skill .progress-bar {
   height: 10px;
   border-radius: 5px;
-  background: #eee;
+  background: #dfdfdf;
   margin-top: 5px;
   position: relative;
 }
@@ -432,8 +451,8 @@ section#main .container-main #notebook .screen-container .screen .open-folder .e
 }
 
 section#main .container-main #notebook .screen-container .screen .open-folder .explorer .container .right ul.links-list li a {
-  background: #eee;
-  color: #222;
+  background: var(--fifth-color);
+  color: var(--third-color);
   display: block;
   padding: 5px 10px;
   -webkit-box-shadow: inset 0 -40px 0 transparent;
@@ -443,7 +462,19 @@ section#main .container-main #notebook .screen-container .screen .open-folder .e
 section#main .container-main #notebook .screen-container .screen .open-folder .explorer .container .right ul.links-list li a:hover {
   -webkit-box-shadow: inset 0 40px 0 pink;
           box-shadow: inset 0 40px 0 pink;
-  color: #fff;
+  color: var(--first-color);
+}
+
+section#main .container-main #notebook .screen-container .screen .open-folder .explorer .container .right::-webkit-scrollbar-thumb {
+  background: #333;
+  border-radius: 10px;
+  border: 6px solid var(--fourth-color);
+}
+
+section#main .container-main #notebook .screen-container .screen .open-folder .explorer .container .right::-webkit-scrollbar-track {
+  background: var(--fifth-color);
+  border: 7px solid var(--fourth-color);
+  margin: 3px;
 }
 
 section#main .container-main #notebook .screen-container .screen .open-folder .view-container {
@@ -454,22 +485,61 @@ section#main .container-main #notebook .screen-container .screen .open-folder .v
   display: none;
 }
 
+section#main .container-main #notebook .screen-container .screen .open-folder .view-container .view {
+  text-align: center;
+}
+
 section#main .container-main #notebook .screen-container .screen .open-folder .view-container .view .design {
   display: inline-block;
-  width: calc(100% / 4 - 30px);
-  margin: 0 30px 30px 0;
+  width: calc(100% / 3 - 10px);
+  margin: 0 10px 10px 0;
+}
+
+section#main .container-main #notebook .screen-container .screen .open-folder .view-container .view .design .info {
+  position: absolute;
+  width: 100%;
+  text-align: right;
+  background: rgba(0, 0, 0, 0.2);
+  -webkit-backdrop-filter: blur(5px);
+          backdrop-filter: blur(5px);
+  bottom: 0;
+  left: 0;
+  border-radius: 0 0 5px 5px;
+  opacity: 0;
+}
+
+section#main .container-main #notebook .screen-container .screen .open-folder .view-container .view .design .info h3 {
+  font-family: var(--primary-font);
+  text-transform: uppercase;
+  color: var(--first-color);
+  font-weight: 500;
+  font-size: 12px;
+  padding: 15px;
 }
 
 section#main .container-main #notebook .screen-container .screen .open-folder .view-container .view .design img {
-  width: 100%;
-  height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
-  border-radius: 5px;
+  border-radius: 3px;
+  margin: 0 0 -4px 0;
 }
 
 section#main .container-main #notebook .screen-container .screen .open-folder .view-container .view .design:nth-child(4n + 0) {
   margin: 0 0 30px 0;
+}
+
+section#main .container-main #notebook .screen-container .screen .open-folder .view-container .view .design:hover .info {
+  opacity: 1;
+}
+
+section#main .container-main #notebook .screen-container .screen .open-folder .view-container::-webkit-scrollbar-thumb {
+  background: #fff;
+  border-radius: 10px;
+  border: 6px solid #989898;
+}
+
+section#main .container-main #notebook .screen-container .screen .open-folder .view-container::-webkit-scrollbar-track {
+  background: #fff;
+  border: 7px solid #989898;
+  margin: 3px;
 }
 
 section#main .container-main #notebook .screen-container:before {
@@ -484,7 +554,7 @@ section#main .container-main #notebook .screen-container:before {
 }
 
 section#main .container-main #notebook .screen-container:after {
-  background: pink;
+  background: var(--accent-color-two);
   width: 200px;
   height: 200px;
   left: -140px;
@@ -532,19 +602,19 @@ section#main:after {
 
 @-webkit-keyframes notebook {
   from {
-    right: -12vw;
+    right: -14%;
   }
   to {
-    right: -6vw;
+    right: -8%;
   }
 }
 
 @keyframes notebook {
   from {
-    right: -12vw;
+    right: -14%;
   }
   to {
-    right: -6vw;
+    right: -8%;
   }
 }
 

@@ -7,49 +7,25 @@ export default function ModalDesigns() {
     const designs = [
       {
         id: 0,
-        title: "Tudo",
+        title: "Songster",
         image: "../../assets/Songster.png",
       },
       {
         id: 1,
-        title: "Tudo",
+        title: "Portfolio v2",
         image: "../../assets/Portfolio-2.png",
-      },
-      {
-        id: 2,
-        title: "Tudo",
-        image: "../../assets/Songster.png",
-      },
-      {
-        id: 3,
-        title: "Tudo",
-        image: "../../assets/Songster.png",
-      },
-      {
-        id: 4,
-        title: "Tudo",
-        image: "../../assets/Songster.png",
-      },
-      {
-        id: 5,
-        title: "Tudo",
-        image: "../../assets/Songster.png",
-      },
-      {
-        id: 6,
-        title: "Tudo",
-        image: "../../assets/Songster.png",
       },
     ];
 
     $(".view-container").show();
+    $(".view-container").html("");
     $(".view-container").append('<div class="view"></div>');
 
     console.log($(".view"));
 
     designs.forEach((design) => {
       $(".view").append(
-        `<div class="design"><img src="${design.image}"/><h3>${design.title}</h3></div>`
+        `<div class="design"><img src="${design.image}"/><div class="info"><h3>${design.title}</h3></div></div>`
       );
     });
   };
@@ -59,9 +35,6 @@ export default function ModalDesigns() {
   const isotopElements = () => {
     $(".view").isotope({
       itemSelector: ".design",
-      masonry: {
-        columnWidth: 100,
-      },
     });
   };
 

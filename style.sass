@@ -13,12 +13,20 @@
 
 \:root
   --primary-font: 'Montserrat', sans-serif
+  --accent-color: #F5F9DC
+  --accent-color-two: #db7070
   --icon-folder: #FFF0A3
+  --first-color: #fff
+  --second-color: #555
+  --third-color: #222
+  --fourth-color: #fbfbfb
+  --fifth-color: #eee
 
 body
   font-family: 'Roboto', sans-serif
   font-weight: 300
   overflow-x: hidden
+  background: var(--first-color)
 
   a,
   a:hover
@@ -31,17 +39,14 @@ body
   width: 15px
 
 ::-webkit-scrollbar-track
-  background: #f1f1f1
-  border: 7px solid #fff
+  background: #fbfbfb
+  border: 7px solid var(--first-color)
   margin: 3px
 
 ::-webkit-scrollbar-thumb
-  background: #777
+  background: var(--second-color)
   border-radius: 10px
-  border: 6px solid #fff
-
-::-webkit-scrollbar-thumb:hover
-  background: #555
+  border: 6px solid var(--first-color)
 
 .pseudo-el
   content: ""
@@ -62,7 +67,6 @@ body
   transition: all 0.5s ease
 
 section#main
-  // background: red
   height: 100vh
 
   .container-main
@@ -78,7 +82,7 @@ section#main
       flex: 1
       height: 100vh
       position: relative
-      @extend .transition-5ms
+      @extend .transition-1s
       left: 0
       font-family: var(--primary-font)
       animation-name: aside
@@ -90,6 +94,7 @@ section#main
         h1
           font-size: 26px
           font-weight: 700
+          color: var(--third-color)
 
           sub
             font-size: 18px
@@ -99,7 +104,7 @@ section#main
 
         h1:before
           @extend .pseudo-el
-          background: #F5F9DC
+          background: var(--accent-color)
           width: 200px
           height: 200px
           border-radius: 100%
@@ -110,6 +115,7 @@ section#main
           font-size: 18px
           margin: 50px 0 0 0
           font-weight: 700
+          color: var(--third-color)
 
         ul
           margin: 20px 0 0 0
@@ -119,43 +125,54 @@ section#main
             line-height: 2em
 
             a
-              color: #222
+              color: var(--third-color)
 
     #notebook
-      flex: 3
+      flex: 10
       margin: 0 auto 8vh auto
       position: relative
-      right: -6vw
+      right: -8%
       text-align: center
       @extend .transition-1s
       animation-name: notebook
       animation-duration: 1.5s
 
       .screen-container
-        background: #222
+        background: var(--third-color)
         width: 80%
-        max-height: 92vh
+        max-height: 82vh
         padding: 30px
         margin: 0 auto
         border-radius: 10px 10px 0 0
         position: relative
+        @extend .transition-5ms
 
-        .back-home-container
+        .controls-container
           display: none
           position: absolute
-          left: -100px
+          left: -130px
           font-family: var(--primary-font)
+          text-align: left
+          font-size: 14px
 
-          a.back-home
-            color: #222
+          a
+            cursor: pointer
+            color: var(--third-color)
+            display: block
+            margin-bottom: 15px
 
-            .fa-chevron-left
+            .fa
               margin-right: 10px
+              min-width: 20px
+              text-align: center
 
         .screen
           display: flex
           height: 100%
-          background: url("./assets/1.jpg")#fff
+          background-image: url("./assets/1.jpg")
+          background-color: var(--first-color)
+          background-repeat: repeat
+          background-size: contain
           overflow-y: auto
 
           ul#screen-links
@@ -176,7 +193,7 @@ section#main
 
               a
                 cursor: pointer
-                color: #444
+                color: var(--second-color)
 
                 span.fa
                   font-size: 40px
@@ -185,10 +202,10 @@ section#main
                   color: var(--icon-folder)
 
                 span.fa-file-pdf
-                  color: #ff6666
+                  color: var(--accent-color-two)
 
                 span.fa-dice
-                  color: #f0b3ff
+                  color: var(--accent-color-two)
 
                 span.sub
                   display: block
@@ -207,7 +224,7 @@ section#main
             justify-content: center
 
             .explorer
-              background: #fff
+              background: var(--first-color)
               border-radius: 5px
               height: 75%
               width: 90%
@@ -216,7 +233,7 @@ section#main
               display: none
 
               .header
-                border-bottom: 1px solid #eee
+                border-bottom: 1px solid var(--fifth-color)
                 display: flex
                 justify-items: start
                 padding: 10px 0 10px 15px
@@ -225,7 +242,7 @@ section#main
                   border-radius: 100%
                   width: 12px
                   height: 12px
-                  background: #eee
+                  background: var(--fifth-color)
                   margin-right: 10px
 
                 .cirle::nth-child(0)
@@ -237,7 +254,7 @@ section#main
 
                 .left
                   flex: 1
-                  border-right: 1px solid #eee
+                  border-right: 1px solid var(--fifth-color)
                   height: 100%
                   padding: 15px
 
@@ -247,7 +264,7 @@ section#main
                       margin: 0 0 15px 0
 
                       a
-                        color: #444
+                        color: var(--second-color)
                         cursor: pointer
 
                       ol
@@ -281,9 +298,10 @@ section#main
                   flex: 3
                   overflow-y: auto
                   padding: 30px
+                  background: var(--fourth-color)
 
                   .project
-                    border: 1px solid #eee
+                    border: 1px solid var(--fifth-color)
                     margin: 0 0 30px 0
                     overflow: hidden
                     border-radius: 5px
@@ -291,6 +309,7 @@ section#main
                     width: 100%
                     vertical-align: top
                     @extend .transition-1s
+                    background: var(--first-color)
 
                     .description
                       padding: 20px
@@ -316,11 +335,12 @@ section#main
                     font-family: var(--primary-font)
                     font-size: 11px
                     margin-bottom: 20px
+                    color: var(--second-color)
 
                     .progress-bar
                       height: 10px
                       border-radius: 5px
-                      background: #eee
+                      background: #dfdfdf
                       margin-top: 5px
                       position: relative
 
@@ -341,8 +361,8 @@ section#main
                       margin: 0 0 10px 0
 
                       a
-                        background: #eee
-                        color: #222
+                        background: var(--fifth-color)
+                        color: var(--third-color)
                         display: block
                         padding: 5px 10px
                         box-shadow: inset 0 -40px 0 transparent
@@ -350,8 +370,18 @@ section#main
 
                       a:hover
                         box-shadow: inset 0 40px 0 pink
-                        color: #fff
+                        color: var(--first-color)
                         @extend .transition-5ms
+
+                .right::-webkit-scrollbar-thumb
+                  background: #333
+                  border-radius: 10px
+                  border: 6px solid var(--fourth-color)
+
+                .right::-webkit-scrollbar-track
+                  background: var(--fifth-color)
+                  border: 7px solid var(--fourth-color)
+                  margin: 3px
 
             .view-container
               width: 100%
@@ -361,20 +391,54 @@ section#main
               display: none
 
               .view
+                text-align: center
+                @extend .transition-5ms
 
                 .design
                   display: inline-block
-                  width: calc(100% / 4 - 30px)
-                  margin: 0 30px 30px 0
+                  width: calc(100% / 3 - 10px)
+                  margin: 0 10px 10px 0
+                  @extend .transition-5ms
+
+                  .info
+                    position: absolute
+                    width: 100%
+                    text-align: right
+                    background: rgba(0, 0, 0, 0.2)
+                    backdrop-filter: blur(5px)
+                    bottom: 0
+                    left: 0
+                    border-radius: 0 0 5px 5px
+                    opacity: 0
+                    @extend .transition-5ms
+
+                    h3
+                      font-family: var(--primary-font)
+                      text-transform: uppercase
+                      color: var(--first-color)
+                      font-weight: 500
+                      font-size: 12px
+                      padding: 15px
 
                   img
-                    width: 100%
-                    height: 100%
-                    object-fit: cover
-                    border-radius: 5px
+                    border-radius: 3px
+                    margin: 0 0 -4px 0
 
                 .design:nth-child(4n + 0)
                   margin: 0 0 30px 0
+
+                .design:hover .info
+                  opacity: 1
+
+            .view-container::-webkit-scrollbar-thumb
+              background: #fff
+              border-radius: 10px
+              border: 6px solid #989898
+
+            .view-container::-webkit-scrollbar-track
+              background: #fff
+              border: 7px solid #989898
+              margin: 3px
 
       .screen-container:before
         @extend .pseudo-el
@@ -392,7 +456,7 @@ section#main
 
       .screen-container:after
         @extend .pseudo-el
-        background: pink
+        background: var(--accent-color-two)
         width: 200px
         height: 200px
         left: -140px
@@ -441,9 +505,9 @@ section#main:after
 
 @keyframes notebook
   from
-    right: -12vw
+    right: -14%
   to
-    right: -6vw
+    right: -8%
 
 @keyframes aside
   from
