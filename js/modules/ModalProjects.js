@@ -68,7 +68,7 @@ export default function ModalProjects() {
         URI: "",
       },
       {
-        id: 7,
+        id: 8,
         image: "./assets/screenshot.png",
         title: "Solsticio",
         description:
