@@ -8,12 +8,12 @@ export default function ModalDesigns() {
       {
         id: 0,
         title: "Songster",
-        image: "../assets/Songster.png",
+        image: "./assets/Songster.png",
       },
       {
         id: 1,
         title: "Portfolio v2",
-        image: "../assets/Portfolio-2.png",
+        image: "./assets/Portfolio-2.png",
       },
     ];
 
