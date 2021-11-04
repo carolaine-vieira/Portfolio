@@ -51,7 +51,7 @@ export default function ModalLinks() {
         id: 7,
         type: "PHP",
         progress: 30,
-        color: "#dcccff",
+        color: "#ab9b96",
       },
     ];
 

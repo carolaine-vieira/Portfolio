@@ -7,27 +7,27 @@ export default function ModalTopics() {
     const topics = [
       {
         id: 0,
-        title: "Metódos Agéis",
+        title: "DevOps",
         description:
-          "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+          "Uma cultura que visa concilicar o antagonismo entre a equipe de desenvolvimento e infraestrutura.",
       },
       {
         id: 1,
         title: "Qualidade de Software e IHC",
         description:
-          "Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+          "Não adianta focar apenas em dispor funcionalidades e outras características de um sistema e esquecer que o usuário interage através da interface. Caso o software seja extremamente difícil de ser utilizado por questões visuais, todas as funcionalidades e consitência de bancos, estará em perigo.",
       },
       {
-        id: 1,
+        id: 2,
         title: "Acessibilidade",
         description:
-          "Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+          "Além de ser lei, é uma questão de empatia. Alguns sistemas não dispõem de mecânismos que ajudem a utilização por deficientes.",
       },
       {
-        id: 1,
-        title: "Songster",
+        id: 3,
+        title: "Pré processadores",
         description:
-          "Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+          "Se é possível fazer algo em 2 passos, por que fazer em 5? Usar sass, pug e outros que cumprem o mesmo tipo de função facilitam e aceleram o desenvolvimento.",
       },
     ];
 

@@ -116,9 +116,9 @@ export default function ModalProjects() {
       },
     ];
 
-    $(".left").append(`<ul><li>Tipo<ol></ol></li></ul>`);
+    $(".left").append(`<ul><li><a class="hide">Tipo</a><ol></ol></li></ul>`);
 
-    links.forEach((link, index) => {
+    links.forEach((link) => {
       $(".left ol").append(
         `<li><a class="${link.class}">${link.title}</a></li>`
       );
@@ -168,11 +168,18 @@ export default function ModalProjects() {
         });
 
         //insertReadMore();
-
         $(event.target).addClass("active");
       });
     });
   };
 
   insertProjects();
+
+  $(".hide").eq(0).css("cursor", "pointer");
+
+  $(".hide")
+    .eq(0)
+    .click(function () {
+      $(".left ol").slideToggle("slow");
+    });
 }
