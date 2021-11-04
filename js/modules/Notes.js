@@ -8,8 +8,13 @@ export default function Note() {
   ];
 
   notes.forEach((note) => {
-    $(".screen").append(
+    $(".screen .notes").append(
       `<div class="note"><h4>${note.title}</h4><p>${note.description}</p></div>`
     );
+  });
+
+  $(".note").draggable({
+    connectToSortable: "#my-sortable",
+    containment: "parent",
   });
 }
