@@ -53,6 +53,18 @@ export default function ModalLinks() {
         progress: 30,
         color: "#ab9b96",
       },
+      {
+        id: 8,
+        type: "Python",
+        progress: 10,
+        color: "#ecc6c6",
+      },
+      {
+        id: 9,
+        type: "Kotlin",
+        progress: 5,
+        color: "#ecc6c6",
+      },
     ];
 
     $(".left").append(`<ul><li>Tipo<ol><li><a>Tudo</a></li></ol></li></ul>`);
