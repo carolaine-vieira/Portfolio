@@ -12,20 +12,25 @@ export default function ModalDesigns() {
       },
       {
         id: 1,
-        title: "Portfolio v2",
+        title: "Portfolio v.2",
         image: "./assets/Portfolio-2.png",
+      },
+      {
+        id: 2,
+        title: "Portfolio v.1",
+        image: "./assets/Portfolio-1.png",
       },
     ];
 
     $(".view-container").show();
     $(".view-container").html("");
-    $(".view-container").append('<div class="view"></div>');
+    $(".view-container").append('<div class="view grid"></div>');
 
     console.log($(".view"));
 
     designs.forEach((design) => {
       $(".view").append(
-        `<div class="design"><img src="${design.image}"/><div class="info"><h3>${design.title}</h3></div></div>`
+        `<div class="design grid-item"><img src="${design.image}"/><div class="info"><h3>${design.title}</h3></div></div>`
       );
     });
   };
@@ -33,12 +38,12 @@ export default function ModalDesigns() {
   insertDesigns();
 
   const isotopElements = () => {
-    $(".view").isotope({
-      itemSelector: ".design",
+    $(".grid").isotope({
+      itemSelector: ".grid-item",
     });
   };
 
   setInterval(() => {
     isotopElements();
-  }, 900);
+  }, 1000);
 }

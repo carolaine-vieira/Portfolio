@@ -3,7 +3,7 @@ export default function Note() {
     {
       title: "Breve descrição",
       description:
-        "Olá! Tenho 22 anos e moro em Salvador/BA. Curso Sistemas de Informação na Universidade Federal da Bahia.",
+        "Olá! Tenho 22 anos e moro em Salvador/BA. Curso Sistemas de Informação na Universidade Federal da Bahia. \n\n (Este portfólio está sendo finalizado)",
     },
   ];
 

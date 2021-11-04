@@ -5,20 +5,22 @@ export default function SwitchMode() {
     console.log(e.target);
 
     if ($(e.target).hasClass("night")) {
-      root.css("--accent-color", "#db7070");
-      root.css("--accent-color-two", "#1dadaf");
+      root.css("--accent-color", "#2a2a2a");
+      root.css("--accent-color-two", "#31a5a7");
       root.css("--first-color", "#222");
       root.css("--second-color", "#fff");
       root.css("--third-color", "#fff");
       root.css("--fourth-color", "#333");
       root.css("--fifth-color", "#444");
+      root.css("--table", "#464646");
+      root.css("--basis-pe", "#2e2e2e");
 
-      $(".screen-container").css("background", "#ebebeb");
+      $(".screen-container").css("background", "#767676");
       $(".basis").css("background", "rgb(60, 60, 60)");
       $(".screen").css("background", "rgb(29,173,175)");
       $(".screen").css(
         "background",
-        "linear-gradient(210deg, rgba(29,173,175,1) 0%, rgba(219,112,112,1) 77%, rgba(219,112,112,1) 100%)"
+        "linear-gradient(210deg, rgba(29,173,175,1) 0%, #2a2a2a 77%, #2a2a2a 100%)"
       );
 
       $(".switch-mode").html("Modo claro");
@@ -28,10 +30,12 @@ export default function SwitchMode() {
       root.css("--accent-color", "#F5F9DC");
       root.css("--accent-color-two", "#db7070");
       root.css("--first-color", "#fff");
-      root.css("--second-color", "#555");
+      root.css("--second-color", "#444");
       root.css("--third-color", "#222");
       root.css("--fourth-color", "#fbfbfb");
       root.css("--fifth-color", "#eee");
+      root.css("--table", "#E7CA82");
+      root.css("--basis-pe", "#999");
 
       $(".screen-container").css("background", "#222");
       $(".basis").css("background", "#666");

@@ -33,11 +33,11 @@ export default function ModalTopics() {
 
     $(".view-container").show();
     $(".view-container").html("");
-    $(".view-container").append('<div class="view"></div>');
+    $(".view-container").append('<div class="view grid"></div>');
 
     topics.forEach((topic) => {
       $(".view").append(
-        `<div class="topic"><div class="info"><h3>${topic.title}</h3><p>${topic.description}</p></div></div>`
+        `<div class="topic grid-item"><div class="info"><h3>${topic.title}</h3><p>${topic.description}</p></div></div>`
       );
     });
   };
@@ -45,12 +45,12 @@ export default function ModalTopics() {
   insertTopics();
 
   const isotopElements = () => {
-    $(".view").isotope({
-      itemSelector: ".topic",
+    $(".grid").isotope({
+      itemSelector: ".grid-item",
     });
   };
 
   setInterval(() => {
     isotopElements();
-  }, 900);
+  }, 1000);
 }

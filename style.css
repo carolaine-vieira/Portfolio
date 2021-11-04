@@ -19,6 +19,8 @@
   --third-color: #222;
   --fourth-color: #fbfbfb;
   --fifth-color: #eee;
+  --table: #E7CA82;
+  --basis-pe: #999;
 }
 
 body {
@@ -427,9 +429,9 @@ section#main .container-main #notebook .screen-container .screen .open-folder .e
   position: absolute;
   bottom: 0;
   left: 0;
-  background: white;
-  background: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0)), color-stop(51%, white));
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, white 51%);
+  background: var(--first-color);
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0)), color-stop(51%, var(--first-color)));
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, var(--first-color) 51%);
   padding: 40px 20px 15px 20px;
   text-align: center;
   width: 100%;
@@ -470,7 +472,7 @@ section#main .container-main #notebook .screen-container .screen .open-folder .e
 section#main .container-main #notebook .screen-container .screen .open-folder .explorer .container .right .skill .progress-bar {
   height: 10px;
   border-radius: 5px;
-  background: #dfdfdf;
+  background: var(--fifth-color);
   margin-top: 5px;
   position: relative;
 }
@@ -537,6 +539,7 @@ section#main .container-main #notebook .screen-container .screen .open-folder .v
 
 section#main .container-main #notebook .screen-container .screen .open-folder .view-container .view {
   text-align: center;
+  min-width: 100%;
 }
 
 section#main .container-main #notebook .screen-container .screen .open-folder .view-container .view .design {
@@ -647,7 +650,7 @@ section#main .container-main #notebook .basis {
 
 section#main .container-main #notebook .basis:after,
 section#main .container-main #notebook .basis:before {
-  background: #999;
+  background: var(--basis-pe);
   height: 3px;
   left: 50%;
   -webkit-transform: translateX(-50%);
@@ -670,7 +673,7 @@ section#main:after {
   width: 100%;
   bottom: 0px;
   z-index: -1;
-  background: #E7CA82;
+  background: var(--table);
 }
 
 @-webkit-keyframes notebook {
@@ -707,5 +710,15 @@ section#main:after {
   to {
     left: 0;
   }
+}
+
+.grid:after {
+  content: '';
+  display: block;
+  clear: both;
+  -webkit-transition: none !important;
+  transition: none !important;
+  -webkit-transform: none !important;
+          transform: none !important;
 }
 /*# sourceMappingURL=style.css.map */

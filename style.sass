@@ -21,6 +21,8 @@
   --third-color: #222
   --fourth-color: #fbfbfb
   --fifth-color: #eee
+  --table: #E7CA82
+  --basis-pe: #999
 
 body
   font-family: 'Roboto', sans-serif
@@ -343,8 +345,8 @@ section#main
                         position: absolute
                         bottom: 0
                         left: 0
-                        background: rgb(255,255,255)
-                        background: linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 51%)
+                        background: var(--first-color)
+                        background: linear-gradient(180deg, rgba(255,255,255,0) 0%, var(--first-color) 51%)
                         padding: 40px 20px 15px 20px
                         text-align: center
                         width: 100%
@@ -377,7 +379,7 @@ section#main
                     .progress-bar
                       height: 10px
                       border-radius: 5px
-                      background: #dfdfdf
+                      background: var(--fifth-color)
                       margin-top: 5px
                       position: relative
 
@@ -434,6 +436,7 @@ section#main
               .view
                 text-align: center
                 @extend .transition-5ms
+                min-width: 100%
 
                 .design
                   display: inline-block
@@ -536,7 +539,7 @@ section#main
       .basis:after,
       .basis:before
         @extend .pseudo-el
-        background: #999
+        background: var(--basis-pe)
         height: 3px
         left: 50%
         -moz-transform: translateX(-50%)
@@ -560,7 +563,7 @@ section#main:after
   width: 100%
   bottom: 0px
   z-index: -1
-  background: #E7CA82
+  background: var(--table)
 
 // ANIMATIONS
 
@@ -575,3 +578,10 @@ section#main:after
     left: -5%
   to
     left: 0
+
+.grid:after
+  content: ''
+  display: block
+  clear: both
+  transition: none !important
+  transform: none !important
