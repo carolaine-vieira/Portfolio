@@ -2,6 +2,7 @@ import initModal from "./InitModal.js";
 
 export default function ModalProjects() {
   initModal();
+  $(".label").html("Projetos — Carolaine Vieira");
 
   const insertProjects = () => {
     const projects = [
@@ -111,8 +112,8 @@ export default function ModalProjects() {
       },
       {
         id: 6,
-        class: "random",
-        title: "Aleatório",
+        class: "other",
+        title: "Outros",
       },
     ];
 
@@ -180,6 +181,6 @@ export default function ModalProjects() {
   $(".hide")
     .eq(0)
     .click(function () {
-      $(".left ol").slideToggle("slow");
+      $(".left ol").slideToggle("fast");
     });
 }

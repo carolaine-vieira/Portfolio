@@ -1,5 +1,5 @@
 export default function initBox() {
-  const maximize = () => {
+  const zoomIn = () => {
     $("aside").css({
       left: "-100%",
       width: "0%",
@@ -14,7 +14,7 @@ export default function initBox() {
     $(".basis").css("width", "90%");
   };
 
-  const minimize = () => {
+  const zoomOut = () => {
     $("aside").css({
       left: "0",
       width: "auto",
@@ -29,12 +29,33 @@ export default function initBox() {
     $(".basis").css("width", "100%");
   };
 
+  const maximize = () => {
+    $(".explorer").css({
+      width: "100%",
+      height: "100%",
+      borderRadius: 0,
+    });
+    $(".left").css("height", $(".explorer").height() - 33);
+    $(".right").css("height", $(".explorer").height() - 42);
+  };
+
+  const minimize = () => {
+    $(".explorer").css({
+      width: "90%",
+      height: "75%",
+      borderRadius: 5,
+    });
+
+    $(".left").css("height", $(".explorer").height() - 33);
+    $(".right").css("height", $(".explorer").height() - 42);
+  };
+
   const openModal = () => {
     $(".open-folder").css("display", "flex");
     $(".left").html("");
     $(".right").html("");
     $(".left").css("height", $(".explorer").height() - 33);
-    $(".right").css("height", $(".explorer").height() - 33);
+    $(".right").css("height", $(".explorer").height() - 42);
   };
   openModal();
 
@@ -49,17 +70,27 @@ export default function initBox() {
 
   $(".controls-container").show();
 
-  $(".controls-container .close").click(function (e) {
+  $(".close-modal").click(function (e) {
     e.preventDefault();
     closeModal();
   });
 
-  $(".controls-container .maximize").click(function (e) {
+  $(".controls-container .maximize-modal").click(function (e) {
+    e.preventDefault();
+    zoomIn();
+  });
+
+  $(".controls-container .minimize-modal").click(function (e) {
+    e.preventDefault();
+    zoomOut();
+  });
+
+  $(".left-controls .maximize-modal").click(function (e) {
     e.preventDefault();
     maximize();
   });
 
-  $(".controls-container .minimize").click(function (e) {
+  $(".left-controls .minimize-modal").click(function (e) {
     e.preventDefault();
     minimize();
   });

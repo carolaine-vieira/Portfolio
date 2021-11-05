@@ -35,17 +35,17 @@ html(lang="en")
         #notebook 
           .screen-container
             .controls-container
-              a(class="close") 
+              a(class="close-modal") 
                 span.fa.fa-times
                 span Fechar
 
-              a(class="maximize") 
+              a(class="maximize-modal") 
                 span.fa.fa-window-maximize
-                span Maximizar
+                span Aumentar
 
-              a(class="minimize") 
+              a(class="minimize-modal") 
                 span.fa.fa-window-minimize
-                span Minimizar
+                span Diminuir
 
             .screen
               ul#screen-links
@@ -84,9 +84,17 @@ html(lang="en")
               .open-folder 
                 .explorer 
                   .header 
-                    .circle 
-                    .circle 
-                    .circle
+                    .left-controls
+                      a(class="close-modal" title="Fechar")
+                        span.fa.fa-times 
+
+                      a(class="maximize-modal" title="Maximizar")
+                        span.fa.fa-window-maximize
+                      
+                      a(class="minimize-modal" title="Minimizar")
+                        span.fa.fa-window-minimize
+
+                    .label 
 
                   .container 
                     .left 

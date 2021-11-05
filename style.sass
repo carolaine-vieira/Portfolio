@@ -31,6 +31,7 @@ body
 
   a,
   a:hover
+    cursor: pointer
     text-decoration: none
     @extend .transition-5ms
 
@@ -159,7 +160,6 @@ section#main
           font-size: 14px
 
           a
-            cursor: pointer
             color: var(--third-color)
             display: block
             margin-bottom: 15px
@@ -217,7 +217,6 @@ section#main
               font-family: var(--primary-font)
 
               a
-                cursor: pointer
                 color: var(--second-color)
 
                 span.fa
@@ -259,16 +258,32 @@ section#main
 
               .header
                 border-bottom: 1px solid var(--fifth-color)
-                display: flex
-                justify-items: start
-                padding: 10px 0 10px 15px
+                padding: 9px 15px
+                position: relative
 
-                .circle
-                  border-radius: 100%
-                  width: 12px
-                  height: 12px
+                .left-controls
+                  position: absolute
+                  right: 10px
+                  margin-top: 3px
+
+                  a
+                    border-radius: 100%
+                    text-align: center
+                    background: var(--fifth-color)
+                    margin-right: 8px
+                    padding: 4px 5px 4px 6px
+                    min-width: 17px
+                    font-size: 8px
+                    display: inline-block
+
+                .label
+                  margin: 0 auto
+                  padding: 5px 10px
                   background: var(--fifth-color)
-                  margin-right: 10px
+                  width: 60%
+                  border-radius: 25px
+                  text-align: center
+                  font-size: 11px
 
               .container
                 display: flex
@@ -276,7 +291,6 @@ section#main
 
                 .left
                   flex: 1
-                  border-right: 1px solid var(--fifth-color)
                   height: 100%
                   padding: 15px
                   overflow-y: auto
@@ -289,7 +303,6 @@ section#main
 
                       a
                         color: var(--second-color)
-                        cursor: pointer
 
                       ol
                         margin: 10px 0 0 15px
@@ -323,6 +336,7 @@ section#main
                   overflow-y: auto
                   padding: 30px
                   background: var(--fourth-color)
+                  border-left: 1px solid var(--fifth-color)
 
                   .project
                     border: 1px solid var(--fifth-color)

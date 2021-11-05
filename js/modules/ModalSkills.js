@@ -2,6 +2,7 @@ import initModal from "./InitModal.js";
 
 export default function ModalLinks() {
   initModal();
+  $(".label").html("Links — Carolaine Vieira");
 
   const insertSkills = () => {
     const skills = [
