@@ -5,10 +5,11 @@ import ModalDesigns from "./modules/ModalDesigns.js";
 import ModalTopics from "./modules/ModalTopics.js";
 import SwitchMode from "./modules/SwitchMode.js";
 import Notes from "./modules/Notes.js";
+import * as Global from "./modules/Global.js";
 
 $(document).ready(function () {
-  const notebookWidth = $(".screen-container").width();
-  $(".screen-container").css("height", notebookWidth * 0.7);
+  const notebookWidth = $(Global.screenContainer).width();
+  $(Global.screenContainer).css("height", notebookWidth * 0.7);
 
   $(".switch-mode").html("Modo escuro");
   $(".switch-mode").addClass("night");
@@ -18,7 +19,6 @@ $(document).ready(function () {
       right: "40px",
       margin: "0 auto 11vh auto",
     });
-
     $("aside .container").css("margin", "15vh 5vh 0 0");
   }
   openFolder();
