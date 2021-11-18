@@ -53,4 +53,8 @@ export default function ModalTopics() {
   setInterval(() => {
     isotopElements();
   }, 1000);
+
+  $(".topic").draggable({
+    containment: "parent",
+  });
 }

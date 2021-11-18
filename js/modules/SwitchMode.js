@@ -2,7 +2,6 @@ export default function SwitchMode() {
   $(".switch-mode").click(function (e) {
     e.preventDefault();
     const root = $(":root");
-    console.log(e.target);
 
     if ($(e.target).hasClass("night")) {
       root.css("--accent-color", "#2a2a2a");
@@ -11,7 +10,7 @@ export default function SwitchMode() {
       root.css("--second-color", "#fff");
       root.css("--third-color", "#fff");
       root.css("--fourth-color", "#333");
-      root.css("--fifth-color", "#444");
+      root.css("--fifth-color", "#3e3e3e");
       root.css("--table", "#464646");
       root.css("--basis-pe", "#2e2e2e");
 

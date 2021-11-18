@@ -14,7 +14,6 @@ export default function Note() {
   });
 
   $(".note").draggable({
-    connectToSortable: "#my-sortable",
     containment: "parent",
   });
 }

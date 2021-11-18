@@ -1,8 +1,9 @@
 import initModal from "./InitModal.js";
+import * as Global from "./Global.js";
 
 export default function ModalLinks() {
   initModal();
-  $(".label").html("Links — Carolaine Vieira");
+  $(".label").html(Global.labelLinks);
 
   const insertLinks = () => {
     const links = [

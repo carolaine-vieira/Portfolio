@@ -1,8 +1,9 @@
 import initModal from "./InitModal.js";
+import * as Global from "./Global.js";
 
 export default function ModalProjects() {
   initModal();
-  $(".label").html("Projetos — Carolaine Vieira");
+  $(".label").html(Global.labelProjects);
 
   const insertProjects = () => {
     const projects = [
