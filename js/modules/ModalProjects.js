@@ -13,7 +13,7 @@ export default function ModalProjects() {
         title: "Um tema WordPress gratuito, responsivo e com tradução",
         description:
           "Utilizei o plugin Advanced Custom Fields para dar uma personalização maior.",
-        type: "React",
+        type: "php",
         URI: "https://github.com/carolaine-vieira/twisted",
       },
       {
