@@ -9,6 +9,15 @@ export default function ModalProjects() {
     const projects = [
       {
         id: 0,
+        image: "./assets/Grand_Preview.png",
+        title: "Um tema WordPress gratuito, responsivo e com tradução",
+        description:
+          "Utilizei o plugin Advanced Custom Fields para dar uma personalização maior.",
+        type: "React",
+        URI: "https://github.com/carolaine-vieira/twisted",
+      },
+      {
+        id: 1,
         image: "./assets/Songster.png",
         title: "Projeto para estudar React",
         description: "Criei a página inicial. Falta o resto...",
@@ -16,7 +25,7 @@ export default function ModalProjects() {
         URI: "https://www.figma.com/file/qGMl9TLpu25H5s9pjDMeDK/Music-Player---React?node-id=0%3A1",
       },
       {
-        id: 1,
+        id: 2,
         image: "./assets/Portfolio-2.png",
         title: "Meu suposto novo portfólio",
         description:
@@ -25,7 +34,7 @@ export default function ModalProjects() {
         URI: "https://www.figma.com/file/5GsQsX4HshYLaMOkIic8HW/Portfolio-2?node-id=0%3A1",
       },
       {
-        id: 2,
+        id: 3,
         image: "./assets/Alternativo.png",
         title: "Alternativo",
         description:
