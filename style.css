@@ -576,6 +576,10 @@ section#main .container-main #notebook .screen-container .screen .open-folder .v
   margin: 0 10px 10px 0;
 }
 
+section#main .container-main #notebook .screen-container .screen .open-folder .view-container .view .design a {
+  color: #fff;
+}
+
 section#main .container-main #notebook .screen-container .screen .open-folder .view-container .view .design .info {
   position: absolute;
   width: 100%;
