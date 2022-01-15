@@ -27,6 +27,11 @@ export default function ModalLinks() {
         title: "Codepen",
         URI: "https://codepen.io/carolaine-vieira",
       },
+      {
+        id: 4,
+        title: "Behance",
+        URI: "https://www.behance.net/carolainevieira",
+      },
     ];
 
     $(".left").append(`<ul><li>Tipo<ol><li><a>Tudo</a></li></ol></li></ul>`);
