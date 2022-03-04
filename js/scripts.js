@@ -8,14 +8,14 @@ const {floorColor, roofColor} = data.room.roomColors;
 
 const initGame = () => {
   const scene = new THREE.Scene();
-  const camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 1000 );
+  const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
   const renderer = new THREE.WebGLRenderer();
-  const controls = new OrbitControls( camera, renderer.domElement );
+  const controls = new OrbitControls(camera, renderer.domElement);
 
   //Meshs
   const meshFloor = new THREE.Mesh(
     new THREE.PlaneGeometry(roomWidth, roomHeight, 10, 10),
-    new THREE.MeshBasicMaterial( { 
+    new THREE.MeshPhongMaterial( { 
       color: floorColor, 
       wireframe: useWireframe,
     })
@@ -89,7 +89,7 @@ const initGame = () => {
   
   scene.add( 
     //Scene basic shape
-    cube,
+    // cube,
     // meshRoof,  
     wall_1, 
     wall_2,
@@ -121,7 +121,7 @@ const initGame = () => {
   
   function animate() {
     requestAnimationFrame( animate );
-    // wall_1.rotation.y += 0.01;
+    // scene.rotation.y += 0.01;
     renderer.render( scene, camera );
   };
   animate();
