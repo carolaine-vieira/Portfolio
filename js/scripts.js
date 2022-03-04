@@ -11,11 +11,11 @@ const meshFloor = new THREE.Mesh(
   new THREE.PlaneGeometry(20, 20, 10, 10),
   new THREE.MeshBasicMaterial( { 
     color: "#222", 
-    wireframe: true,
+    wireframe: false,
   })
 );
 meshFloor.rotation.x -= Math.PI / 2;
-meshFloor.position.y = -2.5;
+meshFloor.position.y = -2;
 
 const meshRoof = new THREE.Mesh(
   new THREE.PlaneGeometry(20, 20, 10, 10),
@@ -36,39 +36,68 @@ const camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.inner
 
 const renderer = new THREE.WebGLRenderer();
 renderer.setSize( window.innerWidth, window.innerHeight );
+
+renderer.shadowMap.enabled = true;
+renderer.shadowMap.type = THREE.BasicShadowMap;
+
 document.body.appendChild( renderer.domElement );
 
 const controls = new OrbitControls( camera, renderer.domElement );
 controls.listenToKeyEvents(window); 
-controls.maxPolarAngle = Math.PI / 2;
-controls.minPolarAngle = 1;
+// controls.maxPolarAngle = Math.PI / 2;
+// controls.minPolarAngle = 1;
 controls.maxDistance = 25;
 
-console.log(controls);
+const cube = new THREE.Mesh(
+  new THREE.BoxGeometry(20, 6, 20, 10, 10, 10),
+  new THREE.MeshBasicMaterial({ color: 0x00ff00, wireframe: true })
+);
+scene.add( cube );
 
 const wall_1 = new THREE.Mesh( 
-  new THREE.BoxGeometry(5, 5, 0.2),
-  new THREE.MeshBasicMaterial( { 
+  new THREE.BoxGeometry(5, 4, 0.2),
+  new THREE.MeshPhongMaterial( { 
     color: "#fff", 
-    wireframe: true,
+    wireframe: false,
   })
 );
 
 const wall_2 = new THREE.Mesh( 
-  new THREE.BoxGeometry(5, 5, 0.2),
-  new THREE.MeshBasicMaterial( { 
+  new THREE.BoxGeometry(5, 4, 0.2),
+  new THREE.MeshPhongMaterial( { 
     color: "green", 
-    wireframe: true,
+    wireframe: false,
   })
 );
-wall_2.position.x = 5;
+wall_2.position.set(5, 0);
+
+const frontDoor = new THREE.Mesh( 
+  new THREE.BoxGeometry(2, 4, 0),
+  new THREE.MeshPhongMaterial( { 
+    color: "#eee", 
+    wireframe: false,
+  })
+);
+frontDoor.position.set(0, 0, -9.9);
 
 scene.add( 
-  meshRoof,  
+  // meshRoof,  
   wall_1, 
   wall_2,
   meshFloor, 
+  frontDoor
 );
+
+const ambientLight = new THREE.AmbientLight("#ffffff", 0.3);
+scene.add(ambientLight);
+
+const light = new THREE.PointLight("red", 0.8, 18);
+light.position.set(-3, 6, -3);
+light.castShadow = true;
+light.shadow.camera.near = 0.1;
+light.shadow.camera.near = 0.1;
+light.shadow.camera.far = 5;
+scene.add(light);
 
 camera.position.set(0, player.height, -5);
 camera.lookAt(new THREE.Vector3(0, player.height, 0));
