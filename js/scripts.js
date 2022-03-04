@@ -3,21 +3,31 @@ import { OrbitControls } from "https://cdn.skypack.dev/three@0.132.2/examples/js
 
 const player = {
   height: 1.8,
+  speed: 0.2,
+  turnSpeed: Math.PI * 0.02
 };
 
 const meshFloor = new THREE.Mesh(
-  new THREE.PlaneGeometry(10, 10, 10, 10),
+  new THREE.PlaneGeometry(20, 20, 10, 10),
   new THREE.MeshBasicMaterial( { 
     color: "#222", 
-    wireframe: false,
+    wireframe: true,
   })
 );
 meshFloor.rotation.x -= Math.PI / 2;
 meshFloor.position.y = -2.5;
 
-const scene = new THREE.Scene();
+const meshRoof = new THREE.Mesh(
+  new THREE.PlaneGeometry(20, 20, 10, 10),
+  new THREE.MeshBasicMaterial( { 
+    color: "red", 
+    wireframe: true,
+  })
+);
+meshRoof.rotation.x -= Math.PI / 2;
+meshRoof.position.y = 2.5;
 
-scene.add( meshFloor );
+const scene = new THREE.Scene();
 
 const roomBackground = new THREE.Color( 'skyblue' );
 scene.background = roomBackground;
@@ -29,6 +39,12 @@ renderer.setSize( window.innerWidth, window.innerHeight );
 document.body.appendChild( renderer.domElement );
 
 const controls = new OrbitControls( camera, renderer.domElement );
+controls.listenToKeyEvents(window); 
+controls.maxPolarAngle = Math.PI / 2;
+controls.minPolarAngle = 1;
+controls.maxDistance = 25;
+
+console.log(controls);
 
 const wall_1 = new THREE.Mesh( 
   new THREE.BoxGeometry(5, 5, 0.2),
@@ -47,9 +63,12 @@ const wall_2 = new THREE.Mesh(
 );
 wall_2.position.x = 5;
 
-scene.add( wall_1 );
-
-scene.add( wall_2 );
+scene.add( 
+  meshRoof,  
+  wall_1, 
+  wall_2,
+  meshFloor, 
+);
 
 camera.position.set(0, player.height, -5);
 camera.lookAt(new THREE.Vector3(0, player.height, 0));
@@ -64,21 +83,22 @@ function animate() {
 animate();
 
 window.addEventListener("keydown", (e) => {
-  switch(e.key) {
-    case "ArrowLeft":
-      camera.rotation.y += Math.PI * 0.01;
-      break;
+  const k = e.key;
 
-    case "ArrowRight":
-      camera.rotation.y -= Math.PI * 0.01;
-      break;
-
-    case "ArrowUp":
-      camera.rotation.x += Math.PI * 0.01;
-      break;
-
-    case "ArrowDown":
-      camera.rotation.x -= Math.PI * 0.01;
-      break;
+  if(k === "w"){ 
+		camera.position.x -= Math.sin(camera.rotation.y) * player.speed;
+		camera.position.z -= -Math.cos(camera.rotation.y) * player.speed;
+	}
+  if(k === "a"){ 
+    camera.position.x += Math.sin(camera.rotation.y + Math.PI/2) * player.speed;
+    camera.position.z += -Math.cos(camera.rotation.y + Math.PI/2) * player.speed;
   }
+	if(k === "s"){ 
+		camera.position.x += Math.sin(camera.rotation.y) * player.speed;
+		camera.position.z += -Math.cos(camera.rotation.y) * player.speed;
+	}
+	if(k === "d"){ 
+		camera.position.x += Math.sin(camera.rotation.y - Math.PI/2) * player.speed;
+		camera.position.z += -Math.cos(camera.rotation.y - Math.PI/2) * player.speed;
+	}
 });
