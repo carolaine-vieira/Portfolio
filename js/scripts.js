@@ -1,133 +1,155 @@
 import * as THREE from 'https://cdn.skypack.dev/pin/three@v0.138.2-mAMNcGi9eJzMFQBfERhF/mode=imports,min/optimized/three.js';
 import { OrbitControls } from "https://cdn.skypack.dev/three@0.132.2/examples/jsm/controls/OrbitControls.js";
+import data from './params.js';
 
-const player = {
-  height: 1.8,
-  speed: 0.2,
-  turnSpeed: Math.PI * 0.02
-};
+const {height, speed, turnSpeed} = data.player;
+const {roomWidth, roomHeight, roomDepth, useWireframe} = data.room;
+const {floorColor, roofColor} = data.room.roomColors;
 
-const meshFloor = new THREE.Mesh(
-  new THREE.PlaneGeometry(20, 20, 10, 10),
-  new THREE.MeshBasicMaterial( { 
-    color: "#222", 
-    wireframe: false,
-  })
-);
-meshFloor.rotation.x -= Math.PI / 2;
-meshFloor.position.y = -2;
+const initGame = () => {
+  const scene = new THREE.Scene();
+  const camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 1000 );
+  const renderer = new THREE.WebGLRenderer();
+  const controls = new OrbitControls( camera, renderer.domElement );
 
-const meshRoof = new THREE.Mesh(
-  new THREE.PlaneGeometry(20, 20, 10, 10),
-  new THREE.MeshBasicMaterial( { 
-    color: "red", 
-    wireframe: true,
-  })
-);
-meshRoof.rotation.x -= Math.PI / 2;
-meshRoof.position.y = 2.5;
+  //Meshs
+  const meshFloor = new THREE.Mesh(
+    new THREE.PlaneGeometry(roomWidth, roomHeight, 10, 10),
+    new THREE.MeshBasicMaterial( { 
+      color: floorColor, 
+      wireframe: useWireframe,
+    })
+  );
+  const meshRoof = new THREE.Mesh(
+    new THREE.PlaneGeometry(roomWidth, roomHeight, 10, 10),
+    new THREE.MeshBasicMaterial( { 
+      color: roofColor, 
+      wireframe: useWireframe,
+    })
+  );
+  const wall_1 = new THREE.Mesh( 
+    new THREE.BoxGeometry(5, roomDepth, 0.2),
+    new THREE.MeshPhongMaterial( { 
+      color: "#fff", 
+      wireframe: useWireframe,
+    })
+  );  
+  const wall_2 = new THREE.Mesh( 
+    new THREE.BoxGeometry(5, roomDepth, 0.2),
+    new THREE.MeshPhongMaterial( { 
+      color: "green", 
+      wireframe: useWireframe,
+    })
+  );
+  const cube = new THREE.Mesh(
+    new THREE.BoxGeometry(roomWidth, 6, roomHeight, 10, 10, 10),
+    new THREE.MeshBasicMaterial({ color: 0x00ff00, wireframe: useWireframe })
+  );
+  const frontDoor = new THREE.Mesh( 
+    new THREE.BoxGeometry(2, roomDepth, 0.2),
+    new THREE.MeshBasicMaterial( { 
+      color: "#eee", 
+      wireframe: useWireframe,
+      side: THREE.BackSide
+    })
+  );
 
-const scene = new THREE.Scene();
+  // Colors  
+  const roomBackground = new THREE.Color( 'black' );  
 
-const roomBackground = new THREE.Color( 'skyblue' );
-scene.background = roomBackground;
+  // Lights
+  const ambientLight = new THREE.AmbientLight("#ffffff", 0.3);
+  const light = new THREE.PointLight("#fff", 0.8, 18);
 
-const camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 1000 );
+  // Floor
+  meshFloor.rotation.x -= Math.PI / 2;
+  meshFloor.position.y = -2;
+  meshFloor.receiveShadow = true;  
+  
+  // Roof
+  meshRoof.rotation.x -= Math.PI / 2;
+  meshRoof.position.y = 2.5;
 
-const renderer = new THREE.WebGLRenderer();
-renderer.setSize( window.innerWidth, window.innerHeight );
+  // Wall 2
+  wall_2.position.set(5, 0);
+  wall_2.receiveShadow = true;
+  wall_2.castShadow = true;
 
-renderer.shadowMap.enabled = true;
-renderer.shadowMap.type = THREE.BasicShadowMap;
+  // Front Door
+  frontDoor.position.set(0, 0, -9.8);
 
-document.body.appendChild( renderer.domElement );
+  // Light 
+  light.position.set(-3, 6, -3);
+  light.castShadow = true;
+  light.shadow.camera.near = 0.1;
+  light.shadow.camera.far = 25;
+  
+  // Scene
+  scene.background = roomBackground;
+  
+  scene.add( 
+    //Scene basic shape
+    cube,
+    // meshRoof,  
+    wall_1, 
+    wall_2,
+    meshFloor, 
+    frontDoor
+  );  
+  
+  scene.add(
+    ambientLight,
+    light
+  );  
+  
+  // Camera
+  camera.position.set(0, height, -5);
+  camera.lookAt(new THREE.Vector3(0, height, 0));  
+  
+  // Controls
+  controls.listenToKeyEvents(window); 
+  controls.maxPolarAngle = Math.PI / 2;
+  controls.minPolarAngle = 1;
+  controls.maxDistance = 25;
 
-const controls = new OrbitControls( camera, renderer.domElement );
-controls.listenToKeyEvents(window); 
-// controls.maxPolarAngle = Math.PI / 2;
-// controls.minPolarAngle = 1;
-controls.maxDistance = 25;
+  // Renderer
+  renderer.setSize( window.innerWidth, window.innerHeight );  
+  renderer.shadowMap.enabled = true;
+  renderer.shadowMap.type = THREE.BasicShadowMap;
+  
+  document.body.appendChild( renderer.domElement );
+  
+  function animate() {
+    requestAnimationFrame( animate );
+    // wall_1.rotation.y += 0.01;
+    renderer.render( scene, camera );
+  };
+  animate();
 
-const cube = new THREE.Mesh(
-  new THREE.BoxGeometry(20, 6, 20, 10, 10, 10),
-  new THREE.MeshBasicMaterial({ color: 0x00ff00, wireframe: true })
-);
-scene.add( cube );
+  playerMovement(camera);
+}
 
-const wall_1 = new THREE.Mesh( 
-  new THREE.BoxGeometry(5, 4, 0.2),
-  new THREE.MeshPhongMaterial( { 
-    color: "#fff", 
-    wireframe: false,
-  })
-);
+const playerMovement = (camera) => {
+  window.addEventListener("keydown", (e) => {
+    const k = e.key;
+  
+    if(k === "w"){ 
+      camera.position.x -= Math.sin(camera.rotation.y) * speed;
+      camera.position.z -= -Math.cos(camera.rotation.y) * speed;
+    }
+    if(k === "a"){ 
+      camera.position.x += Math.sin(camera.rotation.y + Math.PI/2) * speed;
+      camera.position.z += -Math.cos(camera.rotation.y + Math.PI/2) * speed;
+    }
+    if(k === "s"){ 
+      camera.position.x += Math.sin(camera.rotation.y) * speed;
+      camera.position.z += -Math.cos(camera.rotation.y) * speed;
+    }
+    if(k === "d"){ 
+      camera.position.x += Math.sin(camera.rotation.y - Math.PI/2) * speed;
+      camera.position.z += -Math.cos(camera.rotation.y - Math.PI/2) * speed;
+    }
+  });
+}
 
-const wall_2 = new THREE.Mesh( 
-  new THREE.BoxGeometry(5, 4, 0.2),
-  new THREE.MeshPhongMaterial( { 
-    color: "green", 
-    wireframe: false,
-  })
-);
-wall_2.position.set(5, 0);
-
-const frontDoor = new THREE.Mesh( 
-  new THREE.BoxGeometry(2, 4, 0),
-  new THREE.MeshPhongMaterial( { 
-    color: "#eee", 
-    wireframe: false,
-  })
-);
-frontDoor.position.set(0, 0, -9.9);
-
-scene.add( 
-  // meshRoof,  
-  wall_1, 
-  wall_2,
-  meshFloor, 
-  frontDoor
-);
-
-const ambientLight = new THREE.AmbientLight("#ffffff", 0.3);
-scene.add(ambientLight);
-
-const light = new THREE.PointLight("red", 0.8, 18);
-light.position.set(-3, 6, -3);
-light.castShadow = true;
-light.shadow.camera.near = 0.1;
-light.shadow.camera.near = 0.1;
-light.shadow.camera.far = 5;
-scene.add(light);
-
-camera.position.set(0, player.height, -5);
-camera.lookAt(new THREE.Vector3(0, player.height, 0));
-
-function animate() {
-  requestAnimationFrame( animate );
-
-  // wall_1.rotation.y += 0.01;
-
-  renderer.render( scene, camera );
-};
-animate();
-
-window.addEventListener("keydown", (e) => {
-  const k = e.key;
-
-  if(k === "w"){ 
-		camera.position.x -= Math.sin(camera.rotation.y) * player.speed;
-		camera.position.z -= -Math.cos(camera.rotation.y) * player.speed;
-	}
-  if(k === "a"){ 
-    camera.position.x += Math.sin(camera.rotation.y + Math.PI/2) * player.speed;
-    camera.position.z += -Math.cos(camera.rotation.y + Math.PI/2) * player.speed;
-  }
-	if(k === "s"){ 
-		camera.position.x += Math.sin(camera.rotation.y) * player.speed;
-		camera.position.z += -Math.cos(camera.rotation.y) * player.speed;
-	}
-	if(k === "d"){ 
-		camera.position.x += Math.sin(camera.rotation.y - Math.PI/2) * player.speed;
-		camera.position.z += -Math.cos(camera.rotation.y - Math.PI/2) * player.speed;
-	}
-});
+initGame();
