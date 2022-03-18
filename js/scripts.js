@@ -1,6 +1,7 @@
 import * as THREE from "./three-js/build/three.module.js";
 import { OrbitControls } from "./three-js/examples/jsm/controls/OrbitControls.js";
 import { PointerLockControls } from "./three-js/examples/jsm/controls/PointerLockControls.js";
+import { Flow } from "./three-js/examples/jsm/modifiers/CurveModifier.js";
 import data from './params.js';
 
 const {roomWidth, roomLength, roomHeight, useWireframe} = data.room;
@@ -17,13 +18,14 @@ const initGame = () => {
   const canvas = document.querySelector('#canvas');
   const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: true });
   const controls = new PointerLockControls(camera, document.body);  
-  // const orbControls = new OrbitControls(camera, document.body);  
+  const orbControls = new OrbitControls(camera, document.body);  
   const velocity = new THREE.Vector3();
   const direction = new THREE.Vector3();  
   const blocker = document.getElementById( 'blocker' );
   const instructions = document.getElementById( 'instructions' );
   const elementsGroup = new THREE.Group();
   const tableGroup = new THREE.Group();
+  const panelGroup = new THREE.Group();
 
   let moveForward = false, moveBackward = false, moveLeft = false, moveRight = false;
   let prevTime = performance.now();  
@@ -137,16 +139,32 @@ const initGame = () => {
     table.position.y = -(roomHeight / 2) + 3 - (index / 5);
     tableGroup.add(table);
   });
+
+  const panel = Array.apply(null, Array(20)).map(() => { 
+    return new THREE.Mesh(
+      new THREE.PlaneGeometry((roomWidth / 3), (roomHeight / 2) ), 
+      new THREE.MeshPhongMaterial({ color: "pink", side: THREE.DoubleSide })
+    ); 
+  })
+  
+  panel.forEach((panel, index) => {
+    // if( index === globeTable.length - 1 ) table.castShadow = true;    
+    // table.rotation.x -= Math.PI / 2;
+    panel.position.z = -20 + (index / 100);
+    panelGroup.add(panel);
+  });
+
   
   elementsGroup.add( 
-    elements.structure.roof,  
+    // elements.structure.roof,  
     elements.structure.floor,
     elements.lights.ambientLight,
     elements.lights.center,
     elements.lights.roof,
     elements.random.te,
     elements.miscellaneous.globe,
-    tableGroup
+    tableGroup,
+    panelGroup
   );  
 
   scene.background = elements.colors.roomBackground;
@@ -158,6 +176,8 @@ const initGame = () => {
   camera.lookAt(new THREE.Vector3(0, 0, 0));  
   
   // controls.maxPolarAngle = 3;  
+  orbControls.maxPolarAngle = Math.PI / 2;
+  orbControls.maxDistance = 300;
 
   renderer.setPixelRatio(window.devicePixelRatio);
   renderer.setSize(window.innerWidth, window.innerHeight);
@@ -295,7 +315,7 @@ const initGame = () => {
 
       let intersects = [];    
       intersects = ray.intersectObjects( scene.children );
-      console.log(intersects)
+      // console.log(intersects)
 
       // if(intersects.length > 0){
       //   intersects.forEach(el => {
@@ -317,5 +337,8 @@ const initGame = () => {
   }  
 
   animate(); 
+
+
+
 }
 initGame();
