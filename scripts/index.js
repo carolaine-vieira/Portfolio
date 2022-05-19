@@ -7,4 +7,5 @@ var swiper = new Swiper(".common-swiper", {
     nextEl: ".swiper_home_slide_pagination_next",
     prevEl: ".swiper_home_slide_pagination_prev",
   },
+  loop: true,
 });
