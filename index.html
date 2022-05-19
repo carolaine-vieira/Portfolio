@@ -1,119 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./style.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
-    />
-    <link rel="shortcut icon" href="./assets/favicon.png" type="image/x-icon" />
-    <title>Portfólio</title>
-  </head>
-  <body>
-    <section id="main">
-      <div class="container-main">
-        <aside>
-          <div class="container">
-            <h1>Carolaine Vieira <sub>Portfolio </sub></h1>
-            <h2>Links rápidos</h2>
-            <ul>
-              <li>
-                <a
-                  href="./assets/Curriculo-Carolaine-Vieira.pdf"
-                  target="_blank"
-                  >Currículo</a
-                >
-              </li>
-              <li><a href="mailto:s.carolaine.v@gmail.com">Email</a></li>
-              <li><a href="https://github.com/carolaine-vieira">GitHub </a></li>
-              <li><a class="switch-mode" href=""> </a></li>
-            </ul>
-          </div>
-        </aside>
-        <div id="notebook">
-          <div class="screen-container">
-            <div class="controls-container">
-              <a class="close-modal">
-                <span class="fa fa-times"></span><span>Fechar</span></a
-              ><a class="maximize-modal">
-                <span class="fa fa-expand"></span><span>Aumentar</span></a
-              ><a class="minimize-modal">
-                <span class="fa fa-compress"></span><span>Diminuir</span></a
-              >
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="./style/index.css" />
+  <title>Portfólio &mdash; Carolaine Vieira</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+</head>
+
+<body>
+  <header>
+    <div class="wrapper">
+      <h1 class="site-title"><a href="/">Portfólio</a></h1>
+      <nav class="header-links">
+        <ul>
+          <li><a href="" download>Currículo</a></li>
+          <li><a href="/page/about.html">Sobre</a></li>
+          <li><a href="/" class="active">Projetos</a></li>
+          <li><a href="/page/links.html">Links</a></li>
+          <li><a href="/page/random.html">Random</a></li>
+        </ul>
+      </nav>
+      <nav class="social-links">
+        <ul>
+          <li><a href="">git</a></li>
+          <li><a href="">be</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <main>
+    <section id="site-intro">
+      Olá, meu nome é <span>Carolaine Vieira</span>. Sou desenvolvedora
+      Front-End e uma entusiasta de UI/UX.
+    </section>
+    <section id="main" class="home">
+      <div class="swiper common-swiper swiper_home">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide swiper_home_slide">
+            <div class="swiper_home_slide_top">
+              <span class="swiper_home_slide_top_technology">React</span>
+              <a href="" class="swiper_home_slide_top_view">Visualizar</a>
             </div>
-            <div class="screen">
-              <ul id="screen-links">
-                <li>
-                  <a class="skills" title="Pasta com sumário de habilidades"
-                    ><span class="fa fa-folder"></span
-                    ><span class="sub">Habilidades</span></a
-                  >
-                </li>
-                <li>
-                  <a class="projects" title="Projetos concluídos ou não"
-                    ><span class="fa fa-folder"></span
-                    ><span class="sub">Projetos</span></a
-                  >
-                </li>
-                <li>
-                  <a class="topics" title="Alguns assuntos que estudei"
-                    ><span class="fa fa-file-pdf"></span
-                    ><span class="sub">Tópicos Estudados</span></a
-                  >
-                </li>
-                <li>
-                  <a class="links"
-                    ><span class="fa fa-folder"></span
-                    ><span class="sub">Links</span></a
-                  >
-                </li>
-                <li>
-                  <a class="designs"
-                    ><span class="fa fa-images"></span
-                    ><span class="sub">Designs no Figma e/ou Phot...</span></a
-                  >
-                </li>
-              </ul>
-              <div class="notes"></div>
-              <div class="open-folder">
-                <div class="explorer">
-                  <div class="header">
-                    <div class="left-controls">
-                      <a class="close-modal" title="Fechar"
-                        ><span class="fa fa-times"> </span></a
-                      ><a class="maximize-modal" title="Maximizar"
-                        ><span class="fa fa-window-maximize"></span></a
-                      ><a class="minimize-modal" title="Minimizar"
-                        ><span class="fa fa-window-minimize"></span
-                      ></a>
-                    </div>
-                    <div class="label"></div>
-                  </div>
-                  <div class="container">
-                    <div class="left"></div>
-                    <div class="right"></div>
-                  </div>
-                </div>
-                <div class="view-container"></div>
+            <div class="swiper_home_slide_image"
+              style="background-image: url('https://images.unsplash.com/photo-1648737966100-18f790c93a86?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=80&raw_url=true&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687');">
+            </div>
+            <div class="swiper_home_slide_pagination">
+              <div class="swiper_home_slide_pagination_prev">
+                <span class="swiper_home_slide_pagination_label">Projeto Anterior</span>
+                <span class="swiper_home_slide_pagination_link">Twisted: PHP</span>
+              </div>
+              <div class="swiper_home_slide_pagination_next">
+                <span class="swiper_home_slide_pagination_label">Próximo Projeto</span>
+                <span class="swiper_home_slide_pagination_link">Effusus: PHP</span>
               </div>
             </div>
           </div>
-          <div class="basis"></div>
+
+          <div class="swiper-slide swiper_home_slide">
+            <div class="swiper_home_slide_top">
+              <span class="swiper_home_slide_top_technology">php</span>
+              <a href="">Visualizar</a>
+            </div>
+            <div class="swiper_home_slide_image"
+              style="background-image: url('https://images.unsplash.com/photo-1652883123239-e3ddfeb85f6e?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=80&raw_url=true&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1331');">
+            </div>
+            <div class="swiper_home_slide_pagination">
+              <div class="swiper_home_slide_pagination_prev">
+                <span class="swiper_home_slide_pagination_label">Projeto Anterior</span>
+                <span class="swiper_home_slide_pagination_link">Twisted: PHP</span>
+              </div>
+              <div class="swiper_home_slide_pagination_next">
+                <span class="swiper_home_slide_pagination_label">Projeto Anterior</span>
+                <span class="swiper_home_slide_pagination_link">Twisted: PHP</span>
+              </div>
+            </div>
+          </div>
         </div>
+
+        <!-- <div class="swiper-pagination"></div> -->
       </div>
     </section>
-  </body>
-  <script
-    type="text/javascript"
-    src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"
-  ></script>
-  <script
-    type="text/javascript"
-    src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"
-  ></script>
-  <script src="https://npmcdn.com/isotope-layout@3/dist/isotope.pkgd.js"></script>
-  <script type="module" src="./js/script.js" defer></script>
+  </main>
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  <script src="./scripts/index.js" defer></script>
+</body>
+
 </html>
