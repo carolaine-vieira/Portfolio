@@ -50,9 +50,8 @@ section.home .swiper_home_slide_top_view {
 }
 
 section.home .swiper_home_slide_image {
-  height: 60vh;
-  background-size: cover;
-  background-repeat: no-repeat;
+  max-height: 65vh;
+  overflow: hidden;
 }
 
 section.home .swiper_home_slide_pagination {

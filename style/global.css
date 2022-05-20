@@ -1,6 +1,7 @@
 :root {
-  --color-accent-one: #2C3E50;
-  --color-accent-two: #CB997E;
+  --color-accent-one: #222;
+  --color-accent-two: #42c0c2;
+  --color-soft-black: #333333;
   --color-white: #fff;
   --color-black: #333;
   --color-soft-gray: #eee;
@@ -41,6 +42,11 @@ ul {
 
 ul li {
   list-style: none;
+}
+
+img {
+  max-width: 100%;
+  margin-bottom: -4px;
 }
 
 a,
@@ -333,17 +339,81 @@ footer .footer__right_links ul a:hover {
   padding: var(--padding-default);
   border-radius: 5px;
   z-index: 1;
+  margin-bottom: 5%;
+  gap: 10px;
 }
 
-.playground-container .playground__colors {
+.playground-container .playground__button_save {
+  background-color: var(--color-accent-one);
+  color: var(--color-white);
+  padding: 15px;
+  font-family: var(--font-body);
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  margin-top: 40px;
+  cursor: pointer;
+}
+
+.playground-container .playground__button_save:hover {
+  background-color: var(--color-accent-two);
+}
+
+.playground-container .playground__item_title {
+  margin: 0 0 30px 0;
+  font-weight: 500;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.playground-container .playground__item_title::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  width: 100%;
+  z-index: 0;
+  border-bottom: 1px solid var(--color-accent-one);
+  opacity: 0.2;
+}
+
+.playground-container .playground__item_title span {
+  background-color: var(--color-white);
+  display: inline-block;
+  position: relative;
+  z-index: 1;
+  padding: 0 30px;
+}
+
+.playground-container .playground__colors .wrapper {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (1fr)[5];
-      grid-template-columns: repeat(5, 1fr);
+  -ms-grid-columns: (1fr)[3];
+      grid-template-columns: repeat(3, 1fr);
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
   text-align: center;
+  gap: 10px;
+}
+
+.playground-container .playground__colors_item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: var(--color-soft-gray);
+  border-radius: 3px;
+  padding: 3px 5px;
 }
 
 .playground-container .playground__colors_item_color {
@@ -354,6 +424,13 @@ footer .footer__right_links ul a:hover {
   width: 40px;
   height: 40px;
   padding: 0;
+  margin: 0;
   cursor: pointer;
+}
+
+.playground-container .playground__colors_item_label {
+  font-weight: 500;
+  font-size: 14px;
+  margin-left: 6px;
 }
 /*# sourceMappingURL=global.css.map */

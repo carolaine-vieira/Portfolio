@@ -44,9 +44,8 @@ section.home {
       }
   
       &_image {
-        height: 60vh;
-        background-size: cover;
-        background-repeat: no-repeat;
+        max-height: 65vh;
+        overflow: hidden;
       }
   
       &_pagination {
