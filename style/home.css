@@ -1,0 +1,97 @@
+section.home {
+  position: relative;
+  background-color: var(--color-accent-one);
+  min-height: 60vh;
+  padding-top: 0px !important;
+}
+
+section.home::before {
+  height: 1000px;
+  top: -80px;
+  background-image: url("../assets//SVGS/wave-1.svg");
+}
+
+section.home::after {
+  background-color: var(--color-accent-two);
+  height: 100vh;
+  top: 80px;
+  z-index: 0;
+}
+
+section.home .swiper_home {
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+section.home .swiper_home_slide_top, section.home .swiper_home_slide_pagination {
+  background-color: var(--color-white);
+  padding: 25px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+section.home .swiper_home_slide_top {
+  border-radius: 5px 5px 0 0;
+}
+
+section.home .swiper_home_slide_top_technology {
+  display: inline-block;
+  padding: 5px 10px;
+  border-radius: 5px;
+  background-color: #eee;
+  font-size: 12px;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+section.home .swiper_home_slide_top_view {
+  font-weight: 500;
+}
+
+section.home .swiper_home_slide_image {
+  height: 60vh;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+section.home .swiper_home_slide_pagination {
+  border-radius: 0 0 5px 5px;
+}
+
+section.home .swiper_home_slide_pagination_label, section.home .swiper_home_slide_pagination_link {
+  display: block;
+}
+
+section.home .swiper_home_slide_pagination_label {
+  margin-bottom: 5px;
+  font-size: 13px;
+}
+
+section.home .swiper_home_slide_pagination_link {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+section.home .swiper_home_slide_pagination_prev, section.home .swiper_home_slide_pagination_next {
+  cursor: pointer;
+}
+
+section.home .swiper_home_slide_pagination_prev:hover {
+  color: var(--color-accent-two);
+}
+
+section.home .swiper_home_slide_pagination_next {
+  text-align: right;
+}
+
+section.home .swiper_home_slide_pagination_next:hover {
+  color: var(--color-accent-one);
+}
+/*# sourceMappingURL=home.css.map */

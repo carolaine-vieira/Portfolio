@@ -5,7 +5,8 @@
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="./style/index.css" />
+  <link rel="stylesheet" href="./style/global.css" />
+  <link rel="stylesheet" href="./style/home.css" />
   <title>Portfólio &mdash; Carolaine Vieira</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -23,16 +24,13 @@
       <nav class="header-links">
         <ul>
           <li><a href="" download>Currículo</a></li>
-          <li><a href="/page/about.html">Sobre</a></li>
           <li><a href="/" class="active">Projetos</a></li>
-          <li><a href="/page/links.html">Links</a></li>
-          <li><a href="/page/random.html">Random</a></li>
+          <li><a href="/playground">Playground</a></li>
         </ul>
       </nav>
       <nav class="social-links">
         <ul>
-          <li><a href="">git</a></li>
-          <li><a href="">be</a></li>
+          <li><a href=""><span class="fa fa-github"></span></a></li>
         </ul>
       </nav>
     </div>
@@ -54,11 +52,11 @@
               style="background-image: url('https://images.unsplash.com/photo-1648737966100-18f790c93a86?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=80&raw_url=true&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687');">
             </div>
             <div class="swiper_home_slide_pagination">
-              <div class="swiper_home_slide_pagination_prev">
+              <div class="swiper_home_slide_pagination_prev swiper_pagination_prev">
                 <span class="swiper_home_slide_pagination_label">Projeto Anterior</span>
                 <span class="swiper_home_slide_pagination_link">Random: HTML</span>
               </div>
-              <div class="swiper_home_slide_pagination_next">
+              <div class="swiper_home_slide_pagination_next swiper_pagination_next">
                 <span class="swiper_home_slide_pagination_label">Próximo Projeto</span>
                 <span class="swiper_home_slide_pagination_link">Effusus: PHP</span>
               </div>
@@ -74,11 +72,11 @@
               style="background-image: url('./assets/images/effusus-thumbnail.png');">
             </div>
             <div class="swiper_home_slide_pagination">
-              <div class="swiper_home_slide_pagination_prev">
+              <div class="swiper_home_slide_pagination_prev swiper_pagination_prev">
                 <span class="swiper_home_slide_pagination_label">Projeto Anterior</span>
                 <span class="swiper_home_slide_pagination_link">Pizzaria: React</span>
               </div>
-              <div class="swiper_home_slide_pagination_next">
+              <div class="swiper_home_slide_pagination_next swiper_pagination_next">
                 <span class="swiper_home_slide_pagination_label">Próximo Projeto</span>
                 <span class="swiper_home_slide_pagination_link">Twisted: PHP</span>
               </div>
@@ -94,11 +92,11 @@
               style="background-image: url('./assets/images/twisted-thumbnail.png');">
             </div>
             <div class="swiper_home_slide_pagination">
-              <div class="swiper_home_slide_pagination_prev">
+              <div class="swiper_home_slide_pagination_prev swiper_pagination_prev">
                 <span class="swiper_home_slide_pagination_label">Projeto Anterior</span>
                 <span class="swiper_home_slide_pagination_link">Effusus: PHP</span>
               </div>
-              <div class="swiper_home_slide_pagination_next">
+              <div class="swiper_home_slide_pagination_next swiper_pagination_next">
                 <span class="swiper_home_slide_pagination_label">Próximo Projeto</span>
                 <span class="swiper_home_slide_pagination_link">Random: HTML</span>
               </div>
@@ -114,18 +112,16 @@
               style="background-image: url('./assets/images/twisted-thumbnail.png');">
             </div>
             <div class="swiper_home_slide_pagination">
-              <div class="swiper_home_slide_pagination_prev">
+              <div class="swiper_home_slide_pagination_prev swiper_pagination_prev">
                 <span class="swiper_home_slide_pagination_label">Projeto Anterior</span>
                 <span class="swiper_home_slide_pagination_link">Twisted: PHP</span>
               </div>
-              <div class="swiper_home_slide_pagination_next">
+              <div class="swiper_home_slide_pagination_next swiper_pagination_next">
                 <span class="swiper_home_slide_pagination_label">Próximo Projeto</span>
                 <span class="swiper_home_slide_pagination_link">Pizzaria: React</span>
               </div>
             </div>
           </div>
-
-          <!-- <div class="swiper-pagination"></div> -->
         </div>
     </section>
 
@@ -157,7 +153,7 @@
         <div class="footer_right">
           <ul class="footer_right_social_links">
             <li class="footer_right_social_links_item">
-              <a href="/">
+              <a href="mailto:s.carolaine.v@gmail.com">
                 <span class="icon"><span class="fa fa-envelope"></span></span>
                 <span class="title">
                   endereço
@@ -180,7 +176,8 @@
     </footer>
   </main>
   <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-  <script src="./scripts/index.js" defer></script>
+  <script type="module" src="./scripts/index.js" defer></script>
+  <script type="module" src="./scripts/home.js" defer></script>
 </body>
 
 </html>

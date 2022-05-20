@@ -1,0 +1,97 @@
+section.home {
+  position: relative;
+  background-color: var(--color-accent-one);
+  min-height: 60vh;
+  padding-top: 0px !important;
+
+  &::before {    
+    height: 1000px;
+    top: -80px;
+    background-image: url('../assets//SVGS/wave-1.svg');
+  }
+
+  &::after {
+    background-color: var(--color-accent-two);
+    height: 100vh;
+    top: 80px;
+    z-index: 0;
+  }
+
+  .swiper_home {
+    border-radius: 5px;
+    overflow: hidden;
+
+    &_slide {
+      &_top, 
+      &_pagination {
+        background-color: var(--color-white);      
+        padding: 25px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+  
+      &_top {      
+        border-radius: 5px 5px 0 0;
+  
+        &_technology {
+          display: inline-block;
+          padding: 5px 10px;
+          border-radius: 5px;
+          background-color: #eee;
+          font-size: 12px;
+          text-transform: uppercase;
+          font-weight: 500;
+        }
+  
+        &_view {
+          font-weight: 500;
+        }
+      }
+  
+      &_image {
+        height: 60vh;
+        background-size: cover;
+        background-repeat: no-repeat;
+      }
+  
+      &_pagination {
+        border-radius: 0 0 5px 5px;
+  
+        &_label,
+        &_link {
+          display: block;
+        }
+  
+        &_label {
+          margin-bottom: 5px;
+          font-size: 13px;
+        }
+  
+        &_link {
+          font-size: 16px;
+          font-weight: 600;
+        }
+  
+        &_prev,
+        &_next {
+          cursor: pointer;
+        }
+
+        &_prev {
+          &:hover {
+            color: var(--color-accent-two);
+          }
+        }
+
+        &_next {
+          text-align: right;
+
+          &:hover {
+            color: var(--color-accent-one);
+          }
+        }
+      }
+    }
+  }
+}
