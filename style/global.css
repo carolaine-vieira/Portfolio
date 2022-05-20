@@ -116,6 +116,10 @@ a:hover {
   color: var(--color-accent-two);
 }
 
+.header__links li a.active {
+  color: var(--color-accent-two);
+}
+
 .header__links li a::before {
   top: 0;
   margin-top: -32px;

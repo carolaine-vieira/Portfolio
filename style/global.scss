@@ -105,6 +105,10 @@ a:hover {
   &__links {
     li {
       a {
+        &.active {
+          color: var(--color-accent-two);
+        }
+
         &::before {
           @extend .title-bullets;
           top: 0;
