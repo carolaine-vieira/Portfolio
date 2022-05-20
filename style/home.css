@@ -52,6 +52,10 @@ section.home .swiper_home_slide_image {
   overflow: hidden;
 }
 
+section.home .swiper_home_slide_image img {
+  width: 100%;
+}
+
 @media (max-width: 768px) {
   section.home .swiper_home_slide_image {
     max-height: 300px;
