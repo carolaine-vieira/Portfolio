@@ -5,16 +5,10 @@ section.home {
   padding-top: 0px !important;
 }
 
-section.home::before {
-  height: 1000px;
-  top: -80px;
-  background-image: url("../assets//SVGS/wave-1.svg");
-}
-
 section.home::after {
   background-color: var(--color-accent-two);
   height: 100vh;
-  top: 80px;
+  top: 200px;
   z-index: 0;
 }
 
@@ -99,5 +93,9 @@ footer {
   background-color: var(--color-accent-two);
   padding-top: var(--padding-default);
   background-position: 0 120px;
+}
+
+.home-header-svg path {
+  fill: var(--color-accent-two);
 }
 /*# sourceMappingURL=home.css.map */

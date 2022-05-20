@@ -4,12 +4,6 @@ section.project {
   position: relative;
 }
 
-section.project::before {
-  background-image: url("../assets/SVGS/wave-3.svg");
-  top: 0;
-  height: 300px;
-}
-
 section.project::after {
   background-color: var(--color-white);
   height: 100vh;

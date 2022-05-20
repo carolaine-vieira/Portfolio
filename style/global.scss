@@ -30,6 +30,7 @@ body {
 main {
   background-color: var(--color-accent-one);
   overflow: hidden;
+  position: relative;
 }
 
 ul {
@@ -141,6 +142,7 @@ section#site-intro {
 
 section#main {
   padding: 0 var(--padding-default);
+  position: relative;
 }
 
 section.home::after,
@@ -159,22 +161,19 @@ footer::after {
 }
 
 footer {
-  background-image: url('../assets//SVGS/wave-2.svg');  
   background-color: var(--color-white);
-  background-size: 100% auto;
-  background-repeat: no-repeat;
-  background-position: 0 80px;  
-  min-height: 400px;
   padding: 0px var(--padding-default) var(--padding-default) var(--padding-default);
   position: relative;
-  z-index: 1;
   top: 0;
+  overflow: hidden;
 
-  &::after {
-    background-color: var(--color-accent-one);
-    height: fit-content;
-    margin-top: 20px;
-    z-index: 0;
+  .svg-container {
+    height: 300px;
+    bottom: 0;
+
+    path {
+      fill: var(--color-accent-one);
+    }
   }
 
   .footer {
@@ -185,7 +184,8 @@ footer {
     display: flex;
     justify-content: space-between;
     color: var(--color-white);
-    top: -100px;
+    position: relative;
+    z-index: 2;
 
     &__left,
     &__right {
@@ -278,6 +278,22 @@ footer {
   }
 }
 
+.svg-container {
+  position: absolute;
+  width: 100%;
+  height: 500px;
+  z-index: 1;
+  left: 0;
+}
+
+#wave-3 {
+  background-color: var(--color-white);
+  margin-bottom: -6px;
+}
+#wave-3 path {
+  fill: var(--color-accent-one);
+}
+
 .playground-container {  
   background-color: var(--color-white);
   position: relative;
@@ -285,12 +301,7 @@ footer {
   min-height: 30vh;
 
   &::before {
-    background-image: url('../assets/SVGS/wave-3.svg');
     top: 0;
-    height: 300px;
-  }
-
-  &::after {
     background-color: var(--color-white);
     height: 100vh;
   }
@@ -302,6 +313,7 @@ footer {
     position: relative;
     padding: var(--padding-default);
     border-radius: 5px;
+    z-index: 1;
 
     &__colors {
       display: grid;
