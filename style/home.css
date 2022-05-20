@@ -94,4 +94,10 @@ section.home .swiper_home_slide_pagination_next {
 section.home .swiper_home_slide_pagination_next:hover {
   color: var(--color-accent-one);
 }
+
+footer {
+  background-color: var(--color-accent-two);
+  padding-top: var(--padding-default);
+  background-position: 0 120px;
+}
 /*# sourceMappingURL=home.css.map */
