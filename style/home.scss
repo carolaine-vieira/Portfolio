@@ -1,7 +1,6 @@
 section.home {
   position: relative;
-  background-color: var(--color-accent-one);
-  min-height: 60vh;
+  background-color: var(--color-accent-one);  
   padding-top: 0px !important;
 
   &::after {
@@ -43,9 +42,16 @@ section.home {
         }
       }
   
-      &_image {
-        max-height: 65vh;
+      &_image {        
         overflow: hidden;
+
+        @media (max-width: 768px) {
+          max-height: 300px;
+        }
+
+        @media (min-width: 769px) {
+          max-height: 65vh;
+        }
       }
   
       &_pagination {
@@ -86,6 +92,14 @@ section.home {
         }
       }
     }
+  }
+
+  @media (min-width: 769px) {
+    min-height: 60vh;
+  }
+
+  @media (max-width: 768px) {
+    margin-bottom: 5%;
   }
 }
 
