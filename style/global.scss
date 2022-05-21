@@ -1,4 +1,5 @@
 @import './variables.scss';
+@import './effects.scss';
 
 :root {
   --color-accent-one: #222;
@@ -154,6 +155,7 @@ section#site-intro {
   font-size: 28px;
   padding: 40px;
   margin-bottom: 30px;
+  @extend .zoom-out;
 
   span {
     color: var(--color-accent-two);
