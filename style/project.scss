@@ -13,9 +13,9 @@ section.project {
     overflow: hidden;
 
     &_slide {
-      // &_image {
-      //   max-height: 700px;
-      // }
+      &_image {
+        width: 100%;
+      }
     }
 
     &_pagination_prev,
