@@ -1,3 +1,5 @@
+@import './variables.scss';
+
 :root {
   --color-accent-one: #222;
   --color-accent-two: #c2424f;
@@ -8,6 +10,10 @@
 
   --font-body: 'Montserrat', sans-serif;
   --padding-default: 5%;
+
+  @media (max-width: $mobile) {
+    --padding-default: 30px;
+  }
 }
 
 body, html {
@@ -120,7 +126,7 @@ a:hover {
       }      
     }
     
-    @media (max-width: 768px) {
+    @media (max-width: $tablet) {
       display: none;
     }
   }
@@ -132,10 +138,6 @@ a:hover {
 
   &__social_links {
     font-size: 30px;
-  }
-
-  @media (max-width: 768px) {
-    margin-bottom: 5%;
   }
 }
 
@@ -153,9 +155,15 @@ section#site-intro {
     color: var(--color-accent-two);
   }
 
-  @media (max-width: 768px) {
-    padding-top: 10px;
+  @media (max-width: $tablet) {
+    padding: 10px 20px 20px 20px;
     font-size: 22px;
+    margin-bottom: 30px;
+  }
+
+  @media (max-width: $mobile) {
+    font-size: 20px;
+    max-width: 80%;
   }
 }
 
@@ -181,7 +189,7 @@ footer::after {
 
 footer {
   background-color: var(--color-white);
-  padding: 0px var(--padding-default) var(--padding-default) var(--padding-default);
+  padding: 0 0 var(--padding-default) 0;
   position: relative;
   top: 0;
   overflow: hidden;
@@ -194,8 +202,12 @@ footer {
       fill: var(--color-accent-one);
     }
 
-    @media (max-width: 768px) {
-      height: 250px;
+    @media (max-width: $tablet) {
+      height: 500px;
+
+      svg {
+        height: 100%;
+      }
     }
   }
 
@@ -231,15 +243,28 @@ footer {
             .icon {
               padding: 10px 20px 10px 0;
 
-              @media (max-width: 768px) {
+              @media (max-width: $tablet) {
                 display: none;
               }
             }
 
-            @media (max-width: 768px) {
+            @media (max-width: $tablet) {
               justify-content: center;
             }
           }
+        }
+
+        @media (max-width: $tablet) {
+          display: flex;
+
+          li {
+            flex: 1 0 50%;
+          }
+        }
+
+        @media (max-width: $mobile) {
+          display: flex;
+          flex-direction: column;
         }
       }    
     }
@@ -261,6 +286,10 @@ footer {
       b {
         display: block;
       }
+
+      @media (max-width: $mobile) {
+        padding: 35px 20px;
+      }
     }
 
     &__left {
@@ -273,16 +302,20 @@ footer {
         position: relative;
         font-weight: 600;
 
-        @media (max-width: 768px) {
-          display: flex;
-          justify-content: center;
-        }
-
         &::before {          
           @extend .title-bullets;
           bottom: -10px;
           font-size: 40px;
           letter-spacing: 8px;
+        }
+
+        @media (max-width: $tablet) {
+          display: flex;
+          justify-content: center;
+        }
+
+        @media (max-width: $mobile) {
+          font-size: 20px;
         }
       }  
     }
@@ -309,22 +342,27 @@ footer {
             color: var(--color-accent-two);
           }
 
-          @media (max-width: 768px) {
+          @media (max-width: $tablet) {
             grid-template-columns: repeat(2, 1fr);
           }
         }
       }
     }
 
-    @media (max-width: 768px) {
+    @media (max-width: $tablet) {
       flex-direction: column;
       justify-content: center;
+      margin: 0 var(--padding-default);
 
       &__left,
       &__right { 
         text-align: center;        
       }
     }
+  }
+
+  @media (max-width: $mobile) {
+    font-size: 14px;
   }
 }
 
