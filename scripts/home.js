@@ -4,5 +4,6 @@ var swiper = new Swiper(".common-swiper", {
     prevEl: ".swiper_pagination_prev",
   },
   loop: true,
+  initialSlide: 2,
 });
 

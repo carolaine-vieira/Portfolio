@@ -176,7 +176,7 @@ section.project .swipers-container .swiper_multi_prev::after, section.project .s
   color: var(--color-accent-two);
 }
 
-.artifacts__item_image span.lnr-rocket, .artifacts__item_image span.lnr-picture {
+.artifacts__item_image span.lnr-rocket, .artifacts__item_image span.lnr-picture, .artifacts__item_image span.lnr-code {
   color: var(--color-accent-one);
 }
 
