@@ -39,6 +39,10 @@ section.home {
   
         &_view {
           font-weight: 500;
+
+          &:hover {
+            color: var(--color-accent-two);
+          }
         }
       }
   
@@ -79,19 +83,9 @@ section.home {
         &_prev,
         &_next {
           cursor: pointer;
-        }
 
-        &_prev {
           &:hover {
             color: var(--color-accent-two);
-          }
-        }
-
-        &_next {
-          text-align: right;
-
-          &:hover {
-            color: var(--color-accent-one);
           }
         }
       }

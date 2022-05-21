@@ -48,6 +48,10 @@ section.home .swiper_home_slide_top_view {
   font-weight: 500;
 }
 
+section.home .swiper_home_slide_top_view:hover {
+  color: var(--color-accent-two);
+}
+
 section.home .swiper_home_slide_image {
   overflow: hidden;
 }
@@ -90,16 +94,8 @@ section.home .swiper_home_slide_pagination_prev, section.home .swiper_home_slide
   cursor: pointer;
 }
 
-section.home .swiper_home_slide_pagination_prev:hover {
+section.home .swiper_home_slide_pagination_prev:hover, section.home .swiper_home_slide_pagination_next:hover {
   color: var(--color-accent-two);
-}
-
-section.home .swiper_home_slide_pagination_next {
-  text-align: right;
-}
-
-section.home .swiper_home_slide_pagination_next:hover {
-  color: var(--color-accent-one);
 }
 
 @media (min-width: 769px) {

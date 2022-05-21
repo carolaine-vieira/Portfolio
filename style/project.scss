@@ -13,16 +13,16 @@ section.project {
     overflow: hidden;
 
     &_slide {
-      &_image {
-        height: 50vh;
-        background-size: 100% auto;
-      }
+      // &_image {
+      //   max-height: 700px;
+      // }
     }
 
     &_pagination_prev,
     &_pagination_next {
       color: var(--color-white);  
-      z-index: 9;      
+      z-index: 9;    
+      text-shadow: 0 0 5px #000;  
     }
     
     &_pagination_prev::after,
@@ -44,6 +44,8 @@ section.project {
       padding: 15px 25px;
       display: flex;
       justify-content: space-between;
+      z-index: 1;
+      position: relative;
     }
     
     &_pagination_count {
@@ -161,12 +163,12 @@ section.project {
         font-size: 50px;
 
         &.fa-figma,
-        &.lnr-picture {
+        &.lnr-file-empty {
           color: var(--color-accent-two);
         }
 
         &.lnr-rocket,
-        &.lnr-file {
+        &.lnr-picture {
           color: var(--color-accent-one);
         }
       }

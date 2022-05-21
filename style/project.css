@@ -14,14 +14,10 @@ section.project .swiper_project {
   overflow: hidden;
 }
 
-section.project .swiper_project_slide_image {
-  height: 50vh;
-  background-size: 100% auto;
-}
-
 section.project .swiper_project_pagination_prev, section.project .swiper_project_pagination_next {
   color: var(--color-white);
   z-index: 9;
+  text-shadow: 0 0 5px #000;
 }
 
 section.project .swiper_project_pagination_prev::after, section.project .swiper_project_pagination_next::after {
@@ -46,6 +42,8 @@ section.project .swiper_project_info {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  z-index: 1;
+  position: relative;
 }
 
 section.project .swiper_project_pagination_count {
@@ -170,11 +168,11 @@ section.project .swipers-container .swiper_multi_prev::after, section.project .s
   font-size: 50px;
 }
 
-.artifacts__item_image span.fa-figma, .artifacts__item_image span.lnr-picture {
+.artifacts__item_image span.fa-figma, .artifacts__item_image span.lnr-file-empty {
   color: var(--color-accent-two);
 }
 
-.artifacts__item_image span.lnr-rocket, .artifacts__item_image span.lnr-file {
+.artifacts__item_image span.lnr-rocket, .artifacts__item_image span.lnr-picture {
   color: var(--color-accent-one);
 }
 
