@@ -126,7 +126,7 @@ section.home .swiper_home_slide_pagination_next {
   }
 }
 
-@media (min-width: calc($tablet + 1px)) {
+@media (min-width: 769px) {
   section.home {
     min-height: 60vh;
   }

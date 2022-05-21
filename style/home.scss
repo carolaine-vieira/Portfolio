@@ -114,7 +114,7 @@ section.home {
     }
   }
 
-  @media (min-width: calc($tablet + 1px)) {
+  @media (min-width: ($tablet + 1)) {
     min-height: 60vh;
   }
 

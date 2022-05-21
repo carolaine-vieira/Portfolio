@@ -139,6 +139,10 @@ a:hover {
   &__social_links {
     font-size: 30px;
   }
+
+  @media (max-width: $tablet) {
+    padding: var(--padding-default);
+  }
 }
 
 section#site-intro {
@@ -208,7 +212,7 @@ footer {
       svg {
         height: 100%;
       }
-    }
+    }  
   }
 
   .footer {
@@ -363,6 +367,7 @@ footer {
 
   @media (max-width: $mobile) {
     font-size: 14px;
+    margin-top: -1px;
   }
 }
 
@@ -376,7 +381,15 @@ footer {
 
 #wave-3 {
   background-color: var(--color-white);
-  margin-bottom: -6px;
+  margin-bottom: -6px;  
+
+  @media (max-width: $tablet) {
+    margin-top: -8px;
+  }
+
+  @media (max-width: $mobile) {
+    margin-top: -10px;
+  }
 }
 #wave-3 path {
   fill: var(--color-accent-one);

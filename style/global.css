@@ -148,6 +148,12 @@ a:hover {
   font-size: 30px;
 }
 
+@media (max-width: 768px) {
+  .header {
+    padding: var(--padding-default);
+  }
+}
+
 section#site-intro {
   max-width: 550px;
   margin: 0 auto;
@@ -420,6 +426,7 @@ footer .footer__right_links ul a:hover {
 @media (max-width: 580px) {
   footer {
     font-size: 14px;
+    margin-top: -1px;
   }
 }
 
@@ -434,6 +441,18 @@ footer .footer__right_links ul a:hover {
 #wave-3 {
   background-color: var(--color-white);
   margin-bottom: -6px;
+}
+
+@media (max-width: 768px) {
+  #wave-3 {
+    margin-top: -8px;
+  }
+}
+
+@media (max-width: 580px) {
+  #wave-3 {
+    margin-top: -10px;
+  }
 }
 
 #wave-3 path {

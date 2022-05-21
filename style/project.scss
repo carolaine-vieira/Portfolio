@@ -1,3 +1,5 @@
+@import './variables.scss';
+
 section.project {
   background: var(--color-white);
   padding: 0 var(--padding-default) var(--padding-default) var(--padding-default) !important;
@@ -23,19 +25,35 @@ section.project {
       color: var(--color-white);  
       z-index: 9;    
       text-shadow: 0 0 5px #000;  
+
+      @media (max-width: $mobile) {
+        top: 35px;
+      }
     }
     
     &_pagination_prev::after,
     &_pagination_next::after {
       font-size: 35px;
+
+      @media (max-width: $mobile) {
+        font-size: 20px;
+      }
     }
 
     &_pagination_prev {
       left: 20px;
+
+      @media (max-width: $mobile) {
+        left: 15px;
+      }
     }
 
     &_pagination_next {
       right: 20px;
+
+      @media (max-width: $mobile) {
+        right: 15px;
+      }
     }
 
     &_info {
@@ -46,6 +64,12 @@ section.project {
       justify-content: space-between;
       z-index: 1;
       position: relative;
+
+      @media (max-width: $mobile) {
+        flex-direction: column;
+        gap: 20px;
+        font-size: 14px;
+      }
     }
     
     &_pagination_count {
@@ -54,95 +78,9 @@ section.project {
       .swiper-pagination-current {
         font-weight: 600;
       }
-    }
-  }
 
-  .about {
-    padding: var(--padding-default);
-    text-align: center;
-
-    &_title {
-      font-size: 25px;
-      font-weight: 700;
-      color: transparent;
-      display: flex;
-      justify-content: center;
-      margin: 0 0 50px 0;
-
-      &[data-shadow] {
-        position:relative;
-      }
-      &[data-shadow]::before,
-      &[data-shadow]::after {
-        content:attr(data-shadow);
-        position:absolute;
-        top:0;
-      }
-      &[data-shadow]::before {
-        color: var(--color-accent-one);        
-        z-index: 1;
-        text-shadow:-.1em .15em 0 var(--color-soft-gray);
-      }
-      &[data-shadow]::after {        
-        color: var(--color-soft-gray);
-        font-size: 40px;
-        z-index: 0;
-        opacity: 0.8;
-        font-style: italic;
-      }
-    }    
-
-    &_description {
-      max-width: 50%;
-      padding: 20px;
-      margin: 0 auto;
-      font-weight: 300;
-      font-size: 17px;
-    }
-  }
-
-  .swipers-container {
-    display: flex;
-    gap: 20px;
-    overflow: hidden;
-
-    .swiper_multi {
-      overflow: hidden;
-      border-radius: 5px;
-      width: calc(100% / 3);
-
-      &_slide {
-        height: 20vh; 
-        min-height: 250px;
-        overflow: hidden;
-      }
-      
-      &_info {
-        position: absolute;
-        bottom: 15px;
-        margin: 0 15px;
-        width: calc(100% - 30px);
-        background-color: var(--color-black);
-        z-index: 1;
-        min-height: 20px;
-        padding: 6px 10px;
-        text-align: center;
-        font-size: 14px;
-        color: var(--color-white);
-        border-radius: 5px;
-      }
-
-      &_prev {
-        left: 10px;
-      }
-      &_next {
-        right: 0;
-      }
-
-      &_prev::after,
-      &_next::after {
-        font-size: 15px;
-        color: var(--color-white);
+      @media (max-width: $mobile) {
+        display: none;
       }
     }
   }
@@ -172,6 +110,14 @@ section.project {
         &.lnr-code {
           color: var(--color-accent-one);
         }
+
+        @media (max-width: $tablet) {
+          font-size: 40px;
+        }
+
+        @media (max-width: $mobile) {
+          font-size: 30px;
+        }
       }
     }
 
@@ -184,6 +130,16 @@ section.project {
     &_title {
       font-size: 17px;
       font-weight: 500;
+
+      @media (max-width: $tablet) {
+        font-size: 15px;
+      }
     }
+  }
+
+  @media (max-width: $mobile) {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+    margin-bottom: calc(var(--padding-default) * 2);
   }
 }
