@@ -5,5 +5,9 @@ var swiper = new Swiper(".common-swiper", {
   },
   loop: true,
   initialSlide: 1,
+  autoplay: {
+    delay: 4000,
+    pauseOnMouseEnter: true
+  },
 });
 
