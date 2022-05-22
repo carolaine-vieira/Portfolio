@@ -111,6 +111,24 @@ a:hover {
   text-decoration: none;
 }
 
+::-moz-selection {
+  background-color: var(--color-accent-two);
+  color: var(--color-white);
+}
+
+::selection {
+  background-color: var(--color-accent-two);
+  color: var(--color-white);
+}
+
+::-moz-selection b, ::-moz-selection i, ::-moz-selection a {
+  color: var(--color-white);
+}
+
+::selection b, ::selection i, ::selection a {
+  color: var(--color-white);
+}
+
 .wrapper {
   max-width: 1700px;
   margin: 0 auto;
@@ -338,16 +356,16 @@ footer .footer__left_social_links_item a .icon, footer .footer__right_social_lin
 }
 
 @media (max-width: 768px) {
-  footer .footer__left_social_links_item a .icon, footer .footer__right_social_links_item a .icon {
-    display: none;
-  }
-}
-
-@media (max-width: 768px) {
   footer .footer__left_social_links_item a, footer .footer__right_social_links_item a {
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
+  }
+}
+
+@media (max-width: 768px) {
+  footer .footer__left_social_links_item, footer .footer__right_social_links_item {
+    text-align: left;
   }
 }
 
@@ -376,10 +394,16 @@ footer .footer__left_social_links_item a .icon, footer .footer__right_social_lin
   }
 }
 
-footer .footer .fa,
 footer .footer .fa-brands,
 footer .footer .fa-solid {
   font-size: 30px;
+}
+
+@media (max-width: 768px) {
+  footer .footer .fa-brands,
+  footer .footer .fa-solid {
+    font-size: 28px;
+  }
 }
 
 footer .footer a {
@@ -591,22 +615,6 @@ footer .footer__right_links ul a:hover {
   gap: 10px;
 }
 
-.playground-container .playground__button_save {
-  background-color: var(--color-accent-one);
-  color: var(--color-white);
-  padding: 15px;
-  font-family: var(--font-body);
-  font-size: 16px;
-  border: none;
-  border-radius: 5px;
-  margin-top: 40px;
-  cursor: pointer;
-}
-
-.playground-container .playground__button_save:hover {
-  background-color: var(--color-accent-two);
-}
-
 .playground-container .playground__item_title {
   margin: 0 0 30px 0;
   font-weight: 500;
@@ -687,5 +695,27 @@ footer .footer__right_links ul a:hover {
   font-weight: 500;
   font-size: 14px;
   margin-left: 6px;
+}
+
+.playground-container .playground__button_save {
+  background-color: var(--color-accent-one);
+  color: var(--color-white);
+  padding: 15px;
+  font-family: var(--font-body);
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  margin: 30px 0;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .playground-container .playground__button_save {
+    margin: 10px 0 20px 0;
+  }
+}
+
+.playground-container .playground__button_save:hover {
+  background-color: var(--color-accent-two);
 }
 /*# sourceMappingURL=playground.css.map */

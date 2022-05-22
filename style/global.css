@@ -111,6 +111,24 @@ a:hover {
   text-decoration: none;
 }
 
+::-moz-selection {
+  background-color: var(--color-accent-two);
+  color: var(--color-white);
+}
+
+::selection {
+  background-color: var(--color-accent-two);
+  color: var(--color-white);
+}
+
+::-moz-selection b, ::-moz-selection i, ::-moz-selection a {
+  color: var(--color-white);
+}
+
+::selection b, ::selection i, ::selection a {
+  color: var(--color-white);
+}
+
 .wrapper {
   max-width: 1700px;
   margin: 0 auto;
@@ -338,16 +356,16 @@ footer .footer__left_social_links_item a .icon, footer .footer__right_social_lin
 }
 
 @media (max-width: 768px) {
-  footer .footer__left_social_links_item a .icon, footer .footer__right_social_links_item a .icon {
-    display: none;
-  }
-}
-
-@media (max-width: 768px) {
   footer .footer__left_social_links_item a, footer .footer__right_social_links_item a {
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
+  }
+}
+
+@media (max-width: 768px) {
+  footer .footer__left_social_links_item, footer .footer__right_social_links_item {
+    text-align: left;
   }
 }
 
@@ -376,10 +394,16 @@ footer .footer__left_social_links_item a .icon, footer .footer__right_social_lin
   }
 }
 
-footer .footer .fa,
 footer .footer .fa-brands,
 footer .footer .fa-solid {
   font-size: 30px;
+}
+
+@media (max-width: 768px) {
+  footer .footer .fa-brands,
+  footer .footer .fa-solid {
+    font-size: 28px;
+  }
 }
 
 footer .footer a {

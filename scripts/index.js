@@ -19,9 +19,9 @@ const mobileMenu = () => {
   closeButton.innerHTML = '<span class="lnr lnr-cross"></span>';
 
   const overlayContainer = document.createElement('div');
-    overlayContainer.classList.add('modal');
+  overlayContainer.classList.add('modal');
 
-  mobileMenuButton.addEventListener("click", (e) => {
+  mobileMenuButton.addEventListener('click', (e) => {
     e.preventDefault();
     
     overlayContainer.appendChild(closeButton);

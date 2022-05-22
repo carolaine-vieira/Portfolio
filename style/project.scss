@@ -156,6 +156,8 @@ section.project {
   }
 
   &:hover .artifacts__item {    
-    opacity: 0.4;
+    @media (min-width: $tablet) {
+      opacity: 0.4;
+    }
   }
 }
