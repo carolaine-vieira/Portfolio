@@ -652,6 +652,13 @@ footer .footer__right_links ul a:hover {
   gap: 10px;
 }
 
+@media (max-width: 768px) {
+  .playground-container .playground__colors .wrapper {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+  }
+}
+
 .playground-container .playground__colors_item {
   display: -webkit-box;
   display: -ms-flexbox;
