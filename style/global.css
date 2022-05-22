@@ -164,6 +164,16 @@ a:hover {
   color: var(--color-accent-two);
 }
 
+.header ul li[data-menu="button"] {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .header ul li[data-menu="button"] {
+    display: inline-block;
+  }
+}
+
 .header a {
   color: var(--color-white);
 }
@@ -196,6 +206,12 @@ a:hover {
 
 .header__social_links {
   font-size: 30px;
+}
+
+@media (max-width: 768px) {
+  .header__social_links li:nth-child(1) {
+    display: none;
+  }
 }
 
 @media (max-width: 768px) {
@@ -507,5 +523,41 @@ footer .footer__right_links ul a:hover {
 
 #wave-3 path {
   fill: var(--color-accent-one);
+}
+
+.modal {
+  position: fixed;
+  z-index: 9999;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100%;
+  background-color: var(--color-accent-one);
+  padding: 30px;
+}
+
+.modal ul {
+  margin-top: 50px;
+}
+
+.modal .header__links {
+  display: block !important;
+}
+
+.modal .header__links li {
+  margin-bottom: 10px;
+}
+
+.modal a {
+  color: var(--color-white);
+}
+
+.modal .close-btn {
+  position: absolute;
+  right: 30px;
+  top: 30px;
+  color: var(--color-white);
+  cursor: pointer;
+  font-size: 35px;
 }
 /*# sourceMappingURL=global.css.map */

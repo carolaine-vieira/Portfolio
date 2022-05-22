@@ -1,3 +1,53 @@
+.zoom-out, section#site-intro {
+  -webkit-animation: zoomOut 1s;
+          animation: zoomOut 1s;
+}
+
+@-webkit-keyframes zoomOut {
+  from {
+    -webkit-transform: scale(0.8);
+            transform: scale(0.8);
+  }
+  to {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+@keyframes zoomOut {
+  from {
+    -webkit-transform: scale(0.8);
+            transform: scale(0.8);
+  }
+  to {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+.slide-up, section.home .swiper_home {
+  -webkit-animation: slideUp 1s;
+          animation: slideUp 1s;
+}
+
+@-webkit-keyframes slideUp {
+  from {
+    top: 60px;
+  }
+  to {
+    top: 0;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    top: 60px;
+  }
+  to {
+    top: 0;
+  }
+}
+
 :root {
   --color-accent-one: #222;
   --color-accent-two: #c2424f;
@@ -114,6 +164,16 @@ a:hover {
   color: var(--color-accent-two);
 }
 
+.header ul li[data-menu="button"] {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .header ul li[data-menu="button"] {
+    display: inline-block;
+  }
+}
+
 .header a {
   color: var(--color-white);
 }
@@ -146,6 +206,12 @@ a:hover {
 
 .header__social_links {
   font-size: 30px;
+}
+
+@media (max-width: 768px) {
+  .header__social_links li:nth-child(1) {
+    display: none;
+  }
 }
 
 @media (max-width: 768px) {
@@ -459,54 +525,40 @@ footer .footer__right_links ul a:hover {
   fill: var(--color-accent-one);
 }
 
-.zoom-out, section#site-intro {
-  -webkit-animation: zoomOut 1s;
-          animation: zoomOut 1s;
+.modal {
+  position: fixed;
+  z-index: 9999;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100%;
+  background-color: var(--color-accent-one);
+  padding: 30px;
 }
 
-@-webkit-keyframes zoomOut {
-  from {
-    -webkit-transform: scale(0.8);
-            transform: scale(0.8);
-  }
-  to {
-    -webkit-transform: scale(1);
-            transform: scale(1);
-  }
+.modal ul {
+  margin-top: 50px;
 }
 
-@keyframes zoomOut {
-  from {
-    -webkit-transform: scale(0.8);
-            transform: scale(0.8);
-  }
-  to {
-    -webkit-transform: scale(1);
-            transform: scale(1);
-  }
+.modal .header__links {
+  display: block !important;
 }
 
-.slide-up, section.home .swiper_home {
-  -webkit-animation: slideUp 1s;
-          animation: slideUp 1s;
+.modal .header__links li {
+  margin-bottom: 10px;
 }
 
-@-webkit-keyframes slideUp {
-  from {
-    top: 60px;
-  }
-  to {
-    top: 0;
-  }
+.modal a {
+  color: var(--color-white);
 }
 
-@keyframes slideUp {
-  from {
-    top: 60px;
-  }
-  to {
-    top: 0;
-  }
+.modal .close-btn {
+  position: absolute;
+  right: 30px;
+  top: 30px;
+  color: var(--color-white);
+  cursor: pointer;
+  font-size: 35px;
 }
 
 section.home {
