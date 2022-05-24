@@ -4,7 +4,7 @@ var swiper = new Swiper(".common-swiper", {
     prevEl: ".swiper_pagination_prev",
   },
   loop: true,
-  initialSlide: 1,  
+  initialSlide: 0,  
   breakpoints: {
     768: {
       autoplay: {
