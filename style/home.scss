@@ -43,6 +43,15 @@ section.home {
           margin: 0 0 40px 0;
           position: relative;
 
+          sub {
+            display: block;
+            font-weight: 400;
+            font-size: 14px;
+            margin-top: 5px;
+            opacity: 0.5;
+            font-style: italic;
+          }
+
           &::after {
             content: '';
             position: absolute;
