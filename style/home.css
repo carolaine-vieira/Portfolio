@@ -617,12 +617,6 @@ section.home .swiper-button-next::after {
   font-size: 35px;
 }
 
-@media (min-width: 769px) {
-  section.home {
-    min-height: 60vh;
-  }
-}
-
 @media (max-width: 768px) {
   section.home {
     margin-bottom: 5%;

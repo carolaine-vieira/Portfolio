@@ -122,10 +122,6 @@ section.home {
     font-size: 35px;
   }
 
-  @media (min-width: ($tablet + 1)) {
-    min-height: 60vh;
-  }
-
   @media (max-width: $tablet) {
     margin-bottom: 5%;
   }
