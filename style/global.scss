@@ -29,7 +29,7 @@ body {
   justify-content: space-between;
   font-family: var(--font-body);
   color: var(--color-black);
-  height: 100vh;
+  min-height: 100vh;
 }
 
 canvas {
@@ -118,15 +118,16 @@ a:hover {
         &:hover {
           color: var(--color-accent-two);
         }
-      }
+      }      
+    }
+  }
 
-      &[data-menu="button"] {
-        display: none;
+  [data-menu="button"] {
+    display: none;
+    font-size: 30px;
 
-        @media (max-width: $tablet) {
-          display: none;
-        }
-      }
+    @media (max-width: $tablet) {
+      display: block;
     }
   }
 
@@ -167,22 +168,21 @@ a:hover {
     font-weight: 400;
 
     @media (max-width: $tablet) {
-      text-align: center;
-      width: 100%;
-      padding-top: 20px;
-
+      .my-name,
       .divider {
         display: none;
-      }
+      } 
     }
   }
 
   @media (max-width: $tablet) {
-    padding: var(--padding-default);
-
-    .my-name {
-      display: block;
-    }
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    z-index: 999;
+    padding: 30px var(--padding-default);
+    background-color: #222344;
   }
 }
 
@@ -203,7 +203,6 @@ section#main {
     @media (max-width: $tablet) {
       flex-direction: column-reverse;
       justify-content: center;
-      padding: 0 20px;
     } 
   }
 
@@ -267,40 +266,23 @@ section#main {
       gap: 20px;
 
       @media (max-width: $tablet) {
-        margin-bottom: 60px;
         flex-direction: row;
       }
     }
   }
 
   &__left {
-    &_links {
-      ul {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 30px;
+    color: var(--color-white);
+    opacity: 0.8;
 
-        a:hover {
-          color: var(--color-accent-two);
-        }
-
-        @media (max-width: $tablet) {
-          li {
-            flex: 0 0 calc(50% - 20px);
-            gap: 20px;
-            text-align: center;
-          }
-        }
-
-        @media (max-width: 400px) {
-          flex-direction: column;
-        }
-      }
-    }
+    @media (max-width: $tablet) {
+      display: none;
+    } 
   }
 
   @media (max-width: $tablet) {
-    padding: 30px var(--padding-default) 60px var(--padding-default);
+    background-color: #222344;
+    padding: 20px var(--padding-default);
   } 
 }
 
@@ -322,12 +304,17 @@ section#main {
     display: block !important;
 
     li {
-      margin-bottom: 10px;
+      padding: 20px 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     }
   }
   
   a {
     color: var(--color-white);
+
+    &:hover {
+      color: var(--color-accent-two);
+    }
   }
 
   .close-btn {

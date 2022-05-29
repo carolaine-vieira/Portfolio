@@ -8,6 +8,10 @@ var swiper = new Swiper(".common-swiper", {
       slidesPerView: 2,
     },
   },
+  autoplay: {
+    delay: 3000,
+    disableOnInteraction: true,
+  },
 });
 
 particlesJS("particles-js", {

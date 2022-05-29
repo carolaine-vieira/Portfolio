@@ -11,7 +11,9 @@ section.home {
     align-items: center;
 
     .swiper-wrapper {
-      align-items: center;
+      @media (min-width: $tablet) {
+        align-items: center;
+      }
     }
 
     &_slide {
@@ -20,13 +22,16 @@ section.home {
 
       &_image {        
         overflow: hidden;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        cursor: pointer;
+        display: flex;        
+        justify-content: center;        
 
         img {
           max-height: calc(90vh - 300px);
+        }
+
+        @media (min-width: $tablet) {
+          align-items: center;
+          cursor: pointer;
         }
       }
 
@@ -104,6 +109,7 @@ section.home {
         
         @media (max-width: $tablet) {
           min-height: 230px;
+          display: block;
         }
       }
 
@@ -113,13 +119,15 @@ section.home {
         }
 
         .swiper_home_slide_image {
-          img {
-            height: 100%;
+          img {            
+            @media (min-width: 768px) {
+              height: 100%;
+            }
           }
         }
       }
 
-      @media (max-width: 768px) {
+      @media (max-width: $tablet) {
         flex-direction: column;
       }
     }
@@ -132,12 +140,6 @@ section.home {
   }
 
   @media (max-width: $tablet) {
-    margin-bottom: 5%;
-  }
-}
-
-.home-header-svg {
-  path {
-    fill: var(--color-accent-two);
+    margin: calc(var(--padding-default) + 90px) auto 40px auto;
   }
 }
