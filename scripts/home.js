@@ -1,4 +1,4 @@
-var swiper = new Swiper(".common-swiper", {
+var sp = new Swiper(".common-swiper", {
   slidesPerView: 1,
   spaceBetween: 20,
   loop: true,
@@ -12,6 +12,7 @@ var swiper = new Swiper(".common-swiper", {
     delay: 3000,
     disableOnInteraction: true,
   },
+  
 });
 
 particlesJS("particles-js", {
@@ -131,8 +132,13 @@ const handleSwiperSlide = () => {
     swipers.forEach((swiper) => {
       swiper.querySelector("img")?.addEventListener("click", (e) => {
         swiper.classList.toggle("show-description");
+        sp.autoplay.stop();
       });
     });
   }
 };
 handleSwiperSlide();
+
+if( window.innerWidth <= 768 ) {
+  sp.autoplay.stop();
+}
