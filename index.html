@@ -12,20 +12,19 @@
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.linearicons.com/free/1.0.0/icon-font.min.css">
   <link
-    href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Playfair+Display:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700display=swap"
     rel="stylesheet" />
   <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
   <link rel="shortcut icon" href="./assets/images/favicon.png" type="image/x-icon">
 </head>
 
 <body>
-  <div id="particles-js"></div>
-
   <header class="header">
     <div class="wrapper">
-      <h1 class="header__title"><a href="https://carolaine-vieira.github.io/Portfolio/"><b>Portfolio</b><span
-            class="divider"> &mdash; </span><span class="my-name">Carolaine
-            Vieira</span></a></h1>
+      <h1 class="header__title"><a href="https://carolaine-vieira.github.io/Portfolio/">
+          <span>Portfolio</span>
+          Carolaine Vieira
+      </h1>
 
       <nav class="header__links">
         <ul>
@@ -49,9 +48,7 @@
         <div class="swiper common-swiper swiper_home">
           <div class="swiper-wrapper">
             <div class="swiper-slide swiper_home_slide">
-              <div class="swiper_home_slide_image">
-                <img src="./assets/images/pizzara-thumbnail.png" alt="Pizzaria" />
-              </div>
+              <img src="./assets/images/pizzara-thumbnail.png" alt="Pizzaria" />
               <div class="swiper_home_slide_description">
                 <div class="swiper_home_slide_description_top">
                   <h2>Pizzaria
@@ -67,16 +64,16 @@
                   </div>
                 </div>
 
-                <a class="swiper_home_slide_description_link" href="https://pizzaria-rn.herokuapp.com/" target="_blank">
-                  Take a look
-                </a>
+                <div class="swiper_home_slide_description_link">
+                  <a href="https://pizzaria-rn.herokuapp.com/" target="_blank">
+                    Take a look
+                  </a>
+                </div>
               </div>
             </div>
 
             <div class="swiper-slide swiper_home_slide">
-              <div class="swiper_home_slide_image">
-                <img src="./assets/images/effusus-thumbnail.png" alt="Effusus" />
-              </div>
+              <img src="./assets/images/effusus-thumbnail.png" alt="Effusus" />
               <div class="swiper_home_slide_description">
                 <div class="swiper_home_slide_description_top">
                   <h2>Effusus</h2>
@@ -92,9 +89,7 @@
             </div>
 
             <div class="swiper-slide swiper_home_slide">
-              <div class="swiper_home_slide_image">
-                <img src="./assets/images/twisted-thumbnail.png" alt="Twisted" />
-              </div>
+              <img src="./assets/images/twisted-thumbnail.png" alt="Twisted" />
               <div class="swiper_home_slide_description">
                 <div class="swiper_home_slide_description_top">
                   <h2>Twisted</h2>
@@ -106,45 +101,26 @@
                   </div>
                 </div>
 
-                <a class="swiper_home_slide_description_link" href="https://github.com/carolaine-vieira/twisted"
-                  target="_blank">
-                  Code
-                </a>
+                <div class="swiper_home_slide_description_link">
+                  <a href="https://github.com/carolaine-vieira/twisted" target="_blank">
+                    Code
+                  </a>
+                </div>
               </div>
             </div>
+          </div>
+
+          <div class="navigation">
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
           </div>
         </div>
       </div>
     </section>
   </main>
 
-  <footer class="footer">
-    <div class="wrapper">
-      <div class="footer__left">
-        &copy; 2022
-      </div>
-
-      <div class="footer__right">
-        <ul class="footer__right_social_links">
-          <li class="footer__right_social_links_item">
-            <a href="https://github.com/carolaine-vieira" target="_blank">
-              <span class="fa-brands fa-github"></span>
-            </a>
-          </li>
-          <li class="footer__right_social_links_item">
-            <a href="https://www.linkedin.com/in/carolaine-vieira-7602b1145" target="_blank">
-              <span class="fa-brands fa-linkedin"></span>
-            </a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </footer>
-
   <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-  <script type="module" src="./scripts/index.js" defer></script>
   <script type="module" src="./scripts/home.js" defer></script>
-  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
 </body>
 
 </html>

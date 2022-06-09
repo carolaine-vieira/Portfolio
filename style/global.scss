@@ -2,15 +2,15 @@
 @import './effects.scss';
 
 :root {
-  --color-accent-one: #17182f;
-  --color-accent-two: #ee42b9;
+  --color-accent-one: #111;
+  --color-accent-two: #b34536;
   --color-soft-black: #333333;
   --color-white: #fff;
   --color-black: #333;
   --color-soft-gray: #eee;
 
   --font-body: 'Montserrat', sans-serif;
-  --padding-default: 5%;
+  --padding-default: 4%;
 
   @media (max-width: $mobile) {
     --padding-default: 30px;
@@ -23,13 +23,28 @@ body, html {
 }
 
 body {
-  background-color: var(--color-accent-one);  
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  background-color: var(--color-soft-gray);  
   font-family: var(--font-body);
   color: var(--color-black);
   min-height: 100vh;
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    z-index: 0;
+    right: 0;
+    top: 0;
+    background-color: var(--color-accent-one);
+    width: 50%;
+    height: 100%;
+  }
+
+  @media (max-width: $mobile) {
+    &::after {
+      width: 30%;
+    }
+  }
 }
 
 canvas {
@@ -77,24 +92,11 @@ a:hover {
   margin: 0 auto;
 }
 
-#particles-js {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-}
-
-.title-bullets {
-  content: '..';
-  position: absolute;
-  color: var(--color-accent-two);          
-  line-height: 0;
-}
-
 .header {
-  backdrop-filter: blur(2px);
-  color: var(--color-white);
-  padding: 50px var(--padding-default);
+  padding: 70px var(--padding-default) 50px var(--padding-default);
   font-size: 18px;
+  position: relative;
+  z-index: 9;
   
   .wrapper {
     display: flex;
@@ -106,8 +108,11 @@ a:hover {
   ul {
     display: flex;
     gap: 20px;
+    font-weight: 300;
 
-    li {      
+    li {    
+      font-size: 16px;
+
       a {
         display: flex;
         justify-content: center;
@@ -126,37 +131,24 @@ a:hover {
     display: none;
     font-size: 30px;
 
+    a {
+      color: var(--color-white);
+    }
+
     @media (max-width: $tablet) {
       display: block;
     }
   }
 
   a {
-    color: var(--color-white);
+    color: var(--color-black);
 
     &:hover {
       color: var(--color-accent-two);
     }
   }
 
-  &__links {
-    li {
-      a {
-        &::before {
-          @extend .title-bullets;
-          top: 0;
-          margin-top: -32px;
-          font-size: 65px;
-          opacity: 0;
-        }
-  
-        &.active::before,
-        &:hover::before {
-          opacity: 1;
-        }
-      }      
-    }
-    
+  &__links {    
     @media (max-width: $tablet) {
       display: none;
     }
@@ -164,14 +156,22 @@ a:hover {
 
   &__title {
     margin: 0;
-    font-size: 18px;
+    font-size: 30px;
     font-weight: 400;
+    font-family: 'Playfair Display';
+
+    span {
+      font-family: var(--font-body);
+      font-size: 14px;
+      font-weight: 300;
+      font-style: italic;
+      opacity: 0.6;
+      display: block;
+    }
 
     @media (max-width: $tablet) {
-      .my-name,
-      .divider {
-        display: none;
-      } 
+      font-size: 25px;
+      font-weight: 500;
     }
   }
 
@@ -182,7 +182,6 @@ a:hover {
     width: 100%;
     z-index: 999;
     padding: 30px var(--padding-default);
-    background-color: #222344;
   }
 }
 
