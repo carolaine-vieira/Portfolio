@@ -47,16 +47,24 @@ const openModal = () => {
       const modal = document.querySelector(
         `[data-modal=${btn.getAttribute("data-modal-target")}]`
       );
-      modal.classList.toggle("active");
 
-      modal.addEventListener("click", (e) => {
-        if (e.target.classList.contains("modal-project"))
-          modal.classList.toggle("active");
-      });
+      if (modal) {
+        modal.classList.toggle("active");
 
-      window.addEventListener("keydown", (e) => {
-        if (e.key === "Escape") modal.classList.remove("active");
-      });
+        const closeModal = (e) => {
+          const removeModal = () => {
+            modal.classList.remove("active");
+            modal.removeEventListener("click", closeModal);
+            window.removeEventListener("keydown", closeModal);
+          };
+
+          if (e.target?.classList.contains("modal-project")) removeModal();
+          if (e.key === "Escape") removeModal();
+        };
+
+        modal.addEventListener("click", closeModal);
+        window.addEventListener("keydown", closeModal);
+      }
     });
   });
 };
