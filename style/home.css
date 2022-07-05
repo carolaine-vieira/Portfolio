@@ -754,7 +754,7 @@ section.home .swiper-button-next:hover::after {
 }
 
 .modal-project_container ul li a.disabled {
-  opacity: 0.8;
+  opacity: 0.6;
 }
 
 .modal-project_container ul li a.disabled:hover {
