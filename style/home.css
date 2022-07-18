@@ -675,7 +675,7 @@ section.home .swiper_home_slide_image img {
 
 @media (min-width: 769px) {
   section.home .swiper_home_slide_image {
-    max-height: 65vh;
+    max-height: 75vh;
   }
 }
 
