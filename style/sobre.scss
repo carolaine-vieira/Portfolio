@@ -21,6 +21,11 @@
       display: flex;
       align-items: center;
       justify-content: center;
+
+      @media (max-width: $mobile) {
+        font-size: 18px;
+        font-weight: 600;
+      }
     }
   }
 
@@ -66,6 +71,10 @@
             border-bottom-right-radius: 5px;
           }
         }        
+      }
+
+      @media (max-width: $mobile) {
+        grid-template-columns: 60px calc(100% - 60px);
       }
     }
 

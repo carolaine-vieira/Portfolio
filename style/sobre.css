@@ -1229,6 +1229,13 @@ footer .footer__right_links ul a:hover {
           justify-content: center;
 }
 
+@media (max-width: 580px) {
+  .about__item_title {
+    font-size: 18px;
+    font-weight: 600;
+  }
+}
+
 .about__container {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1282,6 +1289,13 @@ footer .footer__right_links ul a:hover {
 .about__container__basic__values span:nth-child(2) {
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
+}
+
+@media (max-width: 580px) {
+  .about__container__basic {
+    -ms-grid-columns: 60px calc(100% - 60px);
+        grid-template-columns: 60px calc(100% - 60px);
+  }
 }
 
 .about__container__tech h2 {
