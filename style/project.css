@@ -766,4 +766,49 @@ section.project .swiper_project_pagination_count .swiper-pagination-current {
     opacity: 0.4;
   }
 }
+
+.project-tags {
+  position: relative;
+  z-index: 1;
+  padding: 0 var(--padding-default) var(--padding-default) var(--padding-default);
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[4];
+      grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+.project-tags__tag {
+  background-color: #eee;
+  padding: 15px;
+  border-radius: 3px;
+}
+
+.project-tags__tag:hover {
+  background-color: var(--color-accent-two);
+  color: var(--color-white);
+}
+
+@media (max-width: 580px) {
+  .project-tags__tag {
+    padding: 8px 10px;
+  }
+}
+
+@media (max-width: 768px) {
+  .project-tags {
+    -ms-grid-columns: (1fr)[3];
+        grid-template-columns: repeat(3, 1fr);
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 580px) {
+  .project-tags {
+    -ms-grid-columns: (1fr)[2];
+        grid-template-columns: repeat(2, 1fr);
+    font-size: 11px;
+    gap: 5px;
+  }
+}
 /*# sourceMappingURL=project.css.map */
