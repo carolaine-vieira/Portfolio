@@ -5,7 +5,7 @@
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="./style/playground.css" />
+  <link rel="stylesheet" href="./style/sobre.css" />
   <title>Portfólio &mdash; Carolaine Vieira</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -27,8 +27,8 @@
             href="https://github.com/carolaine-vieira/Portfolio/raw/gh-pages/assets/files/Curriculo-Carolaine-Vieira.pdf"
             download>Currículo</a></li>
         <li><a href="https://carolaine-vieira.github.io/Portfolio/">Projetos</a></li>
-        <li><a href="https://carolaine-vieira.github.io/Portfolio/playground.html" class="active">Playground</a></li>
-        <li><a href="https://carolaine-vieira.github.io/Portfolio/sobre.html">Sobre</a></li>
+        <li><a href="https://carolaine-vieira.github.io/Portfolio/playground.html">Playground</a></li>
+        <li><a href="https://carolaine-vieira.github.io/Portfolio/sobre.html" class="active">Sobre</a></li>
       </ul>
     </nav>
     <nav class="header__social_links">
@@ -53,42 +53,65 @@
       </svg>
     </div>
 
-    <section id="main" class="playground-container">
-      <div class="playground">
-        <div class="playground__item playground__colors">
-          <h3 class="playground__item_title"><span>Cores</span></h3>
-          <div class="wrapper">
-            <div class="playground__colors_item">
-              <input type="color" data-color="--color-accent-one" class="playground__colors_item_color" value="#222222">
-              <div class="playground__colors_item_label">Realce 1</div>
-            </div>
-
-            <div class="playground__colors_item">
-              <input type="color" data-color="--color-accent-two" class="playground__colors_item_color" value="#c2424f">
-              <div class="playground__colors_item_label">Realce 2</div>
-            </div>
-
-            <div class="playground__colors_item">
-              <input type="color" data-color="--color-white" class="playground__colors_item_color" value="#ffffff">
-              <div class="playground__colors_item_label">Branco</div>
-            </div>
-
-            <div class="playground__colors_item">
-              <input type="color" data-color="--color-black" class="playground__colors_item_color" value="#333333">
-              <div class="playground__colors_item_label">Preto</div>
-            </div>
-
-            <div class="playground__colors_item">
-              <input type="color" data-color="--color-soft-gray" class="playground__colors_item_color" value="#eeeeee">
-              <div class="playground__colors_item_label">Cinza Claro</div>
-            </div>
+    <section id="main" class="about">
+      <div class="about__container">
+        <h2 class="about__item_title"><span>Sobre mim direto</span></h2>
+        <div class="about__container__basic">
+          <div class="about__container__basic__image">
+            <img src="./assets/images/minha.jpg" alt="Minha foto">
+          </div>
+          <div class="about__container__basic__values">
+            <span>28 de janeiro de 1999</span>
+            <span>Graduanda em Sistemas de Informação &mdash; UFBA</span>
           </div>
         </div>
-        <div class="playground__item playground__fonts"></div>
-        <div class="playground__item playground__styles"></div>
-        <button class="playground__item playground__button_save save-colors">
-          Salvar na sessão?
-        </button>
+
+        <div class="about__container__tech">
+          <h2 class="about__item_title"><span>Tecnologias relevantes utilizadas e/ou em uso</span></h2>
+          <div class="tags-list">
+            <span class="tags-list__tag">React</span>
+            <span class="tags-list__tag">Next</span>
+            <span class="tags-list__tag">TypeScript</span>
+            <span class="tags-list__tag">Redux</span>
+            <span class="tags-list__tag">MySQL</span>
+            <span class="tags-list__tag">Node</span>
+            <span class="tags-list__tag">Express</span>
+            <span class="tags-list__tag">Sequelize</span>
+            <span class="tags-list__tag">Jest</span>
+            <span class="tags-list__tag">WooCommerce</span>
+            <span class="tags-list__tag">PHP</span>
+            <span class="tags-list__tag">JQuery</span>
+            <span class="tags-list__tag">WordPress</span>
+            <span class="tags-list__tag">Yup</span>
+            <span class="tags-list__tag">Vue</span>
+            <span class="tags-list__tag">Java</span>
+            <span class="tags-list__tag">Kotlin</span>
+            <span class="tags-list__tag">Python</span>
+            <span class="tags-list__tag">Three.js</span>
+            <span class="tags-list__tag">Figma</span>
+            <span class="tags-list__tag">Adobe XD</span>
+            <span class="tags-list__tag">Photoshop CS6</span>
+            <span class="tags-list__tag">Docker</span>
+            <span class="tags-list__tag">Styled Components</span>
+            <span class="tags-list__tag">React Native</span>
+            <span class="tags-list__tag">Redux</span>
+            <span class="tags-list__tag">Spring Boot</span>
+            <span class="tags-list__tag">Pug</span>
+            <span class="tags-list__tag">Sass</span>
+            <span class="tags-list__tag">JUnit</span>
+          </div>
+        </div>
+
+        <div class="about__container__tech">
+          <h2 class="about__item_title"><span>Conceitos relevantes estudados</span></h2>
+          <div class="tags-list">
+            <span class="tags-list__tag">Acessibilidade e WCAG</span>
+            <span class="tags-list__tag">Material Design</span>
+            <span class="tags-list__tag">CI/CD</span>
+            <span class="tags-list__tag">Performance</span>
+            <span class="tags-list__tag">PLN</span>
+          </div>
+        </div>
       </div>
     </section>
   </main>

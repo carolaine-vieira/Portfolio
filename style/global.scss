@@ -209,7 +209,9 @@ section.project::before,
 section.project::after,
 section.playground-container::before,
 section.playground-container::after,
-footer::after {
+footer::after,
+section.about::before,
+section.about::after {
   content: '';
   position: absolute;
   width: 100%;
