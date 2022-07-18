@@ -71,7 +71,7 @@ body, html {
 }
 
 body {
-  max-width: 1800px;
+  max-width: 1500px;
   margin: 0 auto;
   font-family: var(--font-body);
   color: var(--color-black);
