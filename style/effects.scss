@@ -1,0 +1,28 @@
+.zoom-out {
+  animation: zoomOut 1s;
+
+  @keyframes zoomOut {
+    from {
+      transform: scale(0.8);
+    }
+
+    to {
+      transform: scale(1);
+    }
+  }
+}
+
+.slide-up {
+  animation: slideUp 1s;
+
+  @keyframes slideUp {
+    from {
+      top: 60px;
+    }
+  
+    to {
+      top: 0;
+    }
+  }
+}
+

@@ -1,0 +1,147 @@
+@import './global.scss';
+
+section.home {
+  position: relative;
+  background-color: var(--color-accent-one);  
+  padding-top: 0px !important;
+
+  &::after {
+    background-color: var(--color-accent-two);
+    height: 100vh;
+    top: 200px;
+    z-index: 0;
+  }
+
+  .swiper_home {
+    border-radius: 5px;
+    overflow: hidden;
+    top: 0;
+    @extend .slide-up;
+
+    &_slide {
+      &_top, 
+      &_pagination {
+        background-color: var(--color-white);      
+        padding: 25px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+  
+      &_top {      
+        border-radius: 5px 5px 0 0;
+  
+        &_technology {
+          display: inline-block;
+          padding: 5px 10px;
+          border-radius: 5px;
+          background-color: #eee;
+          font-size: 12px;
+          text-transform: uppercase;
+          font-weight: 500;
+
+          @media (max-width: $mobile) {
+            padding: 3px 8px;
+            font-size: 10px;
+          }
+        }
+  
+        &_view {
+          font-weight: 500;
+
+          &:hover {
+            color: var(--color-accent-two);
+          }
+
+          @media (max-width: $mobile) {
+            font-size: 14px !important;
+          }
+        }
+
+        @media (max-width: $mobile) {
+          padding: 20px;
+        }
+      }
+  
+      &_image {        
+        overflow: hidden;
+
+        img {
+          width: 100%;
+        }
+
+        @media (max-width: $tablet) {
+          max-height: 300px;
+        }
+
+        @media (min-width: 769px) {
+          max-height: 65vh;
+        }
+      }
+  
+      &_pagination {
+        border-radius: 0 0 5px 5px;
+  
+        &_label,
+        &_link {
+          display: block;
+        }
+  
+        &_label {
+          margin-bottom: 5px;
+          font-size: 13px;
+
+          @media (max-width: $mobile) {
+            font-size: 11px;
+          }
+        }
+  
+        &_link {
+          font-size: 16px;
+          font-weight: 600;          
+
+          @media (max-width: $mobile) {
+            font-size: 14px;
+          }
+        }
+  
+        &_prev,
+        &_next {
+          cursor: pointer;
+
+          &:hover {
+            color: var(--color-accent-two);
+          }
+        }
+
+        &_next {
+          text-align: right;
+        }
+
+        @media (max-width: $mobile) {
+          padding: 20px;
+        }
+      }
+    }
+  }
+
+  @media (min-width: ($tablet + 1)) {
+    min-height: 60vh;
+  }
+
+  @media (max-width: $tablet) {
+    margin-bottom: 5%;
+  }
+}
+
+footer {
+  background-color: var(--color-accent-two);
+  padding-top: var(--padding-default);
+  background-position: 0 120px;
+}
+
+.home-header-svg {
+  path {
+    fill: var(--color-accent-two);
+  }
+}
